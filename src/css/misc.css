@@ -1,0 +1,25 @@
+.white-diamond{
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    padding: 20px;
+    transform: rotate(45deg);
+    border: 1px solid #000;
+    position: relative;
+    .orange-diamond{
+        width: 100%;
+        height: 100%;
+        background-color: #F6A150;
+
+    }
+    .man-diamond{
+        width:330px;
+        height: 500px;
+        transform: rotate(-45deg);
+        z-index: 5;
+        position: absolute;
+        top: -100px;
+        left: 0;
+
+    }
+}
