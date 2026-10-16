@@ -23,3 +23,10 @@
 
     }
 }
+
+.small-diamond{
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    background-color: #F68E1E;
+}

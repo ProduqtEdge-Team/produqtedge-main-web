@@ -4,10 +4,119 @@
     font-family: Host-Grotesk;
     width: 100vw;
     min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 @font-face {
     font-family: 'Host-Grotesk';
     src: url('./css/fonts/Host-Grotesk/HostGrotesk-VariableFont_wght.ttf') format('opentype');
+
+}
+
+@media (min-width: 768px) {
+    .footer{
+        padding: 40px 64px;
+        color: #8D959C;
+        font-size: 14px;
+        font-weight: 200;
+        background-color: #021422;
+
+        .sec-1{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 30px;
+
+            div{
+                h3{
+                    all: unset;
+                    font-weight: bold;
+                    color: #5B666F;
+                    font-size: 11px;
+                }
+
+                ul{
+                    all: unset;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    list-style: none;
+                    margin: 5px 0;
+                    font-size: 14px;
+                    li{
+                        display: inline-block;
+                    }
+                }
+
+                p{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    form{
+                        display: flex;
+                        gap: 10px;
+
+                        input{
+                            border: none;
+                            background-color: #2A2A2A;
+                            border-radius: 5px;
+                            padding: 0 14px;
+                        }
+
+                        button{
+                            all: unset;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 10px 16px;
+                            color: #ffffff;
+                            background-color: #F68E1E;
+                            font-weight: 600;
+                            border-radius:5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sec-2{
+            display: flex;
+            justify-content: space-between;
+            p{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                h3{
+                    all: unset;
+                    font-weight: bold;
+                    color: #5B666F;
+                    font-size: 11px;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .sec-3{
+            font-size: 12px;
+            color: #5B666F;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-top: 1px #2A2A2A outset;
+            padding: 10px 0;
+
+            .left{
+                text-align: left;
+            }
+            .right{
+                text-align: right;
+            }
+            .center{
+                text-align: center;
+            }
+        }
+    }
 
 }

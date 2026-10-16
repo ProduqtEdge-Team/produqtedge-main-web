@@ -1,4 +1,5 @@
 import Man from "../images/man.png"
+import "../css/misc.css"
 function Diamond(){
 
     return <div className="white-diamond">
@@ -8,4 +9,11 @@ function Diamond(){
             </div>
 }
 
-export default Diamond
+function smoll(){
+
+    return <i className="small-diamond">
+
+    </i>
+}
+
+export {Diamond, smoll}

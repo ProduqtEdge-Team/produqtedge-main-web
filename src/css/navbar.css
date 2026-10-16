@@ -24,6 +24,7 @@
         align-items: center;
         justify-content: center;
         gap:10px;
+        position: relative;
         a{
             text-decoration: none;
             color: white;
@@ -39,6 +40,10 @@
         .active:hover{
             color: #ffffff;
         }
+
+    /*    */
+
+
     }
 
     .nav-a{
@@ -52,6 +57,69 @@
             font-weight: bold;
             background-color: #F68E1E;
             padding: 12px 14px;
+        }
+    }
+
+    .service-hover{
+        position: absolute;
+        width: 100vw;
+        background-color: white;
+        top: 100%;
+        left: 0;
+        min-height: 100px;
+        z-index: 10;
+        padding: 30px 100px;
+        box-sizing: border-box;
+
+        .service-title{
+            h3{
+                all: unset;
+                display: block;
+                font-size: 20px;
+                font-weight: bold;
+                color: #2A2A2A;
+            }
+            span{
+                font-size: 15px;
+                color: #5B666F;
+            }
+        }
+
+        .service-links-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 45px;
+            div{
+                h2{
+                    all: unset;
+                    color: #F68E1E;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                ul{
+                    all:unset;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    padding: 10px 0;
+                    li{
+                        list-style: none;
+                        a{
+                            text-decoration: none;
+                            color: #535862;
+                            font-size: 14px;
+                            display: flex;
+                            justify-content: space-between;
+
+                            .arrow{
+                                font-size: 18px;
+                                color: #F68E1E;
+
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
