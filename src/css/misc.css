@@ -1,26 +1,29 @@
-.white-diamond{
-    width: 200px;
-    height: 200px;
-    background-color: #ffffff;
-    padding: 20px;
-    transform: rotate(45deg);
-    border: 1px solid #000;
+.diamond{
+    width: 400px;
+    height: 400px;
     position: relative;
-    .orange-diamond{
+
+    .white-diamond{
         width: 100%;
         height: 100%;
-        background-color: #F6A150;
+        background-color: #ffffff;
+        padding: 20px;
+        box-sizing: border-box;
+        transform: rotate(45deg);
+        .orange-diamond{
+            width: 100%;
+            height: 100%;
+            background-color: #F6A150;
 
+        }
     }
-    .man-diamond{
-        width:330px;
-        height: 500px;
-        transform: rotate(-45deg);
-        z-index: 5;
-        position: absolute;
-        top: -100px;
-        left: 0;
 
+    .man-diamond{
+        width: 320px;
+        position: absolute;
+        top: -104px;
+        left: 75px;
+        z-index: 5;
     }
 }
 

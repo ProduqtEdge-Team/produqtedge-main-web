@@ -1,0 +1,59 @@
+@media (min-width:768px) {
+
+    .cta-1{
+        margin: 30px 35px 60px 35px;
+        height: 375px;
+        background-color: #1E2023;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding: 0 65px;
+        box-sizing: border-box;
+
+        .sec-1{
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 42px;
+                font-weight: 500;
+            }
+
+            span{
+                font-size: 17px;
+                margin: 20px 0 40px 0;
+            }
+
+            a{
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: #ffffff;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 14px 18px;
+                background-color: #F68E1E;
+
+                span{
+                    all: unset;
+                }
+
+                svg{
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .diamond{
+            position: absolute;
+            right: -20px;
+            top: 56px;
+        }
+    }
+}

@@ -1,4 +1,7 @@
 import {Diamond} from "./Diamond.tsx";
+import {Link} from "react-router-dom";
+import {ArrowForward} from "@mui/icons-material";
+import "../css/HPM.css"
 
 function V1(){
     return <div className="hpm-v-container">
@@ -25,9 +28,19 @@ function V2(){
 function CTA1(){
 
 
-    return <div>
+    return <section className="cta-1">
+        <div className="sec-1">
+            <h2>Have a project in mind?</h2>
+            <span>Let's build the right strategy together.</span>
+            <div>
+                <Link to="">
+                    <span>Start a Conversation</span> <ArrowForward/>
+                </Link>
+            </div>
+        </div>
 
-    </div>
+        <Diamond/>
+    </section>
 }
 function CTA2(){
 
