@@ -95,7 +95,7 @@ function Home(){
                     Some of our recent projects
                 </h2>
                 <div className="end">
-                    <Link to="">
+                    <Link to="" className="btn-dark">
                        <span>Learn More</span> <ArrowForward/>
                     </Link>
                 </div>
@@ -122,11 +122,11 @@ function Home(){
                         Real Impact, Real <br/> Feedback
                     </h2>
                 </div>
-                <span>
+                <span className="blurb">
                     We partner with businesses to deliver clear strategies and measurable results. Hear what our clients say about working with produqtedge.
                 </span>
             </div>
-            <div className="sec-2">
+            {testimonial && <div className="sec-2">
                 <img src={testimonial.path} alt={testimonial.name}/>
                 <div className="testimonial">
                     <span className="title">{testimonial.title}</span>
@@ -142,7 +142,7 @@ function Home(){
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>}
         </section>
         <section className="home-unique">
             <div className="sec-1">
@@ -157,7 +157,7 @@ function Home(){
                     We combine product-led thinking, digital transformation, operational excellence, and growth strategy to help businesses unlock performance, scale sustainably, and create lasting competitive advantage.
                 </span>
                 <div>
-                    <Link to="">
+                    <Link to="" className="btn-dark">
                         <span>Meet our Team</span> <ArrowForward/>
                     </Link>
                 </div>
@@ -172,7 +172,7 @@ function Home(){
                         What the work <br/> teaches us.
                     </h2>
                 </div>
-                <span>
+                <span className="blurb">
                     Explore our research, insights, and examples of real client impact, designed to help you embrace the key forces of change and get to value faster.
                 </span>
             </div>
@@ -186,7 +186,7 @@ function Home(){
                 ))}
             </div>
             <div className="end">
-                <Link to="">
+                <Link to="" className="btn-dark">
                     <span>See all Works</span> <ArrowForward/>
                 </Link>
             </div>

@@ -1,3 +1,8 @@
+/* side padding that caps page content at 1280px (the 1440px design minus 80px each side) */
+:root{
+    --gutter: max(80px, calc((100% - 1280px) / 2));
+}
+
 .diamond{
     width: 400px;
     height: 400px;
@@ -40,4 +45,19 @@
     align-items: center;
     font-size: 12px;
     gap: 5px;
+}
+
+.btn-dark{
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 14px 18px;
+    background-color: #052239;
+
+    svg{
+        font-size: 16px;
+    }
 }
