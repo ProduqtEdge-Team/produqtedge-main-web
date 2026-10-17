@@ -30,3 +30,11 @@
     transform: rotate(45deg);
     background-color: #F68E1E;
 }
+
+.dia-header{
+    color: #5B666F;
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 5px;
+}

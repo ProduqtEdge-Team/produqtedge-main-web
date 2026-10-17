@@ -3,7 +3,7 @@ import { useSyncExternalStore } from "react";
 export function useIsMobile(breakpoint = 768) {
     const query = `(max-width: ${breakpoint - 1}px)`;
 
-    const subscribe = (callback) => {
+    const subscribe = (callback: () => void) => {
         const mql = window.matchMedia(query);
         if (mql.addEventListener) {
             mql.addEventListener("change", callback);

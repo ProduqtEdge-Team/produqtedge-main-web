@@ -1,4 +1,4 @@
-import Diamond from "./Diamond.tsx";
+import {Diamond} from "./Diamond.tsx";
 
 function V1(){
     return <div className="hpm-v-container">
