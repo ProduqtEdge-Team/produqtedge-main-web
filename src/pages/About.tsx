@@ -5,7 +5,8 @@ import {useEffect} from "react";
 import {ArrowOutward, CheckCircle} from "@mui/icons-material";
 import {CTA2} from "../components/HPM.tsx";
 import {board, team} from "../js/team.ts";
-import {missions, offers, values} from "../js/about.ts";
+import {missions, offers} from "../js/about.ts";
+import CoreValues from "../components/CoreValues.tsx";
 import Offer from "../images/con image.png"
 import Mission from "../images/mission image.png"
 
@@ -78,18 +79,7 @@ function About(){
             <h2 className="board">Advisory Board</h2>
             {memberCards(board)}
         </section>
-        <section className="about-values">
-            <h2>Our Core Values</h2>
-            <div className="sec-2">
-                {values.map((value, i) =>(
-                    <div key={i}>
-                        <value.icon/>
-                        <h3>{value.title}</h3>
-                        <span>{value.content}</span>
-                    </div>
-                ))}
-            </div>
-        </section>
+        <CoreValues/>
         <CTA2/>
     </div>
 }

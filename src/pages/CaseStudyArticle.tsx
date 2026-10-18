@@ -4,9 +4,7 @@ import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import CaseStudyCards from "../components/CaseStudyCards.tsx";
 import {caseStudies} from "../js/caseStudies.ts";
-
-// text wrapped in **double stars** in the data comes out bold
-const bold = (paragraph: string) => paragraph.split("**").map((part, i) => i % 2 === 1 ? <b key={i}>{part}</b> : part)
+import {bold} from "../js/text.tsx";
 
 function CaseStudyArticle(){
     const {slug} = useParams();

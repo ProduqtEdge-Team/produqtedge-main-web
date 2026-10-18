@@ -5,6 +5,8 @@ import About from "../src/pages/About.tsx"
 import TeamMember from "../src/pages/TeamMember.tsx"
 import CaseStudy from "../src/pages/CaseStudy.tsx"
 import CaseStudyArticle from "../src/pages/CaseStudyArticle.tsx"
+import Careers from "../src/pages/Careers.tsx"
+import Job from "../src/pages/Job.tsx"
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
     {path:"/about/:slug", Component:TeamMember},
     {path:"/case-studies", Component:CaseStudy},
     {path:"/case-studies/:slug", Component:CaseStudyArticle},
+    {path:"/careers", Component:Careers},
+    {path:"/careers/:slug", Component:Job},
   ])
   return <RouterProvider router={router}/>
 }

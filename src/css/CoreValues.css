@@ -1,0 +1,51 @@
+@media (min-width:768px) {
+
+    .core-values{
+        padding: 50px var(--gutter);
+
+        h2{
+            all: unset;
+            display: block;
+            font-size: 44px;
+            font-weight: 500;
+            color: #2A2A2A;
+            margin: 0 0 40px 0;
+        }
+
+        .sec-2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background-color: #C8DAF2;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 50px 60px;
+                min-height: 340px;
+                box-sizing: border-box;
+                background-color: #D6E6FB;
+                color: #1E2B5E;
+
+                svg{
+                    font-size: 36px;
+                }
+
+                h3{
+                    all: unset;
+                    display: block;
+                    font-size: 26px;
+                    font-weight: 400;
+                    margin: 25px 0 20px 0;
+                }
+
+                span{
+                    font-size: 14px;
+                    line-height: 1.75;
+                    color: #3A4350;
+                }
+            }
+        }
+    }
+}
