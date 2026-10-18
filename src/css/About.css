@@ -1,0 +1,262 @@
+@media (min-width:768px) {
+
+    .about-who{
+        padding: 120px var(--gutter) 50px var(--gutter);
+
+        h1{
+            all: unset;
+            display: block;
+            font-size: 48px;
+            font-weight: 500;
+            color: #2A2A2A;
+            margin: 0 0 25px 0;
+        }
+
+        span{
+            display: block;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #5B666F;
+            text-align: justify;
+        }
+    }
+
+    .about-offer{
+        padding: 50px var(--gutter);
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 35px;
+
+        .sec-1{
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .sec-2{
+            display: flex;
+            flex-direction: column;
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 48px;
+                font-weight: 500;
+                color: #2A2A2A;
+                margin: 0 0 25px 0;
+            }
+
+            .blurb{
+                font-size: 16px;
+                line-height: 1.75;
+                color: #5B666F;
+                margin: 0 0 25px 0;
+            }
+
+            .list{
+                display: grid;
+                grid-template-rows: repeat(5, auto);
+                grid-auto-flow: column;
+                gap: 14px 30px;
+
+                span{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 13px;
+                    color: #2A2A2A;
+
+                    .check{
+                        font-size: 20px;
+                        color: #2E3A4F;
+                    }
+                }
+            }
+        }
+    }
+
+    .about-mission{
+        padding: 50px var(--gutter);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+
+        .sec-1{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 48px;
+                font-weight: 500;
+                color: #2A2A2A;
+            }
+
+            div{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                h3{
+                    all: unset;
+                    display: block;
+                    font-size: 22px;
+                    font-weight: 400;
+                    color: #2A2A2A;
+                }
+
+                span{
+                    width: 460px;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    color: #5B666F;
+                }
+            }
+        }
+
+        .sec-2{
+            width: 100%;
+            aspect-ratio: 5 / 3;
+            object-fit: cover;
+        }
+    }
+
+    .about-team{
+        padding: 50px var(--gutter);
+
+        h2{
+            all: unset;
+            display: block;
+            font-size: 44px;
+            font-weight: 500;
+            color: #2A2A2A;
+            margin: 0 0 40px 0;
+        }
+
+        .board{
+            font-weight: 400;
+            margin: 60px 0 30px 0;
+        }
+
+        .members{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2px;
+
+            .member{
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+
+                img{
+                    width: 100%;
+                    aspect-ratio: 6 / 5;
+                    object-fit: contain;
+                    object-position: bottom;
+                    background-color: #D3DADB;
+                }
+
+                .end{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 10px;
+                    min-height: 56px;
+                    padding: 0 18px;
+
+                    span{
+                        font-size: 13px;
+                        color: #8D959C;
+
+                        b{
+                            font-weight: 400;
+                            color: #2A2A2A;
+                        }
+
+                        .dot{
+                            display: inline-block;
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 50%;
+                            margin: 0 4px 2px 4px;
+                            background-color: #F68E1E;
+                        }
+                    }
+
+                    a{
+                        flex-shrink: 0;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #ffffff;
+                        background-color: #2E3A4F;
+                        transition: background-color 0.2s ease-in-out;
+
+                        svg{
+                            font-size: 16px;
+                        }
+                    }
+
+                    a:hover{
+                        background-color: #F68E1E;
+                    }
+                }
+            }
+        }
+    }
+
+    .about-values{
+        padding: 50px var(--gutter);
+
+        h2{
+            all: unset;
+            display: block;
+            font-size: 44px;
+            font-weight: 500;
+            color: #2A2A2A;
+            margin: 0 0 40px 0;
+        }
+
+        .sec-2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background-color: #C8DAF2;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 50px 60px;
+                min-height: 340px;
+                box-sizing: border-box;
+                background-color: #D6E6FB;
+                color: #1E2B5E;
+
+                svg{
+                    font-size: 36px;
+                }
+
+                h3{
+                    all: unset;
+                    display: block;
+                    font-size: 26px;
+                    font-weight: 400;
+                    margin: 25px 0 20px 0;
+                }
+
+                span{
+                    font-size: 14px;
+                    line-height: 1.75;
+                    color: #3A4350;
+                }
+            }
+        }
+    }
+}

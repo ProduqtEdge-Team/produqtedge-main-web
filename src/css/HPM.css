@@ -56,4 +56,49 @@
             top: 56px;
         }
     }
+
+    .cta-2{
+        padding: 50px var(--gutter) 40px var(--gutter);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+        .p-1, .p-2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px 60px;
+            min-height: 370px;
+            box-sizing: border-box;
+
+            h2{
+                all: unset;
+                display: block;
+                max-width: 300px;
+                font-size: 44px;
+                font-weight: 600;
+                line-height: 1.25;
+            }
+
+            span{
+                max-width: 380px;
+                font-size: 15px;
+                line-height: 1.6;
+                margin: 25px 0 25px 0;
+            }
+        }
+
+        .p-1{
+            background-color: #E8EAF6;
+            color: #2A2A2A;
+
+            span{
+                color: #5B666F;
+            }
+        }
+
+        .p-2{
+            background-color: #F68E1E;
+            color: #ffffff;
+        }
+    }
 }

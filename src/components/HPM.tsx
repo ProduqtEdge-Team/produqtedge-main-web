@@ -43,11 +43,22 @@ function CTA1(){
     </section>
 }
 function CTA2(){
+    const ctas =[
+        {title:"See the work we do.", content:"Explore the casestudies that showcase our commitment to the craft.", button:"View more", path:"/case-studies"},
+        {title:"Let's make it exceptional.", content:"Let's create something truly exceptional together.", button:"Start a Conversation", path:""},
+    ]
 
-
-    return <div>
-
-    </div>
+    return <section className="cta-2">
+        {ctas.map((cta, i) =>(
+            <div className={`p-${i + 1}`} key={i}>
+                <h2>{cta.title}</h2>
+                <span>{cta.content}</span>
+                <div>
+                    <Link to={cta.path} className="btn-dark">{cta.button}</Link>
+                </div>
+            </div>
+        ))}
+    </section>
 }
 
 export {V1, V2, CTA1, CTA2}
