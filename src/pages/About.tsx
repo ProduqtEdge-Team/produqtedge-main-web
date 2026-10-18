@@ -1,13 +1,12 @@
 import NavBar from "../components/NavBar.tsx";
 import "../css/About.css"
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import {useEffect} from "react";
 import {ArrowOutward, CheckCircle, PeopleOutlineOutlined, SpaOutlined, TroubleshootOutlined, VolunteerActivismOutlined} from "@mui/icons-material";
 import {CTA2} from "../components/HPM.tsx";
+import {team} from "../js/team.ts";
 import Offer from "../images/con image.png"
 import Mission from "../images/mission image.png"
-import Yewande from "../images/Yewande.png"
-import Chike from "../images/Chike.png"
-import Gloria from "../images/Gloria.png"
 import Olaniyi from "../images/Olaniyi.png"
 import Collins from "../images/Collins.png"
 import Femi from "../images/Femi-Omotayo.png"
@@ -15,6 +14,13 @@ import Femi from "../images/Femi-Omotayo.png"
 type Member = {name:string, role:string, path:string, link?:string}
 
 function About(){
+    const {hash} = useLocation();
+
+    // "Back to team" links to /about#team, scroll down to it once the page renders
+    useEffect(() => {
+        if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+    }, [hash]);
+
     const offers =["Product Advisory","Technology and Innovation Advisory","Due Diligence","Product Development","Business Process Optimisation",
         "Go-To-Market Support","Startup Incubation","Product Led Growth","Digital Transformation"]
 
@@ -23,11 +29,7 @@ function About(){
         {title:"Mission", content:"Bridging the gap between ideation and success"},
     ]
 
-    const team: Member[] =[
-        {name:"Yewande Sulaiman", role:"Managing Partner", path:Yewande, link:""},
-        {name:"Chike Ikeora", role:"Partner & Lead Consultant, Technology", path:Chike, link:""},
-        {name:"Gloria Gowal", role:"Partner & Lead Consultant, Delivery", path:Gloria, link:""},
-    ]
+    const teamCards: Member[] = team.map((member) => ({name:member.name, role:member.role, path:member.path, link:`/about/${member.slug}`}))
 
     const board: Member[] =[
         {name:"Olaniyi Yusuf", role:"M.D., Andersen Consulting", path:Olaniyi},
@@ -46,7 +48,9 @@ function About(){
     const memberCards = (members: Member[]) => <div className="members">
         {members.map((member, i) =>(
             <div className="member" key={i}>
-                <img src={member.path} alt={member.name}/>
+                {member.link !== undefined
+                    ? <Link to={member.link}><img src={member.path} alt={member.name}/></Link>
+                    : <img src={member.path} alt={member.name}/>}
                 <div className="end">
                     <span>
                         <b>{member.name}</b> <i className="dot"></i> {member.role}
@@ -91,9 +95,9 @@ function About(){
             </div>
             <img className="sec-2" src={Mission} alt=""/>
         </section>
-        <section className="about-team">
+        <section className="about-team" id="team">
             <h2>Our Team</h2>
-            {memberCards(team)}
+            {memberCards(teamCards)}
             <h2 className="board">Advisory Board</h2>
             {memberCards(board)}
         </section>

@@ -1,0 +1,50 @@
+import NavBar from "../components/NavBar.tsx";
+import "../css/TeamMember.css"
+import {Link, Navigate, useParams} from "react-router-dom";
+import {useEffect} from "react";
+import {ArrowOutward, FormatQuote} from "@mui/icons-material";
+import {CTA2} from "../components/HPM.tsx";
+import {team} from "../js/team.ts";
+
+function TeamMember(){
+    const {slug} = useParams();
+    const member = team.find((item) => item.slug === slug);
+
+    // start at the top whenever a different member is opened
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [slug]);
+
+    if (!member) return <Navigate to="/about" replace/>
+
+    return <div>
+        <NavBar/>
+        <section className="member-hero">
+            <h1>{member.name}</h1>
+            <div className="sec-2">
+                <img src={member.path} alt={member.name}/>
+                <div className="quote">
+                    <FormatQuote className="mark"/>
+                    <h2>{member.quote}</h2>
+                </div>
+            </div>
+        </section>
+        <section className="member-bio">
+            <h3>Biography</h3>
+            {member.bio.map((paragraph, i) =>(
+                <p key={i}>{paragraph}</p>
+            ))}
+            <div className="end">
+                <Link to="/about#team" className="btn-dark">
+                    <span>Back to team</span> <ArrowOutward/>
+                </Link>
+                <a href={member.linkedin} target="_blank" rel="noreferrer" className="btn-outline">
+                    <span>LinkedIn</span> <ArrowOutward/>
+                </a>
+            </div>
+        </section>
+        <CTA2/>
+    </div>
+}
+
+export default TeamMember;

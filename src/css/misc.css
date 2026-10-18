@@ -68,9 +68,14 @@
     align-items: center;
     color: #2A2A2A;
     font-size: 13px;
+    gap: 8px;
     padding: 10px 22px;
     border: 1px solid #2A2A2A;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    svg{
+        font-size: 16px;
+    }
 }
 
 .btn-outline:hover{
