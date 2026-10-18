@@ -2,6 +2,7 @@ import {Diamond} from "./Diamond.tsx";
 import {Link} from "react-router-dom";
 import {ArrowForward} from "@mui/icons-material";
 import "../css/HPM.css"
+import {ctas} from "../js/cta.ts";
 
 function V1(){
     return <div className="hpm-v-container">
@@ -43,11 +44,6 @@ function CTA1(){
     </section>
 }
 function CTA2(){
-    const ctas =[
-        {title:"See the work we do.", content:"Explore the casestudies that showcase our commitment to the craft.", button:"View more", path:"/case-studies"},
-        {title:"Let's make it exceptional.", content:"Let's create something truly exceptional together.", button:"Start a Conversation", path:""},
-    ]
-
     return <section className="cta-2">
         {ctas.map((cta, i) =>(
             <div className={`p-${i + 1}`} key={i}>

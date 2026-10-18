@@ -29,9 +29,9 @@ function NavBar() {
     </div>
 
     const webNav = <nav className="web-nav" onMouseLeave={() => setHovered(false)}>
-        <div className="nav-logo">
-            <img src={Logo} alt="not working"/>
-        </div>
+        <Link to="/" className="nav-logo">
+            <img src={Logo} alt="Produqtedge home"/>
+        </Link>
 
         <div className="nav-links">
             {

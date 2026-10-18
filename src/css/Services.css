@@ -1,7 +1,7 @@
 @media (min-width:768px) {
 
     .services-hero{
-        padding: 90px var(--gutter) 0 var(--gutter);
+        padding: calc(var(--nav-height) + 30px) var(--gutter) 0 var(--gutter);
 
         .sec-1{
             aspect-ratio: 16 / 9;

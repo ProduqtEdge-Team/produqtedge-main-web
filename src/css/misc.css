@@ -1,6 +1,8 @@
 /* side padding that caps page content at 1280px (the 1440px design minus 80px each side) */
 :root{
     --gutter: max(80px, calc((100% - 1280px) / 2));
+    /* fixed navbar height, pages below it pad by this */
+    --nav-height: 76px;
 }
 
 .diamond{

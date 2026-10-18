@@ -1,7 +1,7 @@
 @media (min-width:768px) {
 
     .about-who{
-        padding: 120px var(--gutter) 50px var(--gutter);
+        padding: calc(var(--nav-height) + 60px) var(--gutter) 50px var(--gutter);
 
         h1{
             all: unset;

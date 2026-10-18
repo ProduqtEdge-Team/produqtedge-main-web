@@ -1,0 +1,160 @@
+@media (min-width:768px) {
+
+    /* the image sits top right and the text panel overlaps its bottom left corner */
+    .study-hero{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: calc(var(--nav-height) + 630px);
+        padding: calc(var(--nav-height) + 105px) 0 0 0;
+        box-sizing: border-box;
+        background-color: #F8FAFC;
+
+        .sec-2{
+            position: absolute;
+            top: var(--nav-height);
+            right: 0;
+            width: 58%;
+            height: 630px;
+            object-fit: cover;
+        }
+
+        .sec-1{
+            position: relative;
+            flex: 1;
+            width: 56%;
+            padding: 20px 80px 40px var(--gutter);
+            box-sizing: border-box;
+            background-color: #F8FAFC;
+
+            .logo{
+                display: block;
+                height: 26px;
+                max-width: 50%;
+                object-fit: contain;
+                object-position: left;
+            }
+
+            h1{
+                all: unset;
+                display: block;
+                max-width: 620px;
+                font-size: 48px;
+                font-weight: 500;
+                line-height: 1.25;
+                color: #2A2A2A;
+                margin: 28px 0 0 0;
+            }
+
+            .blurb{
+                display: block;
+                max-width: 640px;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #2A2A2A;
+                margin: 32px 0 0 0;
+            }
+
+            .read{
+                display: block;
+                font-size: 12px;
+                color: #8D959C;
+                margin: 28px 0 0 0;
+            }
+        }
+    }
+
+    .study-body{
+        padding: 75px var(--gutter) 60px var(--gutter);
+        display: grid;
+        grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
+        gap: 110px;
+        background-color: #F8FAFC;
+
+        .article{
+            /* orange rule above the first heading */
+            &::before{
+                content: "";
+                display: block;
+                width: 90%;
+                height: 2px;
+                background-color: #F68E1E;
+                margin: 0 0 30px 0;
+            }
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 28px;
+                font-weight: 500;
+                color: #2A2A2A;
+                margin: 45px 0 22px 0;
+            }
+
+            div:first-child h2{
+                margin-top: 0;
+            }
+
+            p{
+                all: unset;
+                display: block;
+                font-size: 15px;
+                line-height: 1.75;
+                text-align: justify;
+                color: #3A4350;
+                margin: 0 0 20px 0;
+
+                b{
+                    font-weight: 600;
+                    color: #2A2A2A;
+                }
+            }
+        }
+
+        aside{
+            padding: 32px 0 0 0;
+
+            h3{
+                all: unset;
+                display: block;
+                font-size: 15px;
+                font-weight: 500;
+                color: #2A2A2A;
+            }
+
+            a{
+                display: inline-block;
+                font-size: 14px;
+                color: #2A2A2A;
+                text-decoration: none;
+                margin: 18px 0 0 0;
+                transition: color 0.2s ease-in-out;
+            }
+
+            a:hover{
+                color: #F68E1E;
+            }
+        }
+    }
+
+    .study-more{
+        padding: 0 var(--gutter) 100px var(--gutter);
+        background-color: #F8FAFC;
+
+        h2{
+            all: unset;
+            display: block;
+            font-size: 32px;
+            font-weight: 500;
+            color: #2A2A2A;
+            padding: 40px 0 0 0;
+            margin: 0 0 32px 0;
+            border-top: 1px solid #E3E7EB;
+        }
+    }
+
+    /* studies without article text go straight from the header to the cards */
+    .study-hero + .study-more{
+        padding-top: 60px;
+    }
+}

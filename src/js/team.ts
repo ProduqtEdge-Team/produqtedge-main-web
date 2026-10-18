@@ -1,6 +1,9 @@
 import Yewande from "../images/Yewande.png"
 import Chike from "../images/Chike.png"
 import Gloria from "../images/Gloria.png"
+import Olaniyi from "../images/Olaniyi.png"
+import Collins from "../images/Collins.png"
+import Femi from "../images/Femi-Omotayo.png"
 
 // shared by the About page cards and the TeamMember page (/about/:slug)
 // add a new member here and both pages pick them up
@@ -25,4 +28,13 @@ export const team: TeamMember[] =[
             "She has a strong track record in operational restructuring, performance design, and change management. She has supported multiple organisations in adopting digital operating models and optimising service delivery across logistics and supply chain functions.\nShe was highly instrumental in driving change management of OANDO following the merger between Oando Marketing & OVH Energy.",
             "She is aptly positioned to evaluate business processes, systems, and technology to help organisations evolve into more optimal versions of themselves, driving improvements across the entire business while positioning for growth.",
         ]},
+]
+
+// advisory board on the About page, no individual pages yet
+export type BoardMember = {name:string, role:string, path:string}
+
+export const board: BoardMember[] =[
+    {name:"Olaniyi Yusuf", role:"M.D., Andersen Consulting", path:Olaniyi},
+    {name:"Collins Onuegbu", role:"The Chairman, SATH", path:Collins},
+    {name:"Femi Omotayo", role:"M.D., AOS Orwell Limited", path:Femi},
 ]

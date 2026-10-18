@@ -1,0 +1,45 @@
+@media (min-width:768px) {
+
+    .case-cards{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px;
+
+        .case-card{
+            text-decoration: none;
+            color: #2A2A2A;
+            display: flex;
+            flex-direction: column;
+
+            .cover{
+                display: block;
+                width: 100%;
+                aspect-ratio: 9 / 5;
+                object-fit: cover;
+            }
+
+            .logo{
+                display: block;
+                height: 24px;
+                max-width: 70%;
+                object-fit: contain;
+                object-position: left;
+                margin: 20px 0 0 0;
+            }
+
+            h3{
+                all: unset;
+                display: block;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 1.4;
+                margin: 22px 0 0 0;
+                transition: color 0.2s ease-in-out;
+            }
+        }
+
+        .case-card:hover h3{
+            color: #F68E1E;
+        }
+    }
+}

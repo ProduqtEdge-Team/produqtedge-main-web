@@ -4,36 +4,16 @@ import "../css/Home.css"
 import CA from "../images/Consultancy_agency_team.png"
 import {Link} from "react-router-dom";
 import {ArrowBack, ArrowForward, Check} from "@mui/icons-material";
-import Card1 from "../images/Card1Image.png"
-import Card2 from "../images/Card2Image.png"
 import DiaHeader from "../components/DiaHeader.tsx";
 import Photo1 from "../images/Photo1.png"
 import {useState} from "react";
 import {CTA1} from "../components/HPM.tsx";
+import {insights, services, testimonials} from "../js/home.ts";
+import {caseStudies} from "../js/caseStudies.ts";
 function Home(){
     const [Slide, setSlide] = useState(0);
-    const services =[
-        {title:'Product Strategy & Growth', content:'Set product direction, build it properly and grow it on evidence.'},
-        {title:'Operations & Technology', content:'Fix how work moves, then decide where technology adds value.'},
-        {title:'Market & Investment Intelligence', content:'Test the market before you enter it, and the product before you fund it.'},
-        {title:'Leadership Coaching', content:'Build the product capability your teams keep after we leave.'},]
-
-    const reProjects =[
-        {title:"Lendsqr", path:Card2, content:"Supporting Lendsqr’s launch with Due Diligence and Market Intelligence"},
-        {title:"eBango", path:Card2, content:"Boosting eBanqo's Product Management and Productivity with Agile Transformation"},
-        {title:"One Card", path:Card1, content:"Optimising OneCard's Product and Process Efficiency"},
-    ]
-
-    const testimonials =[
-        {title:"Startup Incubation for Lendsqr", path:Photo1, content:"Working with produqtedge brought a new level of clarity to our business. Their strategic approach helped us make better decisions and move forward with confidence.", name:"Rahim Ahmed", role:"Founder, Lendsqr"},
-    ]
     const testimonial = testimonials[Slide]
 
-    const insights =[
-        {title:"Research in Product Management – User Research", path:Card1, content:"Defined clear roadmap for sustainable growth"},
-        {title:"Research in Product Management – User Research", path:Card1, content:"Defined clear roadmap for sustainable growth"},
-        {title:"Research in Product Management – User Research", path:Card1, content:"Defined clear roadmap for sustainable growth"},
-    ]
     return <div>
         <NavBar/>
         <section className="hero" style={{backgroundImage: `url(${heroBackground})`}} >
@@ -95,19 +75,19 @@ function Home(){
                     Some of our recent projects
                 </h2>
                 <div className="end">
-                    <Link to="" className="btn-dark">
+                    <Link to="/case-studies" className="btn-dark">
                        <span>Learn More</span> <ArrowForward/>
                     </Link>
                 </div>
             </div>
             <div className="sec-2">
                 {
-                    reProjects.map((reProject, i) =>(
-                        <div key={i}>
-                            <DiaHeader content={reProject.title}/>
-                            <img src={reProject.path} alt=""/>
-                            <h3>{reProject.content}</h3>
-                        </div>
+                    caseStudies.slice(0, 3).map((study, i) =>(
+                        <Link to={`/case-studies/${study.slug}`} key={i}>
+                            <DiaHeader content={study.name}/>
+                            <img src={study.thumb ?? study.path} alt=""/>
+                            <h3>{study.title}</h3>
+                        </Link>
                     ))
                 }
             </div>
