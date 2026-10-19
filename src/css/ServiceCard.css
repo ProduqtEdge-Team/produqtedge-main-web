@@ -1,0 +1,67 @@
+@media (min-width:768px) {
+
+    .service-card{
+        background-color: #F3F6F8;
+        padding: 40px;
+        margin: 0 0 25px 0;
+
+        h3{
+            all: unset;
+            display: block;
+            font-size: 36px;
+            font-weight: 400;
+            color: #2A2A2A;
+            margin: 0 0 40px 0;
+        }
+
+        .body{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+
+            img{
+                width: 100%;
+                aspect-ratio: 7 / 5;
+                object-fit: cover;
+            }
+
+            .content{
+                display: flex;
+                flex-direction: column;
+
+                .blurb{
+                    font-size: 16px;
+                    line-height: 1.7;
+                    color: #5B666F;
+                    margin: 0 0 20px 0;
+                }
+
+                .list{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 0 25px 0;
+
+                    a{
+                        text-decoration: none;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 13px;
+                        color: #2A2A2A;
+                        padding: 13px 0;
+                        transition: color 0.2s ease-in-out;
+
+                        .arrow{
+                            font-size: 16px;
+                            color: #F68E1E;
+                        }
+                    }
+
+                    a:hover{
+                        color: #F68E1E;
+                    }
+                }
+            }
+        }
+    }
+}

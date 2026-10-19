@@ -1,12 +1,13 @@
 import NavBar from "../components/NavBar.tsx";
 import "../css/Services.css"
 import {Link} from "react-router-dom";
-import {ArrowForward, CheckCircle} from "@mui/icons-material";
+import {CheckCircle} from "@mui/icons-material";
+import ServiceCard from "../components/ServiceCard.tsx";
 import heroBackground from "../images/Frame 2147223898.png"
 import Philosophy from "../images/philosophy-visual.png"
 import Leadership from "../images/Consulting team.png"
 import Why from "../images/Frame 2147223761_3.png"
-import {categories, philosophy, reasons} from "../js/services.ts";
+import {categories, inCategory, philosophy, reasons, toLinks} from "../js/services.ts";
 function Services(){
     return <div>
         <NavBar/>
@@ -33,25 +34,9 @@ function Services(){
         <section className="services-categories">
             <h2>Core Service Categories</h2>
             {categories.map((category, i) =>(
-                <div className="category" key={i}>
-                    <h3>{category.title}</h3>
-                    <div className="body">
-                        <img src={category.path} alt=""/>
-                        <div className="content">
-                            <span className="blurb">{category.content}</span>
-                            <div className="list">
-                                {category.services.map((service, j) =>(
-                                    <Link to="" key={j}>
-                                        <span>{service}</span> <ArrowForward className="arrow"/>
-                                    </Link>
-                                ))}
-                            </div>
-                            <div>
-                                <Link to="" className="btn-outline">View more</Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ServiceCard key={i} title={category.title} path={category.path} content={category.content}
+                             links={toLinks(inCategory(category.slug))}
+                             more={`/services/${category.slug}`}/>
             ))}
         </section>
         <section className="services-leadership">
