@@ -49,11 +49,29 @@
     gap: 5px;
 }
 
-.btn-dark{
+/* shared alignment for every btn variant — label and arrow sit on the same optical centre */
+.btn-dark, .btn-orange, .btn-outline, .btn-text{
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    white-space: nowrap;
+    line-height: 1;
+
+    > span{
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+    }
+
+    svg{
+        display: block;
+        flex-shrink: 0;
+    }
+}
+
+.btn-dark{
     color: #ffffff;
     font-size: 14px;
     padding: 14px 18px;
@@ -65,12 +83,8 @@
 }
 
 .btn-outline{
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
     color: #2A2A2A;
     font-size: 13px;
-    gap: 8px;
     padding: 10px 22px;
     border: 1px solid #2A2A2A;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -86,10 +100,6 @@
 }
 
 .btn-orange{
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     color: #ffffff;
     font-size: 14px;
     padding: 14px 18px;
@@ -103,4 +113,19 @@
 
 .btn-orange:hover{
     background-color: #D97A12;
+}
+
+.btn-text{
+    color: #15191E;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+
+    svg{
+        font-size: 14px;
+    }
+}
+
+.btn-text:hover{
+    color: #F68E1E;
 }

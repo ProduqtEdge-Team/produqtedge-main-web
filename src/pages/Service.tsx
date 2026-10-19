@@ -31,13 +31,20 @@ function Service(){
                 {service.intro.map((paragraph, i) =>(
                     <span key={i}>{paragraph}</span>
                 ))}
-                {service.questions !== undefined && <div className="questions">
-                    {service.questions.map((question, i) =>(
-                        <span key={i}><RadioButtonUnchecked className="circle"/> {question}</span>
-                    ))}
-                </div>}
             </div>}
         </section>
+        {service.questions !== undefined && <section className="service-questions">
+            <div className="sec-1">
+                <h2>Questions we help you answer:</h2>
+                <ul className="questions">
+                    {service.questions.map((question, i) =>(
+                        <li key={i}><RadioButtonUnchecked className="circle"/> {question}</li>
+                    ))}
+                </ul>
+                <Button to="" variant="outline">Contact Us</Button>
+            </div>
+            <img className="sec-2" src={service.path} alt=""/>
+        </section>}
         {service.help !== undefined && <section className="service-help">
             <div className="sec-1">
                 <h2>Questions we help you answer:</h2>
@@ -95,7 +102,7 @@ function Service(){
             </div>
         </section>}
         {service.cases.length > 0 && <section className="service-cases">
-            <h2>Case Study</h2>
+            <h2>Related Case Studies</h2>
             <span className="blurb">
                 Success doesn’t happen by accident. We combine market intelligence, industry experience, and technical expertise into a proven methodology that delivers results.
             </span>
@@ -115,7 +122,7 @@ function Service(){
                         <h3>{item.title}</h3>
                         <span>{item.summary}</span>
                         <div>
-                            <Button to={servicePath(item)}>Learn More</Button>
+                            <Button to={servicePath(item)} variant="text">View</Button>
                         </div>
                     </div>
                 ))}

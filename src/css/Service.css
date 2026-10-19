@@ -1,20 +1,19 @@
 @media (min-width:768px) {
 
     .service-head{
-        padding: calc(var(--nav-height) + 80px) var(--gutter) 110px var(--gutter);
+        padding: calc(var(--nav-height) + 64px) var(--gutter) 0 var(--gutter);
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 501px 1fr;
         gap: 80px;
         align-items: start;
 
         h1{
             all: unset;
             display: block;
-            max-width: 460px;
-            font-size: 52px;
-            font-weight: 600;
-            line-height: 1.25;
-            color: #2A2A2A;
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #222;
         }
 
         .sec-2{
@@ -23,32 +22,72 @@
             gap: 12px;
 
             span{
-                font-size: 16px;
+                font-size: 20px;
                 font-weight: 400;
-                line-height: 1.65;
-                color: #3A4350;
+                line-height: 28px;
+                letter-spacing: -0.1px;
+                color: #374151;
+            }
+        }
+    }
+
+    .service-questions{
+        padding: 100px var(--gutter) 0 var(--gutter);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+
+        .sec-1{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 48px;
+                font-weight: 500;
+                line-height: 1.2;
+                color: #222;
             }
 
             .questions{
+                all: unset;
                 display: flex;
                 flex-direction: column;
-                gap: 18px;
-                margin: 35px 0 0 0;
+                gap: 16px;
 
-                span{
+                li{
+                    list-style: none;
                     display: flex;
                     align-items: center;
-                    gap: 12px;
-                    font-size: 13px;
-                    line-height: 1.4;
-                    color: #2A2A2A;
+                    gap: 10px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #5E615E;
 
                     .circle{
-                        font-size: 16px;
-                        color: #5B666F;
+                        flex-shrink: 0;
+                        font-size: 13px;
+                        color: #052239;
                     }
                 }
             }
+
+            .btn-outline{
+                align-self: flex-start;
+                border-color: #535862;
+                color: #535862;
+                font-size: 16px;
+                padding: 8px 24px;
+            }
+        }
+
+        .sec-2{
+            width: 100%;
+            height: 411px;
+            object-fit: cover;
         }
     }
 
@@ -103,25 +142,27 @@
     }
 
     .service-approach, .service-work{
-        padding: 0 var(--gutter);
+        padding: 100px var(--gutter) 0 var(--gutter);
         display: grid;
-        gap: 25px;
+        gap: 0;
 
         h2{
             all: unset;
             display: block;
-            font-size: 44px;
-            font-weight: 400;
-            color: #2E3A4F;
-            margin: 0 0 50px 0;
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #2A2A2A;
+            margin: 0 0 40px 0;
         }
 
         span{
             display: block;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 400;
-            line-height: 1.85;
-            color: #5B666F;
+            line-height: 32px;
+            letter-spacing: -0.1px;
+            color: #535862;
             margin: 0 0 20px 0;
         }
 
@@ -204,27 +245,30 @@
         padding: 100px var(--gutter) 0 var(--gutter);
 
         .panel{
-            background-color: #0B2239;
+            background-color: #052239;
             padding: 60px;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 40px;
             color: #ffffff;
 
             h3{
                 all: unset;
                 display: block;
-                font-size: 18px;
+                font-size: 25px;
                 font-weight: 500;
+                line-height: 1.2;
+                letter-spacing: -1px;
                 color: #F68E1E;
-                margin: 0 0 50px 0;
             }
 
             .sec-1 span{
                 display: block;
-                max-width: 1100px;
-                font-size: 26px;
-                line-height: 1.55;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 48px;
+                letter-spacing: -0.1px;
+                color: #ffffff;
             }
 
             .sec-2{
@@ -259,18 +303,19 @@
             display: block;
             font-size: 48px;
             font-weight: 500;
-            color: #2A2A2A;
-            margin: 0 0 30px 0;
+            line-height: 1.2;
+            color: #222;
+            margin: 0 0 32px 0;
         }
 
         .blurb{
             display: block;
-            max-width: 960px;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 400;
-            line-height: 1.6;
-            color: #2A2A2A;
-            margin: 0 0 30px 0;
+            line-height: 28px;
+            letter-spacing: -0.1px;
+            color: #374151;
+            margin: 0 0 24px 0;
         }
 
         .case-cards{
@@ -279,15 +324,44 @@
             margin: 0 0 30px 0;
 
             .case-card{
+                padding: 16px;
+                box-sizing: border-box;
+
                 .cover{
-                    aspect-ratio: 12 / 5;
+                    aspect-ratio: auto;
+                    height: 156px;
                 }
 
                 h3{
-                    font-size: 15px;
-                    font-weight: 600;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 28px;
+                    color: #222;
                     margin: 14px 0 0 0;
                 }
+            }
+        }
+
+        /* "View more" primary button — matches CTA2 button spec so both primaries line up */
+        > div:has(> .btn-dark){
+            display: flex;
+            justify-content: center;
+            margin: 40px 0 0 0;
+        }
+
+        > div .btn-dark{
+            background-color: #222;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            height: 58px;
+            padding: 0 40px;
+            box-sizing: border-box;
+
+            svg{
+                width: 14px;
+                height: 14px;
+                font-size: 14px;
             }
         }
     }
@@ -305,14 +379,14 @@
                 all: unset;
                 display: block;
                 max-width: 560px;
-                font-size: 44px;
+                font-size: 48px;
                 font-weight: 500;
-                line-height: 1.3;
+                line-height: 1.2;
                 color: #2A2A2A;
             }
 
             a{
-                font-size: 14px;
+                font-size: 18px;
                 font-weight: 500;
                 color: #052239;
             }
@@ -326,12 +400,14 @@
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 18px;
+            align-items: stretch;
 
             .card{
                 background-color: #F3F6F8;
                 padding: 30px 20px;
                 display: flex;
                 flex-direction: column;
+                height: 100%;
 
                 h3{
                     all: unset;
@@ -348,6 +424,13 @@
                     line-height: 1.6;
                     color: #5B666F;
                     margin: 0 0 30px 0;
+                }
+
+                /* button wrapper div lives at the bottom, centred */
+                > div:last-child{
+                    margin-top: auto;
+                    display: flex;
+                    justify-content: center;
                 }
             }
         }
