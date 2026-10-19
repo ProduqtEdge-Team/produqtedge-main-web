@@ -140,7 +140,7 @@ export const services: Service[] =[
         result:"Not only a better product, but a stronger, more sustainable product management practice that keeps delivering value long after the engagement ends.",
         closing:{title:"Let’s build products that keep creating value.",
             work:{title:"Strengthen the product. Build the practice.", content:"Bring strategy, ownership and execution together across the full product lifecycle."}},
-        cases:["factorex","lendsqr","onecard"]},
+        cases:["lendsqr","onecard"]},
     {slug:"product-led-transformation", category:"advisory-transformation-growth", title:"Product-Led Transformation",
         path:Market, content:marketContent, links:market, summary,
         intro:["In large organisations, company-wide transformation programmes typically stall and drift from their intended product and business outcomes, usually because they become system-led, vendor-driven or project-focused."],
@@ -149,7 +149,7 @@ export const services: Service[] =[
             method:["Product strategy","Hands-on execution support","Modular delivery design","Governance"]},
         different:"We walk the journey with you as an integrated transformation partner. We don’t hand you an implementation manual, or assign Project Managers and walk away at go-live.",
         result:"The organisation realises the value of its transformation investment, supported by governance, ownership and execution efficiency.",
-        cases:["ebanqo","factorex"]},
+        cases:["ebanqo"]},
     {slug:"product-led-growth", category:"advisory-transformation-growth", title:"Product-Led Growth",
         path:Market, content:marketContent, links:market, summary,
         intro:["For organisations seeking sustainable growth, acquiring more customers is only part of the challenge. Lasting growth depends on how effectively the product helps customers recognise value, adopt key features, deepen usage and stay engaged over time."],
@@ -215,9 +215,8 @@ export const services: Service[] =[
         cases:["lendsqr","ebanqo","onecard"]},
     {slug:"investor-validation-due-diligence", category:"market-investment-intelligence", title:"Investor Validation & Startup Due Diligence",
         path:Market, content:categories[2].content, links:market, summary,
-        label:"Investment Validation", heading:"Investor Due Diligence", lead:"An independent view of product viability before you deploy capital.",
         intro:["Our Investor Validation & Startup Due Diligence service helps investors answer critical questions before deploying capital."],
-        questionPath:Meeting, questions:[
+        questions:[
             "Is the product solving a real, validated customer problem?",
             "Has the product achieved genuine product-market fit, or is growth being driven by unsustainable factors?",
             "Does the company have meaningful competitive advantages beyond pricing, incentives or first-mover positioning?",
@@ -226,15 +225,11 @@ export const services: Service[] =[
             "Are there credible expansion opportunities across customer segments, products, verticals or geographies?",
             "What product, execution, technology, operational and regulatory risks could most affect growth?",
         ],
-        approach:{title:"Our approach", path:Table, content:[
-            "Our approach goes beyond reviewing pitch decks, financial projections or high-level market reports. We give investors an independent view of product viability and growth potential. We assess problem-solution fit, validate product-market fit signals, identify market and execution risks, evaluate competitive positioning and uncover opportunities for accelerated growth.",
-        ], tags:["Product assessment","Customer & user research","Market analysis","Competitor benchmarking","Growth diagnostics","Operating model evaluation"]},
-        differentLabel:"An independent perspective",
-        different:"We test the product story against customer evidence, market realities, operating capability and the competitive landscape, so conviction is grounded in what can be validated, not only what has been presented.",
+        approach:{title:"Our Approach", path:Notes,
+            content:["Our approach goes beyond reviewing pitch decks, financial projections or high-level market reports. We give investors an independent view of product viability and growth potential. We assess problem-solution fit, validate product-market fit signals, identify market and execution risks, evaluate competitive positioning and uncover opportunities for accelerated growth."],
+            method:["Product assessment","Customer & user research","Market analysis","Competitor benchmarking","Growth diagnostics","Operating model evaluation"]},
         result:"A practical investment perspective that helps investors make better-informed decisions and build a clearer post-investment value creation strategy.",
-        audience:{title:"Decision-makers deploying growth capital.", tags:["Investors"]},
-        closing:{title:"Deploy capital with clearer conviction.", content:"Start with an independent view of product viability."},
-        cases:[]},
+        cases:["lendsqr","ebanqo","onecard"]},
 ]
 
 // dedicated page at /services/leadership-coaching

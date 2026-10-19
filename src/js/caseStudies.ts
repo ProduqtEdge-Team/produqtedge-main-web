@@ -1,10 +1,9 @@
-import Waves from "../images/image.png"
-import Card1 from "../images/Card1Image.png"
-import Card2 from "../images/Card2Image.png"
+import LendsqrCover from "../images/lendsqr-cover.jpg"
+import EbanqoCover from "../images/ebanqo-cover.png"
+import OneCardCover from "../images/onecard-cover.jpg"
 import Lendsqr from "../images/lendsqr-logo.png"
 import Ebanqo from "../images/ebanqo-logo.svg"
 import OneCard from "../images/onecard-logo.png"
-import Factorex from "../images/factorex-logo.png"
 
 // shared by the Case Studies list (/case-studies), each article (/case-studies/:slug)
 // and the recent projects on Home. add a new study here and all three pick it up
@@ -19,7 +18,7 @@ export type CaseStudy = {slug:string, name:string, logo:string, path:string, thu
     blurb:string, service:string, article:{title:string, content:Block[]}[]}
 
 export const caseStudies: CaseStudy[] =[
-    {slug:"lendsqr", name:"Lendsqr", logo:Lendsqr, path:Waves, thumb:Card2,
+    {slug:"lendsqr", name:"Lendsqr", logo:Lendsqr, path:LendsqrCover, thumb:LendsqrCover,
         title:"Supporting Lendsqr’s launch with Due Diligence and Market Intelligence",
         heading:"Supporting Lendsqr’s launch with Due Diligence and Market Validation",
         blurb:"ProduqtEdge helps Lendsqr establish key frameworks for growth, including market validation, product governance, and scaling strategies.",
@@ -50,7 +49,7 @@ export const caseStudies: CaseStudy[] =[
                 "ProduqtEdge's involvement in Lendsqr's development played a key role in setting up the frameworks that enabled this growth trajectory, including market validation, product governance, and scaling strategies.",
             ]},
         ]},
-    {slug:"ebanqo", name:"eBanqo", logo:Ebanqo, path:Waves, thumb:Card2,
+    {slug:"ebanqo", name:"eBanqo", logo:Ebanqo, path:EbanqoCover, thumb:EbanqoCover,
         title:"Boosting eBanqo's Product Management and Productivity with Agile Transformation",
         blurb:"ProduqtEdge’s transformation of eBanqo drove a 40% boost in productivity and enhanced product adoption, fueling an impressive 300% year-over-year revenue growth.",
         service:"Growth", article:[
@@ -91,7 +90,7 @@ export const caseStudies: CaseStudy[] =[
                 "eBanqo continues to improve and grow, and with a successful raise of **$1 million** in seed funding, the company continues to actively explore opportunities in international markets, positioning itself for continued expansion and influence in the customer engagement landscape. Their investment in streamlining internal processes to drive product leadership and improve customer success has helped them scale their operations very quickly to support the growth.",
             ]},
         ]},
-    {slug:"onecard", name:"OneCard", logo:OneCard, path:Waves, thumb:Card1,
+    {slug:"onecard", name:"OneCard", logo:OneCard, path:OneCardCover, thumb:OneCardCover,
         title:"Optimising OneCard's Product and Process Efficiency",
         blurb:"ProduqtEdge partnered with OneCard to transform its operations into a more efficient, data-driven, and collaborative environment.", service:"Growth", article:[
             {title:"Overview", content:[
@@ -122,8 +121,4 @@ export const caseStudies: CaseStudy[] =[
                 "With ProduqtEdge’s support, OneCard tackled its challenges head-on, laying a solid foundation for future growth. Aligning its processes, people, and technology allowed the company to improve customer satisfaction, work more efficiently, and strengthen its position as a top recharge and payment solutions provider in Nigeria.",
             ]},
         ]},
-    // header only until its article text comes in
-    {slug:"factorex", name:"FACTOReX", logo:Factorex, path:Waves,
-        title:"Driving FACTOReX Product Development and Launch",
-        blurb:"", service:"", article:[]},
 ]

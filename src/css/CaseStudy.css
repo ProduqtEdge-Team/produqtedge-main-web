@@ -30,6 +30,11 @@
     .case-list{
         padding: 64px var(--gutter) 100px var(--gutter);
         background-color: #F8FAFC;
+
+        .case-cards{
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
     }
 }
 

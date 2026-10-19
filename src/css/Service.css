@@ -65,7 +65,7 @@
         padding: 100px var(--gutter) 0 var(--gutter);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        gap: 80px;
         align-items: center;
 
         .sec-1{
@@ -87,6 +87,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
+                max-width: 443px;
 
                 li{
                     list-style: none;
@@ -336,6 +337,10 @@
 
         /* "result only" dark panel — "The result" header + body, single column */
         .panel .sec-1.result-only{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
             h3{
                 color: #F68E1E;
             }
