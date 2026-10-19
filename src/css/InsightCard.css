@@ -64,3 +64,60 @@
         color: #F68E1E;
     }
 }
+
+/* phones */
+@media (max-width:767px) {
+
+    .insight-card{
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        color: #2A2A2A;
+
+        img{
+            width: 100%;
+            aspect-ratio: 9 / 5;
+            object-fit: cover;
+            margin: 0 0 18px 0;
+        }
+
+        .topic{
+            font-size: 12px;
+            color: #F68E1E;
+            margin: 0 0 10px 0;
+        }
+
+        h3{
+            all: unset;
+            display: block;
+            overflow-wrap: anywhere;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #2A2A2A;
+            margin: 0 0 10px 0;
+        }
+
+        .summary{
+            font-size: 14px;
+            line-height: 1.6;
+            color: #3A4350;
+            margin: 0 0 12px 0;
+            /* long summaries stop after three lines */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .meta{
+            font-size: 12px;
+            color: #5B666F;
+
+            i{
+                font-style: normal;
+                margin: 0 4px;
+            }
+        }
+    }
+}
