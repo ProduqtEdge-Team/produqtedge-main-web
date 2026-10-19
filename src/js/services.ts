@@ -1,5 +1,6 @@
-import Advisory from "../images/Frame 2147223761.png"
-import Market from "../images/Frame 2147223761_2.png"
+import Advisory from "../images/new images /Collaborative Strategy Meeting.png"
+import Operational from "../images/new images /20620.jpg"
+import Market from "../images/new images /119111.jpg"
 import Meeting from "../images/Frame 2147223898.png"
 import Notes from "../images/Frame 2147223899.png"
 import Reality from "../images/Frame 2147223899_2.png"
@@ -20,7 +21,7 @@ export type Category = {slug:string, title:string, path:string, hero:string, con
 export const categories: Category[] =[
     {slug:"advisory-transformation-growth", title:"Advisory, Transformation & Growth", path:Advisory, hero:Meeting,
         content:"We partner with investors and venture builders to reduce risk, accelerate validation, and unlock value at every stage of the innovation funnel — from early diligence to incubation support."},
-    {slug:"operational-excellence-digital-transformation", title:"Operational Excellence & Digital Transformation", path:Advisory, hero:Meeting,
+    {slug:"operational-excellence-digital-transformation", title:"Operational Excellence & Digital Transformation", path:Operational, hero:Meeting,
         content:"We partner with investors and venture builders to reduce risk, accelerate validation, and unlock value at every stage of the innovation funnel — from early diligence to incubation support."},
     {slug:"market-investment-intelligence", title:"Market & Investment Intelligence", path:Market, hero:Meeting,
         content:"We help founders and growth teams bridge strategy and execution — from building investor confidence to launching products and expanding market reach."},

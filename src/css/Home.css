@@ -81,7 +81,7 @@
                 p{
                     all: unset;
                     display: block;
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: 400;
                     line-height: 1.6;
                     text-align: justify;
@@ -279,11 +279,21 @@
             }
         }
 
+        /* first slide only: image stretches to match the (longest) testimonial content */
+        .sec-2:first-child{
+            align-items: stretch;
+
+            img{
+                height: 100%;
+                aspect-ratio: auto;
+            }
+        }
+
         .controls{
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin: 50px 0 0 0;
+            margin: 32px 0 0 0;
 
             button{
                 all: unset;
@@ -339,7 +349,7 @@
             }
 
             > span{
-                font-size: 13px;
+                font-size: 16px;
                 font-weight: 400;
                 line-height: 1.75;
                 text-align: justify;
@@ -348,7 +358,7 @@
 
                 b{
                     color: #F68E1E;
-                    font-weight: 600;
+                    font-weight: 400;
                 }
             }
 
@@ -373,13 +383,12 @@
             font-size: 46px;
             font-weight: 400;
             color: #2A2A2A;
-            margin: 0 0 25px 0;
+            margin: 0 0 20px 0;
         }
 
         .blurb{
             display: block;
-            max-width: 340px;
-            font-size: 13px;
+            font-size: 16px;
             font-weight: 400;
             line-height: 1.6;
             color: #5B666F;
@@ -406,8 +415,8 @@
                 h3{
                     all: unset;
                     display: block;
-                    font-size: 14px;
-                    font-weight: 500;
+                    font-size: 16px;
+                    font-weight: 400;
                     color: #2A2A2A;
                     margin: 20px 0 12px 0;
                     transition: color 0.2s ease-in-out;
@@ -417,7 +426,7 @@
                     display: inline-flex;
                     align-items: center;
                     gap: 5px;
-                    font-size: 12px;
+                    font-size: 14px;
                     color: #5B666F;
 
                     .check{

@@ -6,7 +6,7 @@ import ServiceCard from "../components/ServiceCard.tsx";
 import heroBackground from "../images/Frame 2147223898.png"
 import Philosophy from "../images/philosophy-visual.png"
 import Leadership from "../images/Consulting team.png"
-import Why from "../images/Frame 2147223761_3.png"
+import Why from "../images/new images /why choose us .png"
 import {categories, inCategory, philosophy, reasons, toLinks} from "../js/services.ts";
 function Services(){
     return <div>
@@ -40,19 +40,19 @@ function Services(){
             ))}
         </section>
         <section className="services-leadership">
-            <div className="sec-1">
-                <h2>
-                    Leadership Coaching & <br/> Capacity Development
-                </h2>
-                <Button to="">Learn more</Button>
+            <h2>Leadership Coaching & Capacity Development</h2>
+            <div className="intro">
+                <h3>Build the leaders your organization needs to scale.</h3>
+                <span className="blurb">
+                    We provide tailored coaching and capability development programs designed to equip your leadership team with the strategic and operational skills required to drive sustainable growth.
+                </span>
             </div>
-            <h3>Build the leaders your organization needs to scale.</h3>
-            <span className="blurb">
-                We provide tailored coaching and capability development programs designed to equip your leadership team with the strategic and operational skills required to drive sustainable growth.
-            </span>
             <div className="sec-2">
                 <img src={Leadership} alt=""/>
                 <i className="circle"></i>
+            </div>
+            <div className="action">
+                <Button to="">Learn more</Button>
             </div>
         </section>
         <section className="services-why">

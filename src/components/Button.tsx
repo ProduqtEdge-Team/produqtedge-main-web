@@ -10,7 +10,7 @@ type Variant = "dark" | "orange" | "outline";
 function Button({to, variant = "dark", external = false, children}:
     {to: string; variant?: Variant; external?: boolean; children: ReactNode}){
     const className = `btn-${variant}`;
-    const content = <><span>{children}</span> <ArrowForward className="arrow"/></>;
+    const content = <><span>{children}</span><ArrowForward className="arrow"/></>;
 
     if (external){
         return <a href={to} target="_blank" rel="noreferrer" className={className}>{content}</a>

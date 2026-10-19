@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export function Footer(){
 
     return <section className="footer">
@@ -5,29 +7,29 @@ export function Footer(){
             <div>
                 <h3>WHAT WE DO</h3>
                 <ul>
-                    <li>Product Strategy & Growth</li>
-                    <li>Operations & Technology</li>
-                    <li>Market & Investment Intelligence</li>
-                    <li>Leadership Coaching</li>
+                    <li><Link to="/services/advisory-transformation-growth">Product Strategy & Growth</Link></li>
+                    <li><Link to="/services/operational-excellence-digital-transformation">Operations & Technology</Link></li>
+                    <li><Link to="/services/market-investment-intelligence">Market & Investment Intelligence</Link></li>
+                    <li><Link to="/services">Leadership Coaching</Link></li>
                 </ul>
             </div>
             <div>
                 <h3>COMPANY</h3>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Insights</li>
-                    <li>Case Study</li>
-                    <li>Careers</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/services">Services</Link></li>
+                    <li><Link to="/insights">Insights</Link></li>
+                    <li><Link to="/case-studies">Case Study</Link></li>
+                    <li><Link to="/careers">Careers</Link></li>
                 </ul>
             </div>
             <div>
                 <h3>CONTACT</h3>
                 <ul>
-                    <li>Contact Us</li>
-                    <li>info@produqtedge.com</li>
-                    <li>+001 329-356465</li>
+                    <li><Link to="/contact">Contact Us</Link></li>
+                    <li><a href="mailto:info@produqtedge.com">info@produqtedge.com</a></li>
+                    <li><a href="tel:+001329356465">+001 329-356465</a></li>
                 </ul>
             </div>
             <div>
