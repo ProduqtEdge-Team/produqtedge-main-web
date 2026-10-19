@@ -5,6 +5,10 @@ import Meeting from "../images/Frame 2147223898.png"
 import Notes from "../images/Frame 2147223899.png"
 import Reality from "../images/Frame 2147223899_2.png"
 import Talk from "../images/Frame 2147223761_28.png"
+// stand-ins for the photos in the newer service designs
+import Whiteboard from "../images/Frame 2147223761_2.png"
+import Team from "../images/Consulting team.png"
+import Table from "../images/Frame 2147223761.png"
 
 // Services page, "Our Philosophy" paragraphs
 export const philosophy =[
@@ -37,10 +41,27 @@ export const categories: Category[] =[
 //   different, result - the dark "What makes us different" panel, result is the column beside it
 //   cases     - slugs of the case studies shown under it
 // a service with no intro opens with its title only, until its content comes in
+//
+// the newer designs (any service with a closing) add these, and end on the closing instead of
+// the case studies, "More in ..." and the CTA panels
+//   label, heading, lead - orange label over the title, a longer page title, and the line above the intro
+//   questionPath  - photo beside the questions
+//   approach.tags - pills under the approach text
+//   highlights    - two cards under the approach, the second one dark
+//   steps         - numbered 01-04 cards, the last one dark
+//   differentLabel - replaces "What makes us different"
+//   audience      - "Who we work with" title and tags
+//   closing       - "See the work we do" (or work, in its place) beside the orange call to action
+export type Step = {title:string, content?:string}
 export type Service = {slug:string, category:string, title:string, path:string, content:string, links:string[], summary:string,
     intro:string[], questions?:string[], help?:{points:string[], path:string},
-    approach?:{title:string, content:string[], method?:string[], path:string}, work?:{title:string, content:string[], path:string},
-    different?:string, result?:string, cases:string[]}
+    approach?:{title:string, content:string[], method?:string[], tags?:string[], path:string}, work?:{title:string, content:string[], path:string},
+    different?:string, result?:string, cases:string[],
+    label?:string, heading?:string, lead?:string, questionPath?:string,
+    highlights?:{label:string, title:string, content:string}[],
+    steps?:{label?:string, title:string, content?:string, items:Step[]},
+    differentLabel?:string, audience?:{title:string, tags:string[]},
+    closing?:{title:string, content?:string, work?:{title:string, content:string}}}
 
 const advisory =["product-audit-advisory","product-strategy-advisory","customer-journey-optimisation","product-development-pmaas","product-led-transformation","product-led-growth"]
 const operational =["business-process-optimisation","digital-transformation"]
@@ -89,26 +110,36 @@ export const services: Service[] =[
         cases:["lendsqr","ebanqo"]},
     {slug:"customer-journey-optimisation", category:"advisory-transformation-growth", title:"Customer Journey Optimisation",
         path:Market, content:marketContent, links:market, summary,
-        intro:[
-            "As product footprints grow, complexity inevitably increases across customer journeys, technology dependencies, internal processes, and third-party relationships, complexity can quietly undermine reliability, trust, and commercial outcomes.",
-            "While our Product Audit & Advisory is designed to help product leadership gain clear, shared understanding of how products are performing today, our Customer Journey Optimisation helps to ensure that products adopt the most optimal flows and processes for both customer facing processes and internal operations to minimise churn, while increasing adoption and retention. To achieve this, we treat product design and process efficiency as inseparable peas in the pod of user-centred design.",
-        ],
-        approach:{title:"Our Approach", path:Notes, content:[
+        label:"Journey Optimisation", lead:"Product design and process efficiency, treated as one.",
+        intro:["As product footprints grow, complexity increases across customer journeys, technology dependencies, internal processes and third-party relationships. Left unchecked, that complexity quietly undermines reliability, trust and commercial outcomes."],
+        approach:{title:"Our approach", path:Notes, content:[
             "Product Audit & Advisory gives product leadership a clear, shared understanding of how products perform today. Customer Journey Optimisation makes sure those products adopt the best flows and processes, for both customer-facing journeys and internal operations, to reduce churn while increasing adoption and retention.",
             "We review existing digital products and their end-to-end processes, from awareness and onboarding through to renewals and claims. We identify where complexity, manual intervention or misaligned rules dilute the customer experience.",
         ]},
-        work:{title:"Our work", path:Reality, content:[workCovers]},
+        steps:{label:"End-to-end scope", title:"Every moment that shapes the relationship", content:"We connect customer-facing journeys with the internal operations that make them work.",
+            items:[{title:"Awareness"},{title:"Onboarding"},{title:"Renewals"},{title:"Claims"}]},
         different:designDifferent, result:designResult,
+        closing:{title:"Let’s make every journey work better."},
         cases:["onecard","ebanqo"]},
     {slug:"product-development-pmaas", category:"advisory-transformation-growth", title:"Product Development & PMaaS",
         path:Market, content:marketContent, links:market, summary,
+        label:"Product Development & PMaaS", heading:"Product Development & Product Management as a Service", lead:"An integrated product partner, from Validate to Grow.",
         intro:["For organisations developing new digital products or strengthening existing ones, progress is often constrained by unclear product direction, capability gaps, fragmented ownership or limited product management capacity. Successful products need clear ownership, continuous customer discovery, disciplined prioritisation and close coordination across Product, Engineering, Design, Data, Risk, Operations and Business teams."],
-        approach:{title:"Our Approach", path:Notes, content:[
+        approach:{title:"Our approach", path:Notes, content:[
             "Our Product Development & PMaaS covers the full spectrum of Validate, Build, Launch and Grow. It provides the strategic product leadership and hands-on management support needed to develop new products, improve existing ones and strengthen execution across the product lifecycle.",
             "Our approach goes beyond writing product requirements, managing backlogs or coordinating delivery teams. We make sure products are grounded in real customer needs and aligned with clear commercial objectives.",
+            "Whether we’re developing a new product, improving an existing one or strengthening delivery across a portfolio, we integrate directly with your organisation. We establish clear ownership structures and embed the operating discipline needed to move confidently from discovery through development, launch and continuous improvement.",
+        ], tags:["Customer & market research","Product strategy","User-centred design","Experimentation & validation","Delivery governance","Performance measurement"]},
+        steps:{label:"Full product lifecycle", title:"From evidence to enduring value", items:[
+            {title:"Validate", content:"Test the problem, customer need and commercial case."},
+            {title:"Build", content:"Shape, design and deliver the right product."},
+            {title:"Launch", content:"Coordinate readiness, adoption and market entry."},
+            {title:"Grow", content:"Measure value and continuously improve performance."},
         ]},
-        work:{title:"Our work", path:Reality, content:[workCovers]},
-        different:designDifferent, result:designResult,
+        different:"We don’t simply supply Product Managers or hand over a roadmap for internal teams to execute. We work as an integrated product partner, combining strategic direction with hands-on delivery support while transferring knowledge and strengthening internal capability. You get experienced product leadership without first having to build or expand your internal product practice.",
+        result:"Not only a better product, but a stronger, more sustainable product management practice that keeps delivering value long after the engagement ends.",
+        closing:{title:"Let’s build products that keep creating value.",
+            work:{title:"Strengthen the product. Build the practice.", content:"Bring strategy, ownership and execution together across the full product lifecycle."}},
         cases:["factorex","lendsqr","onecard"]},
     {slug:"product-led-transformation", category:"advisory-transformation-growth", title:"Product-Led Transformation",
         path:Market, content:marketContent, links:market, summary,
@@ -137,13 +168,59 @@ export const services: Service[] =[
         approach:{title:"Our approach", path:Notes, content:[growthApproach]},
         different:growthDifferent, result:growthResult,
         cases:["onecard","ebanqo"]},
-    // title only until their content comes in
     {slug:"digital-transformation", category:"operational-excellence-digital-transformation", title:"Digital Transformation",
-        path:Advisory, content:categories[1].content, links:operational, summary, intro:[], cases:[]},
+        path:Advisory, content:categories[1].content, links:operational, summary,
+        label:"Transformation", lead:"Technology decisions connected directly to business outcomes.",
+        intro:["Technology investments should improve how an organisation operates, makes decisions, serves customers and creates value. For many organisations, the challenge isn’t a lack of investment. Systems are disconnected, data is hard to access, manual work persists alongside digital tools, and new solutions never become part of how work actually happens."],
+        questionPath:Team, questions:[
+            "Are our technology investments delivering measurable operational and commercial value?",
+            "Where can workflow automation reduce manual coordination, delays, errors and administrative effort?",
+            "How can our systems, platforms and data be better connected across teams and business functions?",
+            "Which applications of AI can improve decision-making, service delivery, employee productivity or customer experience?",
+            "How can we get real-time visibility into workflow performance, service levels, exceptions and business outcomes?",
+            "What governance, controls, capabilities and change interventions will ensure adoption and sustainable value?",
+        ],
+        approach:{title:"Our approach", path:Whiteboard, content:[
+            "We help organisations translate business priorities and operational needs into a practical, value-led digital transformation agenda. We work with executive sponsors, transformation leaders, technology teams, operational functions and process owners to decide where digital capabilities create the greatest impact and how to introduce them.",
+            "We start with deep-dive discovery to assess your digital maturity and identify gaps. We then define transformation strategy and investment priorities to modernise legacy systems and fragmented technology environments, integrating platforms, workflows and data across business functions.",
+        ]},
+        highlights:[
+            {label:"Built for adoption", title:"Technology is only one part of the work.", content:"We account for operating models, data readiness, governance, workforce capability, customer impact, regulatory constraints and change management."},
+            {label:"Responsible AI", title:"Ready to scale", content:"Where AI is relevant, we make sure the underlying data, processes, controls and accountability structures are mature enough to support it responsibly and at scale."},
+        ],
+        steps:{title:"From maturity to measurable value", items:[
+            {title:"Digital maturity assessment"},{title:"Strategy & investment priorities"},{title:"Modernisation & integration"},{title:"Implementation & adoption"},
+        ]},
+        different:"We connect technology decisions directly to business outcomes. Rather than digitising existing inefficiencies or introducing tools in search of a problem, we identify the right transformation opportunities, establish the foundations for success, and support implementation and adoption.",
+        result:"A connected, governed digital environment where teams work with less friction, leaders see performance in real time, customers receive better service, and technology investment produces measurable operational and commercial value.",
+        audience:{title:"Leaders who own change and outcomes.", tags:["Executive sponsors","Transformation leaders","Technology teams","Operational functions","Process owners"]},
+        closing:{title:"Let’s transform what technology makes possible.", content:"Start with the business outcome that matters most."},
+        cases:[]},
+    // title only until its content comes in
     {slug:"market-intelligence-market-entry", category:"market-investment-intelligence", title:"Market Intelligence & Market Entry Support",
         path:Market, content:categories[2].content, links:market, summary, intro:[], cases:[]},
     {slug:"investor-validation-due-diligence", category:"market-investment-intelligence", title:"Investor Validation & Startup Due Diligence",
-        path:Market, content:categories[2].content, links:market, summary, intro:[], cases:[]},
+        path:Market, content:categories[2].content, links:market, summary,
+        label:"Investment Validation", heading:"Investor Due Diligence", lead:"An independent view of product viability before you deploy capital.",
+        intro:["Our Investor Validation & Startup Due Diligence service helps investors answer critical questions before deploying capital."],
+        questionPath:Meeting, questions:[
+            "Is the product solving a real, validated customer problem?",
+            "Has the product achieved genuine product-market fit, or is growth being driven by unsustainable factors?",
+            "Does the company have meaningful competitive advantages beyond pricing, incentives or first-mover positioning?",
+            "How defensible is the business against incumbent fintechs, banks, telecoms and emerging challengers?",
+            "Is the market large and underserved enough to support venture-scale returns?",
+            "Are there credible expansion opportunities across customer segments, products, verticals or geographies?",
+            "What product, execution, technology, operational and regulatory risks could most affect growth?",
+        ],
+        approach:{title:"Our approach", path:Table, content:[
+            "Our approach goes beyond reviewing pitch decks, financial projections or high-level market reports. We give investors an independent view of product viability and growth potential. We assess problem-solution fit, validate product-market fit signals, identify market and execution risks, evaluate competitive positioning and uncover opportunities for accelerated growth.",
+        ], tags:["Product assessment","Customer & user research","Market analysis","Competitor benchmarking","Growth diagnostics","Operating model evaluation"]},
+        differentLabel:"An independent perspective",
+        different:"We test the product story against customer evidence, market realities, operating capability and the competitive landscape, so conviction is grounded in what can be validated, not only what has been presented.",
+        result:"A practical investment perspective that helps investors make better-informed decisions and build a clearer post-investment value creation strategy.",
+        audience:{title:"Decision-makers deploying growth capital.", tags:["Investors"]},
+        closing:{title:"Deploy capital with clearer conviction.", content:"Start with an independent view of product viability."},
+        cases:[]},
 ]
 
 // dedicated page at /services/leadership-coaching

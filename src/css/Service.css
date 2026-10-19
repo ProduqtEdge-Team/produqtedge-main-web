@@ -1,3 +1,33 @@
+/* the newer service designs, same on every screen size */
+/* small orange label over a heading */
+.service-head .label, .service-highlights .label, .service-steps .label, .service-closing .label{
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #F68E1E;
+}
+
+/* approach tags as pills */
+.service-approach .sec-2 .pills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 0 0;
+
+    span{
+        margin: 0;
+        font-size: 13px;
+        line-height: 1;
+        color: #374151;
+        padding: 8px 14px;
+        background-color: #ffffff;
+        border: 1px solid #E5E7EB;
+        border-radius: 999px;
+    }
+}
+
 @media (min-width:768px) {
 
     .service-head{
@@ -435,6 +465,318 @@
             }
         }
     }
+
+    /* ---- newer service designs, the page carries .service-new ---- */
+    .service-new{
+
+        .service-head{
+            padding-bottom: 64px;
+            border-bottom: 4px solid #F68E1E;
+
+            .sec-1 .label{
+                margin: 0 0 16px 0;
+            }
+
+            .sec-2{
+                gap: 16px;
+
+                span{
+                    font-size: 16px;
+                    line-height: 1.6;
+                    color: #535862;
+                }
+
+                .lead{
+                    font-size: 26px;
+                    font-weight: 500;
+                    line-height: 1.3;
+                    letter-spacing: 0;
+                    color: #052239;
+                }
+            }
+        }
+
+        /* orange dots with a line under each question, photo in a grey frame */
+        .service-questions{
+            align-items: start;
+
+            .questions{
+                gap: 0;
+
+                li{
+                    align-items: flex-start;
+                    gap: 12px;
+                    padding: 14px 0;
+                    border-bottom: 1px solid #E5E7EB;
+                    color: #374151;
+
+                    .dot{
+                        flex-shrink: 0;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background-color: #F68E1E;
+                        margin: 7px 0 0 0;
+                    }
+                }
+            }
+
+            .sec-2{
+                height: auto;
+                aspect-ratio: 5 / 4;
+                padding: 24px;
+                box-sizing: border-box;
+                background-color: #F3F4F6;
+            }
+        }
+
+        /* small labels and calmer text in the dark panel */
+        .service-different .panel{
+            padding: 56px;
+
+            h3{
+                font-size: 15px;
+                font-weight: 600;
+                letter-spacing: 0;
+                margin: 0 0 24px 0;
+            }
+
+            .sec-1 span{
+                font-size: 24px;
+                line-height: 1.5;
+            }
+
+            .sec-2 span{
+                font-size: 17px;
+                line-height: 1.7;
+            }
+        }
+    }
+
+    /* two cards under the approach, the second one dark */
+    .service-highlights{
+        padding: 40px var(--gutter) 0 var(--gutter);
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 20px;
+
+        .card{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 40px;
+            background-color: #ffffff;
+            border: 1px solid #E5E7EB;
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 1.25;
+                color: #222;
+            }
+
+            > span:not(.label){
+                font-size: 16px;
+                line-height: 1.6;
+                color: #535862;
+            }
+        }
+
+        .card:last-child{
+            background-color: #052239;
+            border-color: #052239;
+
+            h2{
+                color: #ffffff;
+            }
+
+            > span:not(.label){
+                color: rgba(255, 255, 255, 0.85);
+            }
+        }
+    }
+
+    /* numbered 01-04 cards, the last one dark */
+    .service-steps{
+        padding: 100px var(--gutter) 0 var(--gutter);
+
+        .sec-1{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 0 0 40px 0;
+
+            h2{
+                all: unset;
+                display: block;
+                max-width: 720px;
+                font-size: 48px;
+                font-weight: 500;
+                line-height: 1.2;
+                color: #222;
+            }
+
+            .blurb{
+                max-width: 480px;
+                font-size: 18px;
+                line-height: 1.5;
+                color: #535862;
+            }
+        }
+
+        .steps{
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+
+            .step{
+                min-height: 160px;
+                padding: 26px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                background-color: #EEF1FA;
+
+                .num{
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: #FF8A00;
+                }
+
+                h3{
+                    all: unset;
+                    display: block;
+                    font-size: 22px;
+                    font-weight: 600;
+                    line-height: 1.25;
+                    color: #052A43;
+                }
+
+                > span:not(.num){
+                    font-size: 15px;
+                    line-height: 1.5;
+                    color: #4D5968;
+                }
+            }
+
+            .step:last-child{
+                background-color: #052A43;
+
+                h3{
+                    color: #ffffff;
+                }
+
+                > span:not(.num){
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+        }
+    }
+
+    .service-highlights + .service-steps{
+        padding-top: 64px;
+    }
+
+    /* "Who we work with", then the work line beside the orange call to action */
+    .service-closing{
+        margin: 100px var(--gutter) 0 var(--gutter);
+        background-color: #EEF1FA;
+
+        .audience{
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 40px;
+            align-items: start;
+            padding: 56px 48px 0 48px;
+
+            h2{
+                all: unset;
+                display: block;
+                max-width: 360px;
+                font-size: 32px;
+                font-weight: 500;
+                line-height: 1.2;
+                color: #222;
+                margin: 12px 0 0 0;
+            }
+
+            .tags{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                span{
+                    font-size: 14px;
+                    color: #052239;
+                    padding: 12px 16px;
+                    background-color: #ffffff;
+                }
+            }
+        }
+
+        .end{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .sec-1, .sec-2{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 16px;
+                padding: 64px 48px;
+
+                h2{
+                    all: unset;
+                    display: block;
+                    font-size: 40px;
+                    font-weight: 600;
+                    line-height: 1.2;
+                    letter-spacing: -0.5px;
+                }
+
+                > span{
+                    max-width: 440px;
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+
+                div{
+                    margin: 12px 0 0 0;
+                }
+            }
+
+            .sec-1{
+                h2{
+                    color: #222;
+                }
+
+                > span{
+                    color: #535862;
+                }
+            }
+
+            .sec-2{
+                color: #ffffff;
+                background-color: #FF8A00;
+            }
+
+            .btn-dark{
+                background-color: #222;
+                font-size: 16px;
+                font-weight: 600;
+                height: 52px;
+                padding: 0 28px;
+                box-sizing: border-box;
+            }
+        }
+
+        .audience + .end{
+            margin: 48px 0 0 0;
+        }
+    }
 }
 
 /* phones */
@@ -799,6 +1141,269 @@
                     margin: 0 0 20px 0;
                 }
             }
+        }
+    }
+
+    /* ---- newer service designs ---- */
+    .service-new{
+
+        .service-head{
+            padding-bottom: 40px;
+            border-bottom: 4px solid #F68E1E;
+
+            .sec-1 .label{
+                margin: 0 0 12px 0;
+            }
+
+            .sec-2 .lead{
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 1.35;
+                color: #052239;
+            }
+        }
+
+        .service-head + .service-questions{
+            padding-top: 48px;
+        }
+
+        .service-questions{
+
+            .questions{
+                gap: 0;
+
+                li{
+                    gap: 12px;
+                    padding: 12px 0;
+                    border-bottom: 1px solid #E5E7EB;
+                    color: #374151;
+
+                    .dot{
+                        flex-shrink: 0;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background-color: #F68E1E;
+                        margin: 7px 0 0 0;
+                    }
+                }
+            }
+
+            .sec-2{
+                padding: 14px;
+                box-sizing: border-box;
+                background-color: #F3F4F6;
+            }
+        }
+
+        .service-head + .service-approach{
+            padding-top: 48px;
+        }
+    }
+
+    .service-highlights{
+        padding: 20px var(--gutter) 0 var(--gutter);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .card{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 28px 20px;
+            background-color: #ffffff;
+            border: 1px solid #E5E7EB;
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 24px;
+                line-height: 1.25;
+                color: #222;
+            }
+
+            > span:not(.label){
+                font-size: 14px;
+                line-height: 1.6;
+                color: #535862;
+            }
+        }
+
+        .card:last-child{
+            background-color: #052239;
+            border-color: #052239;
+
+            h2{
+                color: #ffffff;
+            }
+
+            > span:not(.label){
+                color: rgba(255, 255, 255, 0.85);
+            }
+        }
+    }
+
+    /* one step per row */
+    .service-steps{
+        padding: 48px var(--gutter) 0 var(--gutter);
+
+        .sec-1{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0 0 24px 0;
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 28px;
+                font-weight: 500;
+                line-height: 1.2;
+                color: #222;
+            }
+
+            .blurb{
+                font-size: 14px;
+                line-height: 1.5;
+                color: #535862;
+            }
+        }
+
+        .steps{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .step{
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                background-color: #EEF1FA;
+
+                .num{
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #FF8A00;
+                }
+
+                h3{
+                    all: unset;
+                    display: block;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 1.3;
+                    color: #052A43;
+                }
+
+                > span:not(.num){
+                    font-size: 14px;
+                    line-height: 1.5;
+                    color: #4D5968;
+                }
+            }
+
+            .step:last-child{
+                background-color: #052A43;
+
+                h3{
+                    color: #ffffff;
+                }
+
+                > span:not(.num){
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+        }
+    }
+
+    .service-closing{
+        margin: 48px var(--gutter) 0 var(--gutter);
+        background-color: #EEF1FA;
+
+        .audience{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 32px 20px 0 20px;
+
+            h2{
+                all: unset;
+                display: block;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 1.25;
+                color: #222;
+                margin: 10px 0 0 0;
+            }
+
+            .tags{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                span{
+                    font-size: 13px;
+                    color: #052239;
+                    padding: 10px 14px;
+                    background-color: #ffffff;
+                }
+            }
+        }
+
+        .end{
+            display: flex;
+            flex-direction: column;
+
+            .sec-1, .sec-2{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 32px 20px;
+
+                h2{
+                    all: unset;
+                    display: block;
+                    font-size: 28px;
+                    font-weight: 600;
+                    line-height: 1.2;
+                }
+
+                > span{
+                    font-size: 14px;
+                    line-height: 1.5;
+                }
+
+                div{
+                    margin: 8px 0 0 0;
+                }
+            }
+
+            .sec-1{
+                h2{
+                    color: #222;
+                }
+
+                > span{
+                    color: #535862;
+                }
+            }
+
+            .sec-2{
+                color: #ffffff;
+                background-color: #FF8A00;
+            }
+
+            .btn-dark{
+                background-color: #222;
+                font-size: 15px;
+                font-weight: 600;
+            }
+        }
+
+        .audience + .end{
+            margin: 24px 0 0 0;
         }
     }
 }
