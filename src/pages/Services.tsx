@@ -67,7 +67,7 @@ function Services(){
                     ))}
                 </div>
                 <div>
-                    <Button to="" variant="outline">Contact Us</Button>
+                    <Button to="/contact" variant="outline">Contact Us</Button>
                 </div>
             </div>
             <img className="sec-2" src={Why} alt=""/>

@@ -41,7 +41,7 @@ function Service(){
                         <li key={i}><RadioButtonUnchecked className="circle"/> {question}</li>
                     ))}
                 </ul>
-                <Button to="" variant="outline">Contact Us</Button>
+                <Button to="/contact" variant="outline">Contact Us</Button>
             </div>
             <img className="sec-2" src={service.path} alt=""/>
         </section>}
@@ -54,7 +54,7 @@ function Service(){
                     ))}
                 </div>
                 <div>
-                    <Button to="" variant="outline">Book a discovery call</Button>
+                    <Button to="/contact" variant="outline">Book a discovery call</Button>
                 </div>
             </div>
             <img className="sec-2" src={service.help.path} alt=""/>
@@ -89,16 +89,23 @@ function Service(){
                 <img src={service.work.path} alt=""/>
             </div>
         </section>}
-        {service.different !== undefined && <section className="service-different">
+        {(service.different !== undefined || service.result !== undefined) && <section className="service-different">
             <div className="panel">
-                <div className="sec-1">
-                    <h3>What makes us different</h3>
-                    <span>{service.different}</span>
-                </div>
-                {service.result !== undefined && <div className="sec-2">
-                    <h3>The result</h3>
-                    <span>{service.result}</span>
-                </div>}
+                {service.different !== undefined
+                    ? <>
+                        <div className="sec-1">
+                            <h3>What makes us different</h3>
+                            <span>{service.different}</span>
+                        </div>
+                        {service.result !== undefined && <div className="sec-2">
+                            <h3>The result</h3>
+                            <span>{service.result}</span>
+                        </div>}
+                    </>
+                    : <div className="sec-1 result-only">
+                        <h3>The result</h3>
+                        <span>{service.result}</span>
+                    </div>}
             </div>
         </section>}
         {service.cases.length > 0 && <section className="service-cases">

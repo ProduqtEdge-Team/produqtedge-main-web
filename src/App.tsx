@@ -4,6 +4,7 @@ import Services from "../src/pages/Services.tsx"
 import ServiceCategory from "../src/pages/ServiceCategory.tsx"
 import Service from "../src/pages/Service.tsx"
 import Leadership from "../src/pages/Leadership.tsx"
+import Contact from "../src/pages/Contact.tsx"
 import About from "../src/pages/About.tsx"
 import TeamMember from "../src/pages/TeamMember.tsx"
 import CaseStudy from "../src/pages/CaseStudy.tsx"
@@ -40,6 +41,7 @@ function App() {
       {path:"/careers/:slug", Component:Job},
       {path:"/insights", Component:Insights},
       {path:"/insights/:slug", Component:Insight},
+      {path:"/contact", Component:Contact},
     ]},
   ])
   return <RouterProvider router={router}/>

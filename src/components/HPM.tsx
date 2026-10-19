@@ -33,7 +33,7 @@ function CTA1(){
             <h2>Have a project in mind?</h2>
             <span>Let's build the right strategy together.</span>
             <div>
-                <Button to="" variant="orange">Start a Conversation</Button>
+                <Button to="/contact" variant="orange">Start a Conversation</Button>
             </div>
         </div>
 
