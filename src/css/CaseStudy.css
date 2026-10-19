@@ -32,3 +32,39 @@
         background-color: #F8FAFC;
     }
 }
+
+/* phones */
+@media (max-width:767px) {
+
+    .case-hero{
+        padding: var(--nav-height) 0 0 0;
+
+        .sec-1{
+            height: 420px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 70% 25%;
+            padding: 0 var(--gutter);
+            display: flex;
+            align-items: center;
+
+            h1{
+                all: unset;
+                display: block;
+                max-width: 260px;
+                font-size: 34px;
+                font-weight: 400;
+                line-height: 1.2;
+                color: #ffffff;
+                text-decoration: underline;
+                text-decoration-thickness: 2px;
+                text-underline-offset: 5px;
+            }
+        }
+    }
+
+    .case-list{
+        padding: 40px var(--gutter) 56px var(--gutter);
+        background-color: #F8FAFC;
+    }
+}

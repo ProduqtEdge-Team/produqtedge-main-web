@@ -30,3 +30,37 @@
         padding: 100px var(--gutter) 50px var(--gutter);
     }
 }
+
+/* phones */
+@media (max-width:767px) {
+
+    .category-hero{
+        padding: calc(var(--nav-height) + 20px) var(--gutter) 0 var(--gutter);
+
+        .sec-1{
+            min-height: 320px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0,0,0,0.45);
+            background-blend-mode: darken;
+            padding: 32px 24px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+
+            h1{
+                all: unset;
+                display: block;
+                font-size: 30px;
+                font-weight: 500;
+                line-height: 1.25;
+                color: #ffffff;
+            }
+        }
+    }
+
+    .category-services{
+        padding: 40px var(--gutter) 28px var(--gutter);
+    }
+}

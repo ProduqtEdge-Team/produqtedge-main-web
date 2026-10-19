@@ -48,3 +48,44 @@
         }
     }
 }
+
+/* phones, one card per row */
+@media (max-width:767px) {
+
+    .case-cards{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .case-card{
+            text-decoration: none;
+            color: #2A2A2A;
+            display: flex;
+            flex-direction: column;
+
+            .cover{
+                display: block;
+                width: 100%;
+                aspect-ratio: 9 / 5;
+                object-fit: cover;
+            }
+
+            .logo{
+                display: block;
+                height: 22px;
+                max-width: 70%;
+                object-fit: contain;
+                object-position: left;
+                margin: 16px 0 0 0;
+            }
+
+            h3{
+                all: unset;
+                display: block;
+                font-size: 18px;
+                line-height: 1.4;
+                margin: 14px 0 0 0;
+            }
+        }
+    }
+}
