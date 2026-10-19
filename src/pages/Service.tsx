@@ -122,7 +122,7 @@ function Service(){
                         <h3>{item.title}</h3>
                         <span>{item.summary}</span>
                         <div>
-                            <Button to={servicePath(item)} variant="text">View</Button>
+                            <Button to={servicePath(item)}>Learn More</Button>
                         </div>
                     </div>
                 ))}
