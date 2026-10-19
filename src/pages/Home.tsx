@@ -77,7 +77,7 @@ function Home(){
         </section>
         <section className="home-testimonials">
             <h2>Some Feedback from Our Clients</h2>
-            {/* every slide sits in one row, so the row is as tall as the longest one and moving it slides between them */}
+            {/* every slide sits in one row, moving the row slides between them */}
             <div className="slides">
                 <div className="track" style={{transform: `translateX(calc(${Slide} * (-100% - var(--gap))))`}}>
                     {testimonials.map((testimonial, i) =>(

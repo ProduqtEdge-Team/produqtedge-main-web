@@ -5,6 +5,14 @@
     --nav-height: 76px;
 }
 
+/* phones */
+@media (max-width:767px) {
+    :root{
+        --gutter: 20px;
+        --nav-height: 64px;
+    }
+}
+
 .diamond{
     width: 400px;
     height: 400px;
