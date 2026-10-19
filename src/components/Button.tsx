@@ -3,7 +3,7 @@ import {ArrowForward} from "@mui/icons-material";
 import type {ReactNode} from "react";
 import "../css/misc.css";
 
-type Variant = "dark" | "orange" | "outline";
+type Variant = "dark" | "orange" | "outline" | "text";
 
 // shared action button, matches the home page pattern: label + forward arrow
 // variant picks the colour, external renders an <a> with target=_blank
