@@ -6,7 +6,7 @@ import ServiceCard from "../components/ServiceCard.tsx";
 import heroBackground from "../images/Frame 2147223898.png"
 import Philosophy from "../images/philosophy-visual.png"
 import Leadership from "../images/Consulting team.png"
-import Why from "../images/new images /why choose us .png"
+import Why from "../images/new-images/why-choose-us.png"
 import {categories, inCategory, philosophy, reasons, toLinks} from "../js/services.ts";
 function Services(){
     return <div>

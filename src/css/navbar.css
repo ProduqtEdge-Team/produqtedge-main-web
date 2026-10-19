@@ -139,3 +139,204 @@
         }
     }
 }
+
+/* phones, NavBar swaps to this below 768px */
+.mobile-nav{
+
+    .bar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        height: var(--nav-height);
+        padding: 0 var(--gutter);
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(45, 45, 45, 0.87);
+
+        .nav-logo{
+            display: flex;
+            align-items: center;
+            img{
+                height: 28px;
+            }
+        }
+
+        .toggle{
+            all: unset;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 -8px 0 0;
+            color: #ffffff;
+
+            svg{
+                font-size: 28px;
+            }
+        }
+    }
+
+    /* dims the page, tapping it closes the menu */
+    .backdrop{
+        position: fixed;
+        inset: 0;
+        z-index: 25;
+        background-color: rgba(10, 13, 18, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s;
+    }
+
+    .backdrop.show{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* drops down from under the bar */
+    .menu{
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        z-index: 26;
+        display: flex;
+        flex-direction: column;
+        padding: 4px var(--gutter) 16px var(--gutter);
+        box-sizing: border-box;
+        background-color: #ffffff;
+        box-shadow: 0px 12px 16px -4px rgba(10,13,18,0.08),
+                    0px 4px 6px -2px rgba(10,13,18,0.03);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+        transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+
+        a, button{
+            all: unset;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            font-size: 16px;
+            color: #181D27;
+            border-bottom: 1px solid #E9EAEB;
+
+            svg{
+                font-size: 22px;
+                color: #F68E1E;
+            }
+        }
+
+        > :last-child{
+            border-bottom: none;
+        }
+    }
+
+    .menu.open{
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    /* slides in from off the right edge, over the menu */
+    .services{
+        position: fixed;
+        top: var(--nav-height);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 27;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 20px var(--gutter) 32px var(--gutter);
+        box-sizing: border-box;
+        background-color: #ffffff;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: transform 0.3s ease, visibility 0.3s;
+
+        .back{
+            all: unset;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            color: #181D27;
+
+            svg{
+                font-size: 20px;
+            }
+        }
+
+        .sub{
+            display: block;
+            font-size: 14px;
+            line-height: 20px;
+            color: #535862;
+            margin: 4px 0 28px 0;
+        }
+
+        .group{
+            padding: 0 0 24px 0;
+            margin: 0 0 24px 0;
+            border-bottom: 1px solid #E9EAEB;
+
+            h2{
+                all: unset;
+                display: block;
+                color: #F68E1E;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 28px;
+                margin: 0 0 20px 0;
+            }
+
+            ul{
+                all: unset;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                li{
+                    list-style: none;
+
+                    a{
+                        text-decoration: none;
+                        color: #535862;
+                        font-size: 14px;
+                        line-height: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 8px;
+
+                        .arrow{
+                            font-size: 18px;
+                            color: #F68E1E;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .services.open{
+        visibility: visible;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobile-nav .backdrop, .mobile-nav .menu, .mobile-nav .services{
+        transition: none;
+    }
+}
