@@ -1,0 +1,189 @@
+@media (min-width:768px) {
+
+    .insights-head{
+        padding: calc(var(--nav-height) + 60px) var(--gutter) 50px var(--gutter);
+        background-color: #F8FAFC;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+
+        h1{
+            all: unset;
+            display: block;
+            font-size: 50px;
+            font-weight: 500;
+            color: #2A2A2A;
+        }
+
+        span{
+            font-size: 17px;
+            line-height: 1.6;
+            color: #3A4350;
+            padding: 8px 0 0 0;
+        }
+    }
+
+    .insights-filters{
+        padding: 0 var(--gutter);
+        background-color: #F8FAFC;
+
+        .bar{
+            display: flex;
+            background-color: #0B2239;
+        }
+
+        .filter{
+            position: relative;
+
+            > button{
+                all: unset;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                height: 80px;
+                padding: 0 40px;
+                font-size: 18px;
+                font-weight: 500;
+                color: #ffffff;
+
+                .arrow{
+                    font-size: 22px;
+                    color: #F68E1E;
+                }
+            }
+
+            .menu{
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 5;
+                min-width: 260px;
+                display: flex;
+                flex-direction: column;
+                padding: 8px 0;
+                background-color: #ffffff;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+                button{
+                    all: unset;
+                    cursor: pointer;
+                    font-size: 14px;
+                    color: #2A2A2A;
+                    padding: 12px 20px;
+                    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+                }
+
+                button:hover, .active{
+                    color: #F68E1E;
+                    background-color: #F8FAFC;
+                }
+            }
+        }
+    }
+
+    .insights-none{
+        padding: 60px var(--gutter) 100px var(--gutter);
+        background-color: #F8FAFC;
+
+        span{
+            font-size: 15px;
+            color: #5B666F;
+        }
+    }
+
+    .insights-featured{
+        padding: 45px var(--gutter) 45px var(--gutter);
+        background-color: #F8FAFC;
+
+        .sec-1{
+            text-decoration: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+
+            img{
+                width: 100%;
+                aspect-ratio: 25 / 16;
+                object-fit: cover;
+            }
+
+            .content{
+                display: flex;
+                flex-direction: column;
+
+                .topic{
+                    font-size: 12px;
+                    color: #F68E1E;
+                    margin: 0 0 16px 0;
+                }
+
+                h2{
+                    all: unset;
+                    display: block;
+                    font-size: 38px;
+                    font-weight: 500;
+                    line-height: 1.25;
+                    color: #2A2A2A;
+                    margin: 0 0 28px 0;
+                    transition: color 0.2s ease-in-out;
+                }
+
+                .summary{
+                    font-size: 17px;
+                    line-height: 1.6;
+                    color: #3A4350;
+                    margin: 0 0 18px 0;
+                }
+
+                .meta{
+                    font-size: 12px;
+                    color: #5B666F;
+
+                    i{
+                        font-style: normal;
+                        margin: 0 4px;
+                    }
+                }
+            }
+        }
+
+        .sec-1:hover h2{
+            color: #F68E1E;
+        }
+    }
+
+    .insights-grid{
+        padding: 0 var(--gutter) 60px var(--gutter);
+        background-color: #F8FAFC;
+
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 45px 32px;
+        }
+
+        .end{
+            display: flex;
+            justify-content: center;
+            margin: 55px 0 0 0;
+
+            button{
+                all: unset;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 500;
+                color: #ffffff;
+                padding: 16px 40px;
+                background-color: #2A2A2A;
+                transition: background-color 0.2s ease-in-out;
+            }
+
+            button:hover{
+                background-color: #F68E1E;
+            }
+        }
+    }
+}

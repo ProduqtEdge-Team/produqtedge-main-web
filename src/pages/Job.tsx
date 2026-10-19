@@ -4,8 +4,8 @@ import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {ArrowBack, ArrowForward, ContentCopy} from "@mui/icons-material";
 import {jobs} from "../js/careers.ts";
-import type {Point} from "../js/careers.ts";
 import {bold} from "../js/text.tsx";
+import type {Point} from "../js/text.tsx";
 
 const email = "info@produqtedge.com"
 

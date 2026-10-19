@@ -1,4 +1,3 @@
-import Card1 from "../images/Card1Image.png"
 import Folake from "../images/images_3_1.jpg"
 
 // Home page, slugs of the case studies under "Some of Our Recent Projects"
@@ -8,10 +7,4 @@ export const recentProjects =["onecard","ebanqo","lendsqr"]
 export const testimonials =[
     {title:"Strategic Advisory for Fuelmetrics Limited", path:Folake, name:"Folake Opanubi", role:"Head of Marketing, Fuelmetrics Limited",
         content:"We engaged Produqt Edge in 2024 to conduct a system and product audit at a time when we needed an independent assessment of our systems, products and processes to identify gaps and uncover opportunities for improvement. I was particularly impressed by the attention to detail. They had their finger on the pulse of our products and operations, engaging the right stakeholders and digging deep to develop an in-depth understanding of our business before making their recommendations. What stood out even more was that, about six months later, they proactively checked in to evaluate our progress and even commended us on how quickly we had implemented their recommendations. Our experience with Produqt Edge was a valuable one and their manner of approach made the engagement particularly worthwhile."},
-]
-
-export const insights =[
-    {title:"Research in Product Management – User Research", path:Card1, content:"Defined clear roadmap for sustainable growth"},
-    {title:"Research in Product Management – User Research", path:Card1, content:"Defined clear roadmap for sustainable growth"},
-    {title:"Research in Product Management – User Research", path:Card1, content:"Defined clear roadmap for sustainable growth"},
 ]

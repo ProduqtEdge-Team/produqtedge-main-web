@@ -8,7 +8,8 @@ import DiaHeader from "../components/DiaHeader.tsx";
 import Photo1 from "../images/Photo1.png"
 import {useState} from "react";
 import {CTA1} from "../components/HPM.tsx";
-import {insights, recentProjects, testimonials} from "../js/home.ts";
+import {recentProjects, testimonials} from "../js/home.ts";
+import {insights} from "../js/insights.ts";
 import {caseStudies} from "../js/caseStudies.ts";
 import {categories, leadership} from "../js/services.ts";
 function Home(){
@@ -115,11 +116,11 @@ function Home(){
             <h2>Featured Insights</h2>
             <span className="blurb">Some curated articles and lessons from our project experience.</span>
             <div className="sec-2">
-                {insights.map((insight, i) =>(
-                    <Link to="" key={i}>
-                        <img src={insight.path} alt=""/>
+                {insights.slice(0, 3).map((insight, i) =>(
+                    <Link to={`/insights/${insight.slug}`} key={i}>
+                        <img src={insight.cover} alt=""/>
                         <h3>{insight.title}</h3>
-                        <span><Check className="check"/> {insight.content}</span>
+                        <span><Check className="check"/> {insight.topic}</span>
                     </Link>
                 ))}
             </div>

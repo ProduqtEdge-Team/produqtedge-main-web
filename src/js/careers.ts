@@ -1,9 +1,9 @@
+import type {Point} from "./text.tsx";
+
 // Careers page, "A Great Place to Work" checklist
 export const perks =["Hybrid opportunities with a headquarters in Lagos","Collaborative team culture with a focus on creativity and innovation",
     "Opportunities for growth and development","Ability to contribute to our mission of helping people"]
 
-// a point is a plain line, or a line with its own sub points under it
-export type Point = string | {text:string, points:string[]}
 
 // sub sections sit under the section heading in a smaller heading, ordered lists come out numbered
 export type JobSection = {title:string, sub?:boolean, content?:string[], points?:Point[], ordered?:boolean}
