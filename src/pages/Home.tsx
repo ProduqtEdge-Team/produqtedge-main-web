@@ -15,7 +15,6 @@ import {caseStudies} from "../js/caseStudies.ts";
 import {categories, leadership} from "../js/services.ts";
 function Home(){
     const [Slide, setSlide] = useState(0);
-    const testimonial = testimonials[Slide]
 
     // each category opens its own page, leadership goes to /services
     const serviceLinks = [...categories.map((category) => ({title:category.title, to:`/services/${category.slug}`})), leadership]
@@ -78,20 +77,26 @@ function Home(){
         </section>
         <section className="home-testimonials">
             <h2>Some Feedback from Our Clients</h2>
-            {testimonial && <div className="sec-2">
-                <img src={testimonial.path} alt={testimonial.name}/>
-                <div className="testimonial">
-                    <span className="title">{testimonial.title}</span>
-                    <span className="quote">{testimonial.content}</span>
-                    <span className="name">&mdash; {testimonial.name}</span>
-                    <span className="role">{testimonial.role}</span>
+            {/* every slide sits in one row, so the row is as tall as the longest one and moving it slides between them */}
+            <div className="slides">
+                <div className="track" style={{transform: `translateX(calc(${Slide} * (-100% - var(--gap))))`}}>
+                    {testimonials.map((testimonial, i) =>(
+                        <div className="sec-2" key={i} aria-hidden={i !== Slide}>
+                            <img src={testimonial.path} alt={testimonial.name}/>
+                            <div className="testimonial">
+                                <span className="title">{testimonial.title}</span>
+                                <span className="quote">{testimonial.content}</span>
+                                <span className="name">&mdash; {testimonial.name}</span>
+                                <span className="role">{testimonial.role}</span>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            </div>}
+            </div>
             <div className="controls">
-                <button type="button" aria-label="Previous" disabled={Slide === 0}
-                        onClick={() => setSlide(Math.max(0, Slide - 1))}><ArrowBack/></button>
-                <button type="button" aria-label="Next" disabled={Slide === testimonials.length - 1}
-                        onClick={() => setSlide(Math.min(testimonials.length - 1, Slide + 1))}><ArrowForward/></button>
+                {/* stops at the first and last slide instead of looping */}
+                <button type="button" aria-label="Previous" disabled={Slide === 0} onClick={() => setSlide(Math.max(Slide - 1, 0))}><ArrowBack/></button>
+                <button type="button" aria-label="Next" disabled={Slide === testimonials.length - 1} onClick={() => setSlide(Math.min(Slide + 1, testimonials.length - 1))}><ArrowForward/></button>
             </div>
         </section>
         <section className="home-about">
