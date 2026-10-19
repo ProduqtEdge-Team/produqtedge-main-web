@@ -16,7 +16,7 @@ import {categories, leadership} from "../js/services.ts";
 function Home(){
     const [Slide, setSlide] = useState(0);
 
-    // each category opens its own page, leadership goes to /services
+    // each category opens its own page, then leadership
     const serviceLinks = [...categories.map((category) => ({title:category.title, to:`/services/${category.slug}`})), leadership]
     const projects = caseStudies.filter((study) => recentProjects.includes(study.slug))
         .sort((a, b) => recentProjects.indexOf(a.slug) - recentProjects.indexOf(b.slug))
