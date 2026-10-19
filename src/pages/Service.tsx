@@ -3,6 +3,7 @@ import "../css/Service.css"
 import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import {CheckCircle, RadioButtonUnchecked} from "@mui/icons-material";
+import Button from "../components/Button.tsx";
 import CaseStudyCards from "../components/CaseStudyCards.tsx";
 import {CTA2} from "../components/HPM.tsx";
 import {categories, inCategory, servicePath, services} from "../js/services.ts";
@@ -46,7 +47,7 @@ function Service(){
                     ))}
                 </div>
                 <div>
-                    <Link to="" className="btn-outline">Book a discovery call</Link>
+                    <Button to="" variant="outline">Book a discovery call</Button>
                 </div>
             </div>
             <img className="sec-2" src={service.help.path} alt=""/>
@@ -100,7 +101,7 @@ function Service(){
             </span>
             <CaseStudyCards slugs={service.cases}/>
             <div>
-                <Link to="/case-studies" className="btn-dark">View more</Link>
+                <Button to="/case-studies">View more</Button>
             </div>
         </section>}
         {more.length > 0 && <section className="service-more">
@@ -114,7 +115,7 @@ function Service(){
                         <h3>{item.title}</h3>
                         <span>{item.summary}</span>
                         <div>
-                            <Link to={servicePath(item)} className="btn-dark">Learn More</Link>
+                            <Button to={servicePath(item)}>Learn More</Button>
                         </div>
                     </div>
                 ))}

@@ -1,8 +1,9 @@
 import NavBar from "../components/NavBar.tsx";
 import "../css/TeamMember.css"
-import {Link, Navigate, useParams} from "react-router-dom";
+import {Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
-import {ArrowOutward, FormatQuote} from "@mui/icons-material";
+import {FormatQuote} from "@mui/icons-material";
+import Button from "../components/Button.tsx";
 import {CTA2} from "../components/HPM.tsx";
 import {team} from "../js/team.ts";
 
@@ -35,12 +36,8 @@ function TeamMember(){
                 <p key={i}>{paragraph}</p>
             ))}
             <div className="end">
-                <Link to="/about#team" className="btn-dark">
-                    <span>Back to team</span> <ArrowOutward/>
-                </Link>
-                <a href={member.linkedin} target="_blank" rel="noreferrer" className="btn-outline">
-                    <span>LinkedIn</span> <ArrowOutward/>
-                </a>
+                <Button to="/about#team">Back to team</Button>
+                <Button to={member.linkedin} variant="outline" external>LinkedIn</Button>
             </div>
         </section>
         <CTA2/>

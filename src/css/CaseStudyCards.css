@@ -10,6 +10,7 @@
             color: #2A2A2A;
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
 
             .cover{
                 display: block;
@@ -36,6 +37,10 @@
                 margin: 22px 0 0 0;
                 transition: color 0.2s ease-in-out;
             }
+        }
+
+        .case-card:hover{
+            transform: translateY(-4px);
         }
 
         .case-card:hover h3{

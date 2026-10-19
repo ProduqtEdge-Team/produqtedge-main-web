@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar.tsx";
 import "../css/Services.css"
-import {Link} from "react-router-dom";
 import {CheckCircle} from "@mui/icons-material";
+import Button from "../components/Button.tsx";
 import ServiceCard from "../components/ServiceCard.tsx";
 import heroBackground from "../images/Frame 2147223898.png"
 import Philosophy from "../images/philosophy-visual.png"
@@ -44,7 +44,7 @@ function Services(){
                 <h2>
                     Leadership Coaching & <br/> Capacity Development
                 </h2>
-                <Link to="" className="btn-dark">Learn more</Link>
+                <Button to="">Learn more</Button>
             </div>
             <h3>Build the leaders your organization needs to scale.</h3>
             <span className="blurb">
@@ -67,7 +67,7 @@ function Services(){
                     ))}
                 </div>
                 <div>
-                    <Link to="" className="btn-outline">Contact Us</Link>
+                    <Button to="" variant="outline">Contact Us</Button>
                 </div>
             </div>
             <img className="sec-2" src={Why} alt=""/>

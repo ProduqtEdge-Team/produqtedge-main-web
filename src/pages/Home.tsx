@@ -4,6 +4,7 @@ import "../css/Home.css"
 import CA from "../images/Consultancy_agency_team.png"
 import {Link} from "react-router-dom";
 import {ArrowBack, ArrowForward, Check} from "@mui/icons-material";
+import Button from "../components/Button.tsx";
 import DiaHeader from "../components/DiaHeader.tsx";
 import Photo1 from "../images/Photo1.png"
 import {useState} from "react";
@@ -55,9 +56,7 @@ function Home(){
                     ))}
                 </div>
                 <div>
-                    <Link to="/services" className="btn-orange">
-                        <span>View More</span> <ArrowForward/>
-                    </Link>
+                    <Button to="/services" variant="orange">View More</Button>
                 </div>
             </div>
             <img className="sec-2" src={CA} alt=""/>
@@ -74,9 +73,7 @@ function Home(){
                 ))}
             </div>
             <div className="end">
-                <Link to="/case-studies" className="btn-dark">
-                    <span>View Past Projects</span> <ArrowForward/>
-                </Link>
+                <Button to="/case-studies">View Past Projects</Button>
             </div>
         </section>
         <section className="home-testimonials">
@@ -91,8 +88,10 @@ function Home(){
                 </div>
             </div>}
             <div className="controls">
-                <button type="button" aria-label="Previous" onClick={() => setSlide((Slide - 1 + testimonials.length) % testimonials.length)}><ArrowBack/></button>
-                <button type="button" aria-label="Next" onClick={() => setSlide((Slide + 1) % testimonials.length)}><ArrowForward/></button>
+                <button type="button" aria-label="Previous" disabled={Slide === 0}
+                        onClick={() => setSlide(Math.max(0, Slide - 1))}><ArrowBack/></button>
+                <button type="button" aria-label="Next" disabled={Slide === testimonials.length - 1}
+                        onClick={() => setSlide(Math.min(testimonials.length - 1, Slide + 1))}><ArrowForward/></button>
             </div>
         </section>
         <section className="home-about">
@@ -105,9 +104,7 @@ function Home(){
                     We combine product-led thinking, digital transformation, operational excellence, and growth strategy to help businesses unlock performance, scale sustainably, and create lasting competitive advantage.
                 </span>
                 <div>
-                    <Link to="/about#team" className="btn-dark">
-                        <span>Meet our Team</span> <ArrowForward/>
-                    </Link>
+                    <Button to="/about#team">Meet our Team</Button>
                 </div>
             </div>
             <img className="sec-2" src={Photo1} alt=""/>
@@ -125,9 +122,7 @@ function Home(){
                 ))}
             </div>
             <div className="end">
-                <Link to="/insights" className="btn-dark">
-                    <span>Visit our Insights Page</span> <ArrowForward/>
-                </Link>
+                <Button to="/insights">Visit our Insights Page</Button>
             </div>
         </section>
         <CTA1/>

@@ -4,20 +4,20 @@
     top: 0;
     left: 0;
     right: 0;
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: var(--nav-height);
     background-color: rgba(45, 45, 45, 0.87);
-    grid-template-columns: 1fr auto 1fr;
-    padding: 0 max(0px, calc((100% - 1440px) / 2));
+    padding: 0 max(80px, calc((100% - 1440px) / 2 + 80px));
     box-sizing: border-box;
     z-index: 20;
 
     .nav-logo{
-        padding: 5px 40px;
         display: flex;
         align-items: center;
         img{
-            height:40px;
+            height: 32px;
         }
     }
 
@@ -25,7 +25,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap:28px;
+        gap:32px;
         position: relative;
         a{
             text-decoration: none;
@@ -43,24 +43,6 @@
         .active:hover{
             color: #ffffff;
         }
-
-    /*    */
-
-
-    }
-
-    .nav-a{
-        display: flex;
-        align-items: center;
-        padding: 0 40px;
-        a{
-            margin-left: auto;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            background-color: #F68E1E;
-            padding: 14px 18px;
-        }
     }
 
     .service-hover{
@@ -71,61 +53,87 @@
         left: 0;
         min-height: 100px;
         z-index: 10;
-        padding: 30px max(100px, calc((100% - 1240px) / 2));
+        padding: 20px max(80px, calc((100% - 1440px) / 2 + 80px)) 24px;
         box-sizing: border-box;
+        border: 1px solid #e9eaeb;
+        box-shadow: 0px 12px 16px -4px rgba(10,13,18,0.08),
+                    0px 4px 6px -2px rgba(10,13,18,0.03),
+                    0px 2px 2px -1px rgba(10,13,18,0.04);
 
         .service-title{
-            /* keeps the spacing it had as a paragraph */
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 24px;
             div{
-                margin: 1em 0;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
             }
             h3{
                 all: unset;
                 display: block;
-                font-size: 20px;
-                font-weight: bold;
-                color: #2A2A2A;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+                color: #181d27;
             }
             span{
-                font-size: 15px;
-                color: #5B666F;
+                font-size: 14px;
+                line-height: 20px;
+                color: #535862;
             }
         }
 
         .service-links-container{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 45px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
             div{
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                padding-right: 16px;
+                border-right: 1px solid #e9eaeb;
                 h2{
                     all: unset;
                     color: #F68E1E;
-                    font-weight: bold;
+                    font-weight: 700;
                     font-size: 18px;
+                    line-height: 28px;
+                    max-width: 280px;
                 }
                 ul{
                     all:unset;
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
-                    padding: 10px 0;
+                    gap: 20px;
                     li{
                         list-style: none;
                         a{
                             text-decoration: none;
                             color: #535862;
                             font-size: 14px;
+                            font-weight: 400;
+                            line-height: 20px;
                             display: flex;
                             justify-content: space-between;
+                            gap: 8px;
 
                             .arrow{
                                 font-size: 18px;
                                 color: #F68E1E;
-
                             }
                         }
                     }
                 }
+            }
+            div:last-child{
+                border-right: none;
+                padding-right: 0;
+            }
+            div:nth-child(3) h2{
+                max-width: 260px;
             }
         }
     }

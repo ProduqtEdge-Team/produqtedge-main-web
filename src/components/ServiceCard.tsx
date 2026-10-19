@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import {ArrowForward} from "@mui/icons-material";
+import Button from "./Button.tsx";
 import "../css/ServiceCard.css"
 
 // grey card with a photo, blurb and list of links, used on /services and each category page
@@ -18,7 +19,7 @@ function ServiceCard({title, path, content, links, more}: {title:string, path:st
                     ))}
                 </div>
                 <div>
-                    <Link to={more} className="btn-outline">View more</Link>
+                    <Button to={more} variant="outline">View more</Button>
                 </div>
             </div>
         </div>

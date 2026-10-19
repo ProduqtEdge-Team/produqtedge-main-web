@@ -1,6 +1,5 @@
 import {Diamond} from "./Diamond.tsx";
-import {Link} from "react-router-dom";
-import {ArrowForward} from "@mui/icons-material";
+import Button from "./Button.tsx";
 import "../css/HPM.css"
 import {ctas} from "../js/cta.ts";
 
@@ -34,9 +33,7 @@ function CTA1(){
             <h2>Have a project in mind?</h2>
             <span>Let's build the right strategy together.</span>
             <div>
-                <Link to="">
-                    <span>Start a Conversation</span> <ArrowForward/>
-                </Link>
+                <Button to="" variant="orange">Start a Conversation</Button>
             </div>
         </div>
 
@@ -50,7 +47,7 @@ function CTA2(){
                 <h2>{cta.title}</h2>
                 <span>{cta.content}</span>
                 <div>
-                    <Link to={cta.path} className="btn-dark">{cta.button}</Link>
+                    <Button to={cta.path}>{cta.button}</Button>
                 </div>
             </div>
         ))}

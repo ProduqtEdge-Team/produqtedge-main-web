@@ -40,10 +40,6 @@ function NavBar() {
             }
         </div>
 
-       <div className="nav-a">
-           <Link to="" >Book a discovery call</Link>
-       </div>
-
     {/*    services hover*/}
 
         <div className="service-hover" style={{display: Hovered ? "block" : "none"}}>
