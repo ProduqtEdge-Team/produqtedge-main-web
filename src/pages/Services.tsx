@@ -7,7 +7,7 @@ import heroBackground from "../images/Frame 2147223898.png"
 import Philosophy from "../images/philosophy-visual.png"
 import Leadership from "../images/Consulting team.png"
 import Why from "../images/new-images/why-choose-us.png"
-import {categories, inCategory, philosophy, reasons, toLinks} from "../js/services.ts";
+import {categories, inCategory, leadership, philosophy, reasons, toLinks} from "../js/services.ts";
 function Services(){
     return <div>
         <NavBar/>
@@ -52,7 +52,7 @@ function Services(){
                 <i className="circle"></i>
             </div>
             <div className="action">
-                <Button to="">Learn more</Button>
+                <Button to={leadership.to}>Learn more</Button>
             </div>
         </section>
         <section className="services-why">
