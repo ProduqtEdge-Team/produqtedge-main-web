@@ -13,8 +13,10 @@ import Factorex from "../images/factorex-logo.png"
 //   thumb   - image on the Home cards, falls back to path
 //   service - "Related Consulting service" in the article sidebar
 //   article - sections of the article, wrap text in **double stars** to make it bold
+//             content is paragraphs, a {points} block in between comes out as a bullet list, numbered when ordered is set
+export type Block = string | {points:string[], ordered?:boolean}
 export type CaseStudy = {slug:string, name:string, logo:string, path:string, thumb?:string, title:string, heading?:string,
-    blurb:string, service:string, article:{title:string, content:string[]}[]}
+    blurb:string, service:string, article:{title:string, content:Block[]}[]}
 
 export const caseStudies: CaseStudy[] =[
     {slug:"lendsqr", name:"Lendsqr", logo:Lendsqr, path:Waves, thumb:Card2,
@@ -48,13 +50,79 @@ export const caseStudies: CaseStudy[] =[
                 "ProduqtEdge's involvement in Lendsqr's development played a key role in setting up the frameworks that enabled this growth trajectory, including market validation, product governance, and scaling strategies.",
             ]},
         ]},
-    // header only until their article text comes in
     {slug:"ebanqo", name:"eBanqo", logo:Ebanqo, path:Waves, thumb:Card2,
         title:"Boosting eBanqo's Product Management and Productivity with Agile Transformation",
-        blurb:"", service:"", article:[]},
+        blurb:"ProduqtEdge’s transformation of eBanqo drove a 40% boost in productivity and enhanced product adoption, fueling an impressive 300% year-over-year revenue growth.",
+        service:"Growth", article:[
+            {title:"Overview", content:["eBanqo is a forward-thinking technology company specializing in customer engagement through its omni-channel digital platform. Their services allow businesses to integrate customer touchpoints such as social media chat platforms (Facebook Messenger, WhatsApp, Twitter), in-app chat, and other customer interaction channels. By enabling seamless and consistent customer engagement across multiple platforms, eBanqo helps organizations lower overheads, improve customer service, and increase user satisfaction."]},
+            {title:"The Opportunity", content:[
+                "The company needed to maximise the productivity of their lean team by introducing standardised product management processes to help them ship better products and respond to the market faster. Some of the key needs they had identified included a better way to develop and manage products, improve team performance, boost overall productivity, achieve better time to market and customer satisfaction. Despite the company’s vastly experienced technology team, the company’s leadership identified key issues that hindered their ability to scale effectively including:",
+                {points:[
+                    "the absence of a structured product management framework,",
+                    "miscommunication and delays due to the product and development teams often working in silos,",
+                    "delays and rework in product development cycles due to gaps in product discovery,",
+                    "inefficient use of resources resulting in low productivity and slow delivery,",
+                    "slow and debilitating onboarding which had started extending to sales and pipeline conversion.",
+                ]},
+                "Naturally, without clearly defined processes and expectations, it was difficult to measure and manage performance of the product and technology teams which also impacted the company’s ability to scale as quickly as was required to keep ahead of the market.",
+            ]},
+            {title:"The Solution", content:[
+                "ProduqtEdge was well suited to work with the company’s leadership to develop a product management practice governed by well-defined processes to help the company achieve team efficiency and scalability. We defined strategic goals and expected outcomes from the engagement.",
+                {ordered:true, points:[
+                    "Increase productivity by reducing process wastes leading to defects, rework and overprocessing by at least 50%",
+                    "Improve discovery process and reduce onboarding timelines by at least 50%",
+                    "Reduce time to market for new features",
+                    "Improve standardization across products and features by improving discovery processes, documentation and templates",
+                    "Improve product operations and customer success",
+                ]},
+                "As always, we started with an in-depth discovery phase that involved engaging and observing employees and customers to identify key pain points and opportunities for improvement. Leveraging the insights from the discovery phase, we were able to identify the gaps and root causes. A key part of the discovery process involved conducting secondary research to analyse customer personas, competitive landscape and other key aspects of the market to identify underlying issues around customer satisfaction, product adoption, and market share. This assessment helped us tailor our recommendations and execution to meet the specific needs of the organization in line with the agreed upon strategic goals.",
+                "Key outputs from the engagement included:",
+                {points:[
+                    "Definition of processes (SOPs) and handshakes required for key actions such as new feature development, customer discovery, onboarding etc",
+                    "Definition of documentation requirements and templates for key events such as feature specification, release documentation etc",
+                    "Introduction of a product governance framework defining processes and rituals to guide the product team, manage delivery and guide performance management",
+                ]},
+                "We also introduced a comprehensive governance framework that provided clear guidance on how to build products that created value for eBanqo’s customers. This framework was designed to ensure that product development aligned with customer needs, while also providing the structure necessary to manage resources effectively and optimize team collaboration.",
+                "A critical component of the solution was coaching eBanqo’s product and development teams on the defined structures and processes. By focusing on continuous discovery and iterative development, the teams were able to become more efficient in delivering high-quality products that met customer expectations.",
+            ]},
+            {title:"The Impact", content:[
+                "The transformation led by ProduqtEdge had a profound impact on eBanqo’s operations. By introducing agile practices and implementing a structured product management framework, we were able to achieve a **40%** increase in sprint productivity across both its product and development teams. The new governance framework provided the clarity and direction needed to build products that created tangible value for customers, resulting in higher product adoption rates and improved customer satisfaction.",
+                "eBanqo has emerged as a significant player in the customer engagement solutions sector, demonstrating impressive growth and a strong market presence. The company's remarkable revenue growth of approximately **300%** year-over-year highlights the increasing demand for effective customer engagement solutions in today's digital era. Businesses are continually seeking innovative ways to connect with their customers, and eBanqo has risen to meet this challenge.",
+                "eBanqo continues to improve and grow, and with a successful raise of **$1 million** in seed funding, the company continues to actively explore opportunities in international markets, positioning itself for continued expansion and influence in the customer engagement landscape. Their investment in streamlining internal processes to drive product leadership and improve customer success has helped them scale their operations very quickly to support the growth.",
+            ]},
+        ]},
     {slug:"onecard", name:"OneCard", logo:OneCard, path:Waves, thumb:Card1,
         title:"Optimising OneCard's Product and Process Efficiency",
-        blurb:"", service:"", article:[]},
+        blurb:"ProduqtEdge partnered with OneCard to transform its operations into a more efficient, data-driven, and collaborative environment.", service:"Growth", article:[
+            {title:"Overview", content:[
+                "OneCard Nigeria, a leading technology company founded in 2012, provides innovative solutions for topping up essential services like mobile airtime, pay-TV, toll passes, and electricity. Known for its products such as the One1Card and MyTopUp Business, OneCard has helped simplify recharges for both individuals and businesses. However, despite these advancements, the company struggled with operational inefficiencies and cultural challenges that limited its ability to scale and consistently deliver the high level of service its customers deserved.",
+            ]},
+            {title:"The Opportunity", content:[
+                "OneCard sought to optimize its operations to achieve better efficiency, improve customer satisfaction, and enhance its competitive advantage. The company faced several challenges, including:",
+                {ordered:true, points:[
+                    "**Poor Process Automation:** Many processes were manual, leading to delays, errors, and inefficiencies.",
+                    "**Lack of Ownership and Accountability:** Employees often lacked urgency, with limited engagement across teams.",
+                    "**Data Deficiencies:** Insufficient data collection and analysis made it difficult to track transaction trends, predict customer behavior, and address system failures effectively.",
+                    "**Poor Collaboration and Communication:** Teams operated in silos, often shifting blame, which hindered cross-functional alignment.",
+                    "**Product Delivery Issues:** Delays and defects in product requests slowed time-to-market and reduced quality.",
+                    "**Documentation Gaps:** Weak documentation practices posed risks to business continuity and increased dependency on specific individuals.",
+                ]},
+                "These issues created an opportunity to revamp processes, align teams, and leverage technology to enhance OneCard's operational efficiency and customer-centric focus.",
+            ]},
+            {title:"The Solution", content:[
+                "ProduqtEdge partnered with OneCard to transform its operations into a more efficient, data-driven, and collaborative environment. The journey began with a deep dive into OneCard’s existing processes to uncover inefficiencies and areas for improvement.",
+                "To tackle these challenges, ProduqtEdge redesigned workflows and introduced automation, cutting down errors and speeding up delivery times. Leveraging data was a key component of the strategies we deployed to help OneCard achieve operational efficiency through improved KPI definition and performance management, improve customer acquisition and retention, and manage product and technology issues, amongst others.",
+                "Team collaboration saw a major boost with frameworks designed to break down silos and promote open communication. Clear performance indicators and a recognition system were introduced to build accountability and keep employees motivated.",
+                "For product and feature development, governance frameworks were implemented to reduce defects and enable faster, high-quality releases. To ensure knowledge continuity and reduce dependency on key individuals, knowledge-sharing sessions and a shared repository were established, fostering a culture of learning and growth across teams.",
+            ]},
+            {title:"The Impact", content:[
+                "The transformation brought noticeable improvements to how OneCard operates. Automating key processes made the company more efficient, cutting down delays and saving costs. With a better data strategy in place, OneCard could now make smarter decisions, anticipate customer needs, and fix system issues before they became bigger problems.",
+                "Employees became more engaged and responsible, thanks to clear goals and a reward system that recognized their hard work. Product development also got a boost, with faster delivery times and better quality, showing customers that OneCard is serious about meeting their expectations.",
+                "Teamwork across the company improved as communication barriers were broken down, creating a more collaborative and connected work environment. By introducing knowledge-sharing practices, OneCard reduced its dependence on specific individuals, ensuring smooth operations even when there were personnel changes.",
+                "With ProduqtEdge’s support, OneCard tackled its challenges head-on, laying a solid foundation for future growth. Aligning its processes, people, and technology allowed the company to improve customer satisfaction, work more efficiently, and strengthen its position as a top recharge and payment solutions provider in Nigeria.",
+            ]},
+        ]},
+    // header only until its article text comes in
     {slug:"factorex", name:"FACTOReX", logo:Factorex, path:Waves,
         title:"Driving FACTOReX Product Development and Launch",
         blurb:"", service:"", article:[]},

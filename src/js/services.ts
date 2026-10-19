@@ -145,6 +145,9 @@ export const services: Service[] =[
         path:Market, content:categories[2].content, links:market, summary, intro:[], cases:[]},
 ]
 
+// leadership has no page of its own yet, so its links open /services
+export const leadership = {title:"Leadership Coaching & Capacity Development", to:"/services"}
+
 export const servicePath = (service: Service) => `/services/${service.category}/${service.slug}`
 
 export const inCategory = (slug: string) => services.filter((service) => service.category === slug)

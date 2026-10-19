@@ -18,7 +18,8 @@ function CaseStudyArticle(){
     if (!study) return <Navigate to="/case-studies" replace/>
 
     // about 200 words a minute
-    const words = study.article.flatMap((section) => section.content).join(" ").split(/\s+/).length
+    const words = study.article.flatMap((section) => section.content)
+        .flatMap((block) => typeof block === "string" ? block : block.points).join(" ").split(/\s+/).length
     const minutes = Math.max(1, Math.round(words / 200))
 
     return <div>
@@ -37,9 +38,12 @@ function CaseStudyArticle(){
                 {study.article.map((section, i) =>(
                     <div key={i}>
                         <h2>{section.title}</h2>
-                        {section.content.map((paragraph, j) =>(
-                            <p key={j}>{bold(paragraph)}</p>
-                        ))}
+                        {section.content.map((block, j) => typeof block === "string"
+                            ? <p key={j}>{bold(block)}</p>
+                            : block.ordered
+                                ? <ol key={j}>{block.points.map((point, k) => <li key={k}>{bold(point)}</li>)}</ol>
+                                : <ul key={j}>{block.points.map((point, k) => <li key={k}>{bold(point)}</li>)}</ul>
+                        )}
                     </div>
                 ))}
             </div>

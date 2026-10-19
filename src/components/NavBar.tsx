@@ -4,6 +4,7 @@ import Logo from "../images/long-logo.png";
 import "../css/navbar.css"
 import {useState} from "react";
 import {ArrowForward} from "@mui/icons-material";
+import {categories, inCategory, leadership, toLinks} from "../js/services.ts";
 function NavBar() {
     const mobile = useIsMobile()
     const [Hovered, setHovered] = useState(false);
@@ -13,16 +14,10 @@ function NavBar() {
         {title:"Insights", route:"/insights"},
         {title:"Careers", route:"/careers"}]
 
+    // every service in services.ts
     const servHover =[
-        {title:"Advisory, Transformation & Growth",
-            content:["Product Audit & Advisory","Product Strategy Advisory","Customer Journey Optimization","Product Development & PMaas","Product Led transformation","Product Led Growth"]},
-        {title:"Operational Excellence & Digital Transformation",
-            content:["Business Process Optimization","Digital Transformation"]},
-        {title:"Market & Investment Intelligence",
-            content:["Market Intelligence & Market Entry Support","Investor Validation & Startup Due Diligence"]},
-        {title:"Leadership Coaching & Capacity Development",
-            content:["Leadership Coaching & Capacity Development"]},
-
+        ...categories.map((category) => ({title:category.title, content:toLinks(inCategory(category.slug))})),
+        {title:leadership.title, content:[leadership]},
     ]
     const mobileNav = <div>
         Mobile
@@ -53,10 +48,10 @@ function NavBar() {
 
         <div className="service-hover" style={{display: Hovered ? "block" : "none"}}>
             <div className="service-title">
-                <p>
+                <div>
                     <h3>Services</h3>
                     <span>Find your starting point</span>
-                </p>
+                </div>
             </div>
             <div className="service-links-container">
                 {
@@ -66,7 +61,7 @@ function NavBar() {
                             <h2>{item.title}</h2>
                             <ul>
                                 {item.content.map((link, j) =>(
-                                    <li key={j}><Link to="/services"> <span>{link}</span> <ArrowForward className="arrow"/> </Link></li>
+                                    <li key={j}><Link to={link.to} onClick={() => setHovered(false)}> <span>{link.title}</span> <ArrowForward className="arrow"/> </Link></li>
                                 ))}
                             </ul>
                         </div>

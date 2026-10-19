@@ -8,11 +8,17 @@ import DiaHeader from "../components/DiaHeader.tsx";
 import Photo1 from "../images/Photo1.png"
 import {useState} from "react";
 import {CTA1} from "../components/HPM.tsx";
-import {insights, services, testimonials} from "../js/home.ts";
+import {insights, recentProjects, testimonials} from "../js/home.ts";
 import {caseStudies} from "../js/caseStudies.ts";
+import {categories, leadership} from "../js/services.ts";
 function Home(){
     const [Slide, setSlide] = useState(0);
     const testimonial = testimonials[Slide]
+
+    // each category opens its own page, leadership goes to /services
+    const serviceLinks = [...categories.map((category) => ({title:category.title, to:`/services/${category.slug}`})), leadership]
+    const projects = caseStudies.filter((study) => recentProjects.includes(study.slug))
+        .sort((a, b) => recentProjects.indexOf(a.slug) - recentProjects.indexOf(b.slug))
 
     return <div>
         <NavBar/>
@@ -20,9 +26,11 @@ function Home(){
 
             <div className="hero-body">
                 <div className="sec-1">
-                    <span></span>
-                    <h1 className="">
-                        We Transform <br/> Product and Businesses for Sustainable Growth
+                    <span className="steps">
+                        Strategy <ArrowForward className="arrow"/> Execution <ArrowForward className="arrow"/> Growth
+                    </span>
+                    <h1>
+                        We Transform <br/> Products and Businesses <br/> for Sustainable Growth
                     </h1>
                 </div>
                 <div className="sec-2">
@@ -33,111 +41,70 @@ function Home(){
             </div>
         </section>
         <section className="home-services">
-            <div className="p-1">
-                <div className="sec-1">
-                    <DiaHeader content="What we do"/>
-                    <h2>
-                        Our services
-                    </h2>
-                </div>
-                <p className="sec-2">
-                    <span>
-                        We partner with teams to solve complex challenges, delivering strategies and solutions that create real impact. Each project reflects our focus on clarity, performance, and growth.
-                    </span>
-                    <Link to="/services">View Our Services</Link>
-                </p>
-            </div>
-            <div className="p-2">
-                <div className="sec-1" style={{backgroundImage: `url(${CA})`}} >
-                </div>
-                <div className="sec-2">
-                    {services.map((service, i) =>(
-                        <Link to="/" key={i}>
-                            <div>
-                                <h3>{service.title}</h3>
-                                <span>{service.content}</span>
-                            </div>
-
-                            <ArrowForward className="arrow"/>
-
+            <div className="sec-1">
+                <h2>Our Services</h2>
+                <span className="blurb">
+                    We partner with teams and organisations to solve complex challenges, delivering strategies and solutions that create real impact. Each project reflects our focus on uniqueness, clarity, performance transformation, and growth.
+                </span>
+                <div className="list">
+                    {serviceLinks.map((link, i) =>(
+                        <Link to={link.to} key={i}>
+                            <span>{link.title}</span> <ArrowForward className="arrow"/>
                         </Link>
                     ))}
                 </div>
-            </div>
-        </section>
-        <section className="home-projects">
-            <div className="sec-1">
-                <div style={{display:'flex', alignItems:'start'}}>
-                    <DiaHeader content="Selected work"/>
-
-                </div>
-                <h2>
-                    Some of our recent projects
-                </h2>
-                <div className="end">
-                    <Link to="/case-studies" className="btn-dark">
-                       <span>Learn More</span> <ArrowForward/>
+                <div>
+                    <Link to="/services" className="btn-orange">
+                        <span>View More</span> <ArrowForward/>
                     </Link>
                 </div>
             </div>
+            <img className="sec-2" src={CA} alt=""/>
+        </section>
+        <section className="home-projects">
+            <h2>Some of Our Recent Projects</h2>
             <div className="sec-2">
-                {
-                    caseStudies.slice(0, 3).map((study, i) =>(
-                        <Link to={`/case-studies/${study.slug}`} key={i}>
-                            <DiaHeader content={study.name}/>
-                            <img src={study.thumb ?? study.path} alt=""/>
-                            <h3>{study.title}</h3>
-                        </Link>
-                    ))
-                }
+                {projects.map((study, i) =>(
+                    <Link to={`/case-studies/${study.slug}`} key={i}>
+                        <DiaHeader content={study.name}/>
+                        <img src={study.thumb ?? study.path} alt=""/>
+                        <h3>{study.title}</h3>
+                    </Link>
+                ))}
             </div>
-
-            <span className="end">We combine strategic thinking with practical execution to help businesses move forward with confidence and long-term impact.</span>
+            <div className="end">
+                <Link to="/case-studies" className="btn-dark">
+                    <span>View Past Projects</span> <ArrowForward/>
+                </Link>
+            </div>
         </section>
         <section className="home-testimonials">
-            <div className="sec-1">
-                <div>
-                    <DiaHeader content="Client Stories"/>
-                    <h2>
-                        Real Impact, Real <br/> Feedback
-                    </h2>
-                </div>
-                <span className="blurb">
-                    We partner with businesses to deliver clear strategies and measurable results. Hear what our clients say about working with produqtedge.
-                </span>
-            </div>
+            <h2>Some Feedback from Our Clients</h2>
             {testimonial && <div className="sec-2">
                 <img src={testimonial.path} alt={testimonial.name}/>
                 <div className="testimonial">
                     <span className="title">{testimonial.title}</span>
-                    <h3>"{testimonial.content}"</h3>
-                    <div className="end">
-                        <p>
-                            <span className="name">&mdash; {testimonial.name}</span>
-                            <span className="role">{testimonial.role}</span>
-                        </p>
-                        <div className="controls">
-                            <button type="button" onClick={() => setSlide((Slide - 1 + testimonials.length) % testimonials.length)}><ArrowBack/></button>
-                            <button type="button" onClick={() => setSlide((Slide + 1) % testimonials.length)}><ArrowForward/></button>
-                        </div>
-                    </div>
+                    <span className="quote">{testimonial.content}</span>
+                    <span className="name">&mdash; {testimonial.name}</span>
+                    <span className="role">{testimonial.role}</span>
                 </div>
             </div>}
+            <div className="controls">
+                <button type="button" aria-label="Previous" onClick={() => setSlide((Slide - 1 + testimonials.length) % testimonials.length)}><ArrowBack/></button>
+                <button type="button" aria-label="Next" onClick={() => setSlide((Slide + 1) % testimonials.length)}><ArrowForward/></button>
+            </div>
         </section>
-        <section className="home-unique">
+        <section className="home-about">
             <div className="sec-1">
-                <DiaHeader content="What makes us unique"/>
-                <h2>
-                    Strategy is easy. We're <br/> here for the rest.
-                </h2>
-                <span className="body">
-                    At <b>ProduqtEdge</b>, we believe sustainable growth happens when strategy, products, operations, and technology work together. Sitting at the intersection of people, product and process, we incorporate our market and industry experience, technical know-how through tested and trusted delivery methods and strategies to help organisations successfully deliver value, find product-market fit, grow their products while ensuring the corresponding scale is achieved for internal processes.
+                <h2>Who We Are</h2>
+                <span>
+                    At <b>ProduqtEdge</b>, we believe that sustainable growth happens when strategy, products, operations, and technology work together. Sitting at the intersection of people, product and process, we incorporate our market and industry experience, technical know-how through tested and trusted delivery methods and strategies to help organisations successfully deliver value, find product-market fit, grow their products while ensuring the corresponding scale is achieved for internal processes.
                 </span>
-                <span className="sub">
+                <span>
                     We combine product-led thinking, digital transformation, operational excellence, and growth strategy to help businesses unlock performance, scale sustainably, and create lasting competitive advantage.
                 </span>
                 <div>
-                    <Link to="" className="btn-dark">
+                    <Link to="/about#team" className="btn-dark">
                         <span>Meet our Team</span> <ArrowForward/>
                     </Link>
                 </div>
@@ -145,17 +112,8 @@ function Home(){
             <img className="sec-2" src={Photo1} alt=""/>
         </section>
         <section className="home-insights">
-            <div className="sec-1">
-                <div>
-                    <DiaHeader content="Featured insights"/>
-                    <h2>
-                        What the work <br/> teaches us.
-                    </h2>
-                </div>
-                <span className="blurb">
-                    Explore our research, insights, and examples of real client impact, designed to help you embrace the key forces of change and get to value faster.
-                </span>
-            </div>
+            <h2>Featured Insights</h2>
+            <span className="blurb">Some curated articles and lessons from our project experience.</span>
             <div className="sec-2">
                 {insights.map((insight, i) =>(
                     <Link to="" key={i}>
@@ -166,8 +124,8 @@ function Home(){
                 ))}
             </div>
             <div className="end">
-                <Link to="" className="btn-dark">
-                    <span>See all Works</span> <ArrowForward/>
+                <Link to="/insights" className="btn-dark">
+                    <span>Visit our Insights Page</span> <ArrowForward/>
                 </Link>
             </div>
         </section>

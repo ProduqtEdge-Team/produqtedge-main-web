@@ -109,6 +109,25 @@
                     color: #2A2A2A;
                 }
             }
+
+            ul, ol{
+                margin: 0 0 20px 0;
+                padding: 0 0 0 28px;
+
+                li{
+                    font-size: 15px;
+                    line-height: 1.75;
+                    text-align: justify;
+                    color: #3A4350;
+                    margin: 0 0 4px 0;
+                    padding: 0 0 0 4px;
+                }
+
+                b{
+                    font-weight: 600;
+                    color: #2A2A2A;
+                }
+            }
         }
 
         aside{

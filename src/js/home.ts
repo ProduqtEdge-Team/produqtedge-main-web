@@ -1,17 +1,13 @@
 import Card1 from "../images/Card1Image.png"
-import Photo1 from "../images/Photo1.png"
+import Folake from "../images/images_3_1.jpg"
 
-// Home page, "Our services" list
-export const services =[
-    {title:'Product Strategy & Growth', content:'Set product direction, build it properly and grow it on evidence.'},
-    {title:'Operations & Technology', content:'Fix how work moves, then decide where technology adds value.'},
-    {title:'Market & Investment Intelligence', content:'Test the market before you enter it, and the product before you fund it.'},
-    {title:'Leadership Coaching', content:'Build the product capability your teams keep after we leave.'},
-]
+// Home page, slugs of the case studies under "Some of Our Recent Projects"
+export const recentProjects =["onecard","ebanqo","lendsqr"]
 
-// "Client Stories" slider, add more and the arrows cycle through them
+// "Some Feedback from Our Clients" slider, add more and the arrows cycle through them
 export const testimonials =[
-    {title:"Startup Incubation for Lendsqr", path:Photo1, content:"Working with produqtedge brought a new level of clarity to our business. Their strategic approach helped us make better decisions and move forward with confidence.", name:"Rahim Ahmed", role:"Founder, Lendsqr"},
+    {title:"Strategic Advisory for Fuelmetrics Limited", path:Folake, name:"Folake Opanubi", role:"Head of Marketing, Fuelmetrics Limited",
+        content:"We engaged Produqt Edge in 2024 to conduct a system and product audit at a time when we needed an independent assessment of our systems, products and processes to identify gaps and uncover opportunities for improvement. I was particularly impressed by the attention to detail. They had their finger on the pulse of our products and operations, engaging the right stakeholders and digging deep to develop an in-depth understanding of our business before making their recommendations. What stood out even more was that, about six months later, they proactively checked in to evaluate our progress and even commended us on how quickly we had implemented their recommendations. Our experience with Produqt Edge was a valuable one and their manner of approach made the engagement particularly worthwhile."},
 ]
 
 export const insights =[

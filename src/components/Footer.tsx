@@ -32,27 +32,27 @@ export function Footer(){
             </div>
             <div>
                 <h3>STAY UPDATED</h3>
-                <p>
+                <div className="newsletter">
                     <span>Get insights on strategy, growth, and business thinking delivered to your inbox.</span>
                     <form>
                         <input type="text" placeholder="Enter your email"/>
                         <button type="button">Subscribe</button>
                     </form>
-                </p>
+                </div>
             </div>
         </div>
         <div className="sec-2">
-            <p>
+            <div>
                 <h3>SOCIALS</h3>
                 <span>
 
                 </span>
-            </p>
+            </div>
 
-            <p>
+            <div>
                 <h3>LOCATION</h3>
                 <span>Lagos, Abuja</span>
-            </p>
+            </div>
         </div>
         <div className="sec-3">
             <span className="left">All rights reserved &copy; ProduqtEdge Studio {new Date().getFullYear()} </span>

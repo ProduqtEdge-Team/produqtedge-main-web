@@ -3,7 +3,7 @@
     .cta-1{
         margin: 30px max(35px, calc((100% - 1370px) / 2)) 60px max(35px, calc((100% - 1370px) / 2));
         height: 375px;
-        background-color: #1E2023;
+        background-color: #0B2239;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         position: relative;
         overflow: hidden;
