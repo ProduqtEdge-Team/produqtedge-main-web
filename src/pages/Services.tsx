@@ -2,6 +2,7 @@ import NavBar from "../components/NavBar.tsx";
 import "../css/Services.css"
 import {CheckCircle} from "@mui/icons-material";
 import Button from "../components/Button.tsx";
+import SectionHeader from "../components/SectionHeader.tsx";
 import ServiceCard from "../components/ServiceCard.tsx";
 import heroBackground from "../images/Frame 2147223898.png"
 import Philosophy from "../images/philosophy-visual.png"
@@ -24,7 +25,7 @@ function Services(){
         </section>
         <section className="services-philosophy">
             <div className="sec-1">
-                <h2>Our Philosophy</h2>
+                <SectionHeader>Our Philosophy</SectionHeader>
                 {philosophy.map((paragraph, i) =>(
                     <span key={i}>{paragraph}</span>
                 ))}
@@ -32,7 +33,7 @@ function Services(){
             <img className="sec-2" src={Philosophy} alt=""/>
         </section>
         <section className="services-categories">
-            <h2>Core Service Categories</h2>
+            <SectionHeader>Core Service Categories</SectionHeader>
             {categories.map((category, i) =>(
                 <ServiceCard key={i} title={category.title} path={category.path} content={category.content}
                              links={toLinks(inCategory(category.slug))}
@@ -40,7 +41,7 @@ function Services(){
             ))}
         </section>
         <section className="services-leadership">
-            <h2>Leadership Coaching & Capacity Development</h2>
+            <SectionHeader>Leadership Coaching & Capacity Development</SectionHeader>
             <div className="intro">
                 <h3>Build the leaders your organization needs to scale.</h3>
                 <span className="blurb">
@@ -57,7 +58,7 @@ function Services(){
         </section>
         <section className="services-why">
             <div className="sec-1">
-                <h2>Why Choose Produqtedge</h2>
+                <SectionHeader>Why Choose Produqtedge</SectionHeader>
                 <span className="blurb">
                     We are a product studio and consultancy built to help organisations reduce risk, execute with clarity, and achieve measurable outcomes across every stage of the product and innovation journey.
                 </span>

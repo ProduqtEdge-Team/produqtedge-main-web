@@ -4,7 +4,8 @@ import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import {ArrowForward, ImageOutlined} from "@mui/icons-material";
 import Button from "../components/Button.tsx";
-import {CTA2} from "../components/HPM.tsx";
+import SectionHeader from "../components/SectionHeader.tsx";
+import CallToAction from "../components/CallToAction.tsx";
 import {capability, categories, inCategory, servicePath, services} from "../js/services.ts";
 
 function ServiceCategory(){
@@ -40,7 +41,7 @@ function ServiceCategory(){
             </div>
         </section>
         <section className="category-services">
-            <h2>The Services</h2>
+            <SectionHeader>The Services</SectionHeader>
             <div className="cards">
                 {inCategory(category.slug).map((service, i) =>(
                     <Link to={servicePath(service)} className="card" key={i}>
@@ -53,7 +54,7 @@ function ServiceCategory(){
             </div>
         </section>
         <section className="category-start">
-            <h2>{category.start.title}</h2>
+            <SectionHeader>{category.start.title}</SectionHeader>
             <span className="blurb">{category.start.content}</span>
             <div className="rows">
                 {category.start.rows.map((row, i) => {
@@ -67,7 +68,7 @@ function ServiceCategory(){
             </div>
         </section>
         <section className="category-fit">
-            <h2>{fit.title}</h2>
+            <SectionHeader>{fit.title}</SectionHeader>
             <div className="body">
                 {/* stays a grey box until the photo for it is supplied */}
                 <div className="placeholder">
@@ -100,7 +101,7 @@ function ServiceCategory(){
         </section>
         <section className="category-other">
             <div className="sec-1">
-                <h2>Other Service Areas</h2>
+                <SectionHeader>Other Service Areas</SectionHeader>
                 <Link to="/services">All services</Link>
             </div>
             <div className="cards">
@@ -113,7 +114,7 @@ function ServiceCategory(){
                 ))}
             </div>
         </section>
-        <CTA2/>
+        <CallToAction/>
     </div>
 }
 

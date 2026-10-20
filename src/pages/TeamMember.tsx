@@ -4,7 +4,7 @@ import {Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import {FormatQuote} from "@mui/icons-material";
 import Button from "../components/Button.tsx";
-import {CTA2} from "../components/HPM.tsx";
+import CallToAction from "../components/CallToAction.tsx";
 import {team} from "../js/team.ts";
 
 function TeamMember(){
@@ -40,7 +40,7 @@ function TeamMember(){
                 <Button to={member.linkedin} variant="outline" external>LinkedIn</Button>
             </div>
         </section>
-        <CTA2/>
+        <CallToAction/>
     </div>
 }
 

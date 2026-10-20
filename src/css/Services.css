@@ -1,7 +1,7 @@
 @media (min-width:768px) {
 
     .services-hero{
-        padding: calc(var(--nav-height) + 30px) var(--gutter) 0 var(--gutter);
+        padding: calc(var(--nav-height) + 50px) var(--gutter) 50px var(--gutter);
 
         .sec-1{
             aspect-ratio: 16 / 9;
@@ -42,7 +42,7 @@
     }
 
     .services-philosophy{
-        padding: 100px var(--gutter) 50px var(--gutter);
+        padding: 50px var(--gutter);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
@@ -78,6 +78,9 @@
 
     .services-categories{
         padding: 50px var(--gutter);
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
 
         h2{
             all: unset;
@@ -88,6 +91,11 @@
             margin: 0 0 40px 0;
         }
 
+        /* zero out the per-card bottom margin so the flex gap is the only spacing */
+        > .service-card{
+            margin: 0;
+        }
+
         /* second card (Operational Excellence) has its image on the right */
         > .service-card:nth-of-type(2) .body img{
             order: 2;
@@ -95,7 +103,7 @@
     }
 
     .services-leadership{
-        padding: 80px var(--gutter) 50px var(--gutter);
+        padding: 50px var(--gutter);
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -157,38 +165,11 @@
         .action{
             display: flex;
             justify-content: center;
-
-            .btn-dark{
-                background-color: #222;
-                color: #ffffff;
-                font-size: 18px;
-                font-weight: 600;
-                line-height: 26px;
-                height: 58px;
-                padding: 0 40px;
-                box-sizing: border-box;
-                justify-content: center;
-
-                span{
-                    color: #ffffff;
-                    display: inline-flex;
-                    align-items: center;
-                    line-height: 1;
-                }
-
-                svg{
-                    display: flex;
-                    align-self: center;
-                    width: 14px;
-                    height: 14px;
-                    font-size: 14px;
-                }
-            }
         }
     }
 
     .services-why{
-        padding: 90px var(--gutter) 80px var(--gutter);
+        padding: 50px var(--gutter);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
@@ -332,9 +313,16 @@
 
     .services-categories{
         padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
 
         h2{
             margin: 0 0 24px 0;
+        }
+
+        > .service-card{
+            margin: 0;
         }
     }
 

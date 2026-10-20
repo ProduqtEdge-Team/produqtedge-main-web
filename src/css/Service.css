@@ -1,7 +1,7 @@
 @media (min-width:768px) {
 
     .service-head{
-        padding: calc(var(--nav-height) + 64px) var(--gutter) 0 var(--gutter);
+        padding: calc(var(--nav-height) + 50px) var(--gutter) 50px var(--gutter);
         display: grid;
         grid-template-columns: 501px 1fr;
         gap: 80px;
@@ -32,7 +32,7 @@
     }
 
     .service-questions{
-        padding: 100px var(--gutter) 0 var(--gutter);
+        padding: 50px var(--gutter);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
@@ -80,8 +80,6 @@
                 align-self: flex-start;
                 border-color: #535862;
                 color: #535862;
-                font-size: 16px;
-                padding: 8px 24px;
             }
         }
 
@@ -93,7 +91,7 @@
     }
 
     .service-approach, .service-work{
-        padding: 100px var(--gutter) 0 var(--gutter);
+        padding: 50px var(--gutter);
         display: grid;
         gap: 40px;
 
@@ -203,7 +201,7 @@
     }
 
     .service-different{
-        padding: 100px var(--gutter) 0 var(--gutter);
+        padding: 50px var(--gutter);
 
         .panel{
             background-color: #052239;
@@ -223,6 +221,13 @@
                 color: #F68E1E;
             }
 
+            /* 40px between "What makes us different" heading and the body text */
+            .sec-1{
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+
             .sec-1 span{
                 display: block;
                 font-size: 32px;
@@ -236,11 +241,14 @@
                 align-self: start;
                 padding: 0 0 50px 30px;
                 border-left: 1px solid rgba(255, 255, 255, 0.5);
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
 
                 span{
                     display: block;
-                    font-size: 16px;
-                    line-height: 1.85;
+                    font-size: 32px;
+                    line-height: 1.4;
                     color: rgba(255, 255, 255, 0.85);
                 }
             }
@@ -275,7 +283,7 @@
     }
 
     .service-cases{
-        padding: 100px var(--gutter) 0 var(--gutter);
+        padding: 50px var(--gutter);
 
         h2{
             all: unset;
@@ -321,7 +329,7 @@
             }
         }
 
-        /* "View more" primary button — matches CTA2 button spec so both primaries line up */
+        /* "View more" primary button — matches CallToAction button spec so both primaries line up */
         > div:has(> .btn-dark){
             display: flex;
             justify-content: center;
@@ -420,6 +428,11 @@
                 color: #ffffff;
             }
 
+            /* override the shared SectionHeader colour on this dark card */
+            .section-header{
+                color: #ffffff !important;
+            }
+
             .points li{
                 color: rgba(255, 255, 255, 0.9);
 
@@ -462,7 +475,7 @@
 
     /* numbered 01-04 cards (Leadership), the last one dark */
     .service-steps{
-        padding: 100px var(--gutter) 0 var(--gutter);
+        padding: 50px var(--gutter);
 
         h2{
             all: unset;
@@ -858,6 +871,10 @@
 
             h2{
                 color: #ffffff;
+            }
+
+            .section-header{
+                color: #ffffff !important;
             }
 
             .points li{

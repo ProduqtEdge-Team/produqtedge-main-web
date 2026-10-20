@@ -1,7 +1,7 @@
 @media (min-width:768px) {
 
     .insights-head{
-        padding: calc(var(--nav-height) + 60px) var(--gutter) 50px var(--gutter);
+        padding: calc(var(--nav-height) + 50px) var(--gutter) 50px var(--gutter);
         background-color: #F8FAFC;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -85,7 +85,7 @@
     }
 
     .insights-none{
-        padding: 60px var(--gutter) 100px var(--gutter);
+        padding: 50px var(--gutter);
         background-color: #F8FAFC;
 
         span{
@@ -95,7 +95,7 @@
     }
 
     .insights-featured{
-        padding: 45px var(--gutter) 45px var(--gutter);
+        padding: 50px var(--gutter);
         background-color: #F8FAFC;
 
         .sec-1{
@@ -158,7 +158,7 @@
     }
 
     .insights-grid{
-        padding: 0 var(--gutter) 60px var(--gutter);
+        padding: 50px var(--gutter);
         background-color: #F8FAFC;
 
         .cards{

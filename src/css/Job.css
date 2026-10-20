@@ -1,7 +1,7 @@
 @media (min-width:768px) {
 
     .job-head{
-        padding: calc(var(--nav-height) + 40px) var(--gutter) 0 var(--gutter);
+        padding: calc(var(--nav-height) + 50px) var(--gutter) 50px var(--gutter);
 
         .back{
             display: inline-flex;
@@ -87,7 +87,7 @@
     }
 
     .job-body{
-        padding: 40px var(--gutter) 100px var(--gutter);
+        padding: 50px var(--gutter);
         display: grid;
         grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
         gap: 105px;

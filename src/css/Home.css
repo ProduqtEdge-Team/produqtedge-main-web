@@ -152,7 +152,7 @@
                 all: unset;
                 display: block;
                 font-size: 46px;
-                font-weight: 400;
+                font-weight: 500;
                 color: #2A2A2A;
                 margin: 0 0 30px 0;
             }
@@ -208,7 +208,7 @@
             all: unset;
             display: block;
             font-size: 46px;
-            font-weight: 400;
+            font-weight: 500;
             color: #2A2A2A;
             margin: 0 0 40px 0;
         }
@@ -267,14 +267,14 @@
     }
 
     .home-testimonials{
-        padding: 90px var(--gutter);
+        padding: 80px var(--gutter);
         background-color: #F9F8F5;
 
         h2{
             all: unset;
             display: block;
             font-size: 46px;
-            font-weight: 400;
+            font-weight: 500;
             color: #2A2A2A;
             margin: 0 0 40px 0;
         }
@@ -335,7 +335,7 @@
     }
 
     .home-about{
-        padding: 90px var(--gutter);
+        padding: 80px var(--gutter);
         display: grid;
         grid-template-columns: 1fr 1.35fr;
         gap: 70px;
@@ -349,7 +349,7 @@
                 all: unset;
                 display: block;
                 font-size: 46px;
-                font-weight: 400;
+                font-weight: 500;
                 color: #2A2A2A;
                 margin: 0 0 30px 0;
             }
@@ -381,13 +381,13 @@
     }
 
     .home-insights{
-        padding: 40px var(--gutter) 90px var(--gutter);
+        padding: 80px var(--gutter);
 
         h2{
             all: unset;
             display: block;
             font-size: 46px;
-            font-weight: 400;
+            font-weight: 500;
             color: #2A2A2A;
             margin: 0 0 20px 0;
         }

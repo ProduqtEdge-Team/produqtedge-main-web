@@ -1,7 +1,7 @@
 @media (min-width:768px) {
 
     .member-hero{
-        padding: calc(var(--nav-height) + 40px) var(--gutter) 50px var(--gutter);
+        padding: calc(var(--nav-height) + 50px) var(--gutter) 50px var(--gutter);
 
         h1{
             all: unset;
@@ -51,7 +51,7 @@
     }
 
     .member-bio{
-        padding: 30px var(--gutter) 40px var(--gutter);
+        padding: 50px var(--gutter);
 
         h3{
             all: unset;

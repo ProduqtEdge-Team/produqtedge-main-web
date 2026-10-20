@@ -1,7 +1,7 @@
 @media (min-width:768px) {
 
     .careers-hero{
-        padding: calc(var(--nav-height) + 30px) var(--gutter) 0 var(--gutter);
+        padding: calc(var(--nav-height) + 50px) var(--gutter) 50px var(--gutter);
 
         .sec-1{
             height: 380px;
@@ -44,7 +44,7 @@
     }
 
     .careers-join{
-        padding: 100px var(--gutter);
+        padding: 50px var(--gutter);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
@@ -69,7 +69,7 @@
     }
 
     .careers-place{
-        padding: 0 var(--gutter) 50px var(--gutter);
+        padding: 50px var(--gutter);
         display: grid;
         grid-template-columns: 1fr 1.2fr;
         gap: 80px;
@@ -115,7 +115,7 @@
     }
 
     .careers-positions{
-        padding: 70px var(--gutter) 70px var(--gutter);
+        padding: 50px var(--gutter);
         scroll-margin-top: var(--nav-height);
 
         h2{
@@ -233,7 +233,7 @@
     }
 
     .careers-cta{
-        padding: 30px var(--gutter) 60px var(--gutter);
+        padding: 50px var(--gutter);
 
         .sec-1{
             min-height: 520px;
@@ -262,6 +262,11 @@
                 font-weight: 500;
                 line-height: 1.25;
                 margin: 25px 0 30px 0;
+            }
+
+            /* override the shared SectionHeader colour: dark CTA photo needs white text */
+            .section-header{
+                color: #ffffff !important;
             }
 
             span{
@@ -505,6 +510,10 @@
                 font-weight: 500;
                 line-height: 1.25;
                 margin: 16px 0 20px 0;
+            }
+
+            .section-header{
+                color: #ffffff !important;
             }
 
             span{

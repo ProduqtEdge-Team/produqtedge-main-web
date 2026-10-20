@@ -75,7 +75,7 @@
     }
 
     .insight-body{
-        padding: 40px var(--gutter) 90px var(--gutter);
+        padding: 50px var(--gutter);
         background-color: #F8FAFC;
         border-top: 1px solid #E3E7EB;
 
@@ -190,7 +190,7 @@
     }
 
     .insight-more{
-        padding: 60px var(--gutter) 90px var(--gutter);
+        padding: 50px var(--gutter);
         background-color: #F8FAFC;
         border-top: 1px solid #E3E7EB;
 

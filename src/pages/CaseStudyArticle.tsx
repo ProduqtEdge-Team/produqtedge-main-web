@@ -3,6 +3,7 @@ import "../css/CaseStudyArticle.css"
 import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import CaseStudyCards from "../components/CaseStudyCards.tsx";
+import SectionHeader from "../components/SectionHeader.tsx";
 import {caseStudies} from "../js/caseStudies.ts";
 import {bold} from "../js/text.tsx";
 
@@ -53,7 +54,7 @@ function CaseStudyArticle(){
             </aside>}
         </section>}
         <section className="study-more">
-            <h2>How we’ve helped clients</h2>
+            <SectionHeader>How we’ve helped clients</SectionHeader>
             <CaseStudyCards/>
         </section>
     </div>

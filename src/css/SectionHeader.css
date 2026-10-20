@@ -1,0 +1,15 @@
+/* !important so this one component wins over the many per-page h2 overrides that already exist */
+.section-header{
+    all: unset;
+    display: block;
+    font-size: 46px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    color: #2A2A2A !important;
+}
+
+@media (max-width: 767px){
+    .section-header{
+        font-size: 30px !important;
+    }
+}

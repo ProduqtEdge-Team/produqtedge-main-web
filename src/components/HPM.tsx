@@ -1,7 +1,6 @@
 import {Diamond} from "./Diamond.tsx";
 import Button from "./Button.tsx";
 import "../css/HPM.css"
-import {ctas} from "../js/cta.ts";
 
 function V1(){
     return <div className="hpm-v-container">
@@ -40,18 +39,4 @@ function CTA1(){
         <Diamond/>
     </section>
 }
-function CTA2(){
-    return <section className="cta-2">
-        {ctas.map((cta, i) =>(
-            <div className={`p-${i + 1}`} key={i}>
-                <h2>{cta.title}</h2>
-                <span>{cta.content}</span>
-                <div>
-                    <Button to={cta.path}>{cta.button}</Button>
-                </div>
-            </div>
-        ))}
-    </section>
-}
-
-export {V1, V2, CTA1, CTA2}
+export {V1, V2, CTA1}

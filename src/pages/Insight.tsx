@@ -4,6 +4,7 @@ import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import {ArrowBack, AccessTime} from "@mui/icons-material";
 import InsightCard from "../components/InsightCard.tsx";
+import SectionHeader from "../components/SectionHeader.tsx";
 import {insights} from "../js/insights.ts";
 import type {InsightBlock} from "../js/insights.ts";
 import {rich} from "../js/text.tsx";
@@ -77,7 +78,7 @@ function Insight(){
             </div>
         </section>
         <section className="insight-more">
-            <h2>Keep reading</h2>
+            <SectionHeader>Keep reading</SectionHeader>
             <div className="cards">
                 {more.map((item, i) =>(
                     <InsightCard insight={item} key={i}/>

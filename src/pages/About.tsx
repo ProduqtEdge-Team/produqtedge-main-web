@@ -3,7 +3,8 @@ import "../css/About.css"
 import {Link, useLocation} from "react-router-dom";
 import {useEffect} from "react";
 import {ArrowOutward, CheckCircle} from "@mui/icons-material";
-import {CTA2} from "../components/HPM.tsx";
+import SectionHeader from "../components/SectionHeader.tsx";
+import CallToAction from "../components/CallToAction.tsx";
 import {board, team} from "../js/team.ts";
 import {missions, offers} from "../js/about.ts";
 import CoreValues from "../components/CoreValues.tsx";
@@ -50,7 +51,7 @@ function About(){
         <section className="about-offer">
             <img className="sec-1" src={Offer} alt=""/>
             <div className="sec-2">
-                <h2>What We Offer</h2>
+                <SectionHeader>What We Offer</SectionHeader>
                 <span className="blurb">
                     Our services cut across the broad spectrum of product development, management and growth engineering for organisations across all stages of growth. Sitting at the intersection of people, product and process, we help organisations successfully deliver value, find product-market fit, grow their products by incorporating our extensive market and industry experience, technical know-how, employing tested and trusted delivery methods and strategies, while optimising internal processes for scalability and exponential growth.
                 </span>
@@ -63,7 +64,7 @@ function About(){
         </section>
         <section className="about-mission">
             <div className="sec-1">
-                <h2>Mission & Vision</h2>
+                <SectionHeader>Mission & Vision</SectionHeader>
                 {missions.map((mission, i) =>(
                     <div key={i}>
                         <h3>{mission.title}</h3>
@@ -74,13 +75,13 @@ function About(){
             <img className="sec-2" src={Mission} alt=""/>
         </section>
         <section className="about-team" id="team">
-            <h2>Our Team</h2>
+            <SectionHeader>Our Team</SectionHeader>
             {memberCards(teamCards)}
             <h2 className="board">Advisory Board</h2>
             {memberCards(board)}
         </section>
         <CoreValues/>
-        <CTA2/>
+        <CallToAction/>
     </div>
 }
 

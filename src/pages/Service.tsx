@@ -4,8 +4,9 @@ import {Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import {ArrowForward, CheckCircle, RadioButtonUnchecked} from "@mui/icons-material";
 import Button from "../components/Button.tsx";
+import SectionHeader from "../components/SectionHeader.tsx";
 import CaseStudyCards from "../components/CaseStudyCards.tsx";
-import {CTA2} from "../components/HPM.tsx";
+import CallToAction from "../components/CallToAction.tsx";
 import {categories, services} from "../js/services.ts";
 import type {Service as Item} from "../js/services.ts";
 
@@ -36,7 +37,7 @@ function Service({service: fixed}: {service?: Item}){
         </section>
         {service.questions !== undefined && <section className="service-questions">
             <div className="sec-1">
-                <h2>Questions we help you answer:</h2>
+                <SectionHeader>Questions we help you answer:</SectionHeader>
                 <ul className="questions">
                     {service.questions.points.map((question, i) =>(
                         <li key={i}><RadioButtonUnchecked className="circle"/> {question}</li>
@@ -51,7 +52,7 @@ function Service({service: fixed}: {service?: Item}){
                 <img src={service.approach.path} alt=""/>
             </div>
             <div className="sec-2">
-                <h2>{service.approach.title}</h2>
+                <SectionHeader>{service.approach.title}</SectionHeader>
                 {service.approach.content.map((paragraph, i) =>(
                     <span key={i}>{paragraph}</span>
                 ))}
@@ -67,7 +68,7 @@ function Service({service: fixed}: {service?: Item}){
         </section>}
         {work !== undefined && <section className="service-work">
             <div className="sec-1">
-                <h2>{work.title}</h2>
+                <SectionHeader>{work.title}</SectionHeader>
                 {work.lead !== undefined && <h3>{work.lead}</h3>}
                 {work.content?.map((paragraph, i) =>(
                     <span key={i}>{paragraph}</span>
@@ -89,7 +90,7 @@ function Service({service: fixed}: {service?: Item}){
             {/* the photo, or the dark "What you get" card in its place */}
             {service.gets !== undefined
                 ? <div className="sec-2 gets">
-                    <h2>{service.gets.title}</h2>
+                    <SectionHeader>{service.gets.title}</SectionHeader>
                     <ul className="points">
                         {service.gets.points.map((point, i) =>(
                             <li key={i}><CheckCircle className="check"/> {point}</li>
@@ -101,7 +102,7 @@ function Service({service: fixed}: {service?: Item}){
                 </div>}
         </section>}
         {service.steps !== undefined && <section className="service-steps">
-            <h2>{service.steps.title}</h2>
+            <SectionHeader>{service.steps.title}</SectionHeader>
             <div className="steps">
                 {service.steps.items.map((step, i) =>(
                     <div className="step" key={i}>
@@ -130,13 +131,13 @@ function Service({service: fixed}: {service?: Item}){
             </div>
         </section>}
         {service.cases.length > 0 && <section className="service-cases">
-            <h2>Related Case Studies</h2>
+            <SectionHeader>Related Case Studies</SectionHeader>
             <span className="blurb">
                 Success doesn’t happen by accident. We combine market intelligence, industry experience, and technical expertise into a proven methodology that delivers results.
             </span>
             <CaseStudyCards slugs={service.cases}/>
         </section>}
-        <CTA2/>
+        <CallToAction/>
     </div>
 }
 

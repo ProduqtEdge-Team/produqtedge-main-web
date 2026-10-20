@@ -28,7 +28,8 @@
     }
 
     .case-list{
-        padding: 64px var(--gutter) 100px var(--gutter);
+        padding: 50px var(--gutter);
+        margin: 0 0 100px 0;
         background-color: #F8FAFC;
 
         .case-cards{
@@ -70,6 +71,7 @@
 
     .case-list{
         padding: 40px var(--gutter) 56px var(--gutter);
+        margin: 0 0 100px 0;
         background-color: #F8FAFC;
     }
 }

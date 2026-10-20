@@ -135,7 +135,7 @@
 
     /* lilac band, each row opens the service it suggests */
     .category-start{
-        padding: 80px var(--gutter);
+        padding: 50px var(--gutter);
         background-color: #E9EBF8;
 
         .blurb{
