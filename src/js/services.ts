@@ -180,8 +180,6 @@ export const services: Service[] =[
         ], method:["Customer & market research","Product strategy","Delivery governance","Performance measurement","User-centred design","Experimentation & validation"]},
         different:"We don’t simply supply Product Managers or hand over a roadmap for internal teams to execute. We work as an integrated product partner, combining strategic direction with hands-on delivery support while transferring knowledge and strengthening internal capability. You get experienced product leadership without first having to build or expand your internal product practice.",
         result:"Not only a better product, but a stronger, more sustainable product management practice that keeps delivering value long after the engagement ends.",
-        closing:{title:"Let’s build products that keep creating value.",
-            work:{title:"Strengthen the product. Build the practice.", content:"Bring strategy, ownership and execution together across the full product lifecycle."}},
         cases},
     {slug:"product-led-transformation", category:"advisory-transformation-growth", title:"Product-Led Transformation",
         summary:"Transformation anchored to product and business outcomes, not technical milestones.",
