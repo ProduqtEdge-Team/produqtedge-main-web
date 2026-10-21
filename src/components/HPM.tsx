@@ -29,7 +29,7 @@ function CTA1(){
 
     return <section className="cta-1">
         <div className="sec-1">
-            <h2>Have a project in mind?</h2>
+            <h2>Turn the idea on your desk into a product people actually use.</h2>
             <span>Let's build the right strategy together.</span>
             <div>
                 <Button to="/contact" variant="orange">Start a Conversation</Button>
