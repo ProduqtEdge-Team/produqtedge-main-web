@@ -1,0 +1,275 @@
+/* admin area styles — kept intentionally plain, this is an internal tool */
+
+.admin-shell{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 100vh;
+    background-color: #f5f6f8;
+    color: #15191e;
+    font-family: inherit;
+}
+
+.admin-sidebar{
+    background-color: #0b2239;
+    color: #ffffff;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.admin-sidebar .brand{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.admin-sidebar nav{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.admin-sidebar nav a{
+    color: #ffffff;
+    opacity: 0.75;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background-color 0.15s, opacity 0.15s;
+}
+
+.admin-sidebar nav a:hover{
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.admin-sidebar nav a.active{
+    opacity: 1;
+    background-color: rgba(246, 142, 30, 0.18);
+    color: #f6a150;
+}
+
+.admin-sidebar .footer{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.admin-sidebar .footer button{
+    all: unset;
+    cursor: pointer;
+    color: #ffffff;
+    opacity: 0.85;
+    font-size: 13px;
+    padding: 8px 0;
+}
+
+.admin-sidebar .footer button:hover{ opacity: 1; }
+
+.admin-main{
+    padding: 32px 40px;
+    overflow-y: auto;
+}
+
+.admin-main .page-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.admin-main h1{
+    all: unset;
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-main .btn{
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #0b2239;
+    color: #ffffff;
+    border-radius: 6px;
+    transition: background-color 0.15s;
+}
+
+.admin-main .btn:hover{ background-color: #15344f; }
+
+.admin-main .btn.orange{ background-color: #f68e1e; }
+.admin-main .btn.orange:hover{ background-color: #d97a12; }
+.admin-main .btn.ghost{ background-color: transparent; color: #15191e; border: 1px solid #d4d7dc; }
+.admin-main .btn.ghost:hover{ background-color: #ebedf0; }
+.admin-main .btn.danger{ background-color: #c9372c; }
+.admin-main .btn.danger:hover{ background-color: #a62a21; }
+
+.admin-table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.admin-table th, .admin-table td{
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ebedf0;
+}
+
+.admin-table th{
+    background-color: #f9fafb;
+    font-weight: 500;
+    color: #5b666f;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.admin-table tr:last-child td{ border-bottom: none; }
+.admin-table tr:hover td{ background-color: #fafbfc; }
+
+.admin-table .actions{
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.admin-table .actions a, .admin-table .actions button{
+    all: unset;
+    cursor: pointer;
+    font-size: 13px;
+    color: #0b2239;
+    text-decoration: underline;
+}
+
+.admin-table .actions .danger{ color: #c9372c; }
+
+.badge{
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.badge.published{ background-color: #d1f0d7; color: #1a7a2e; }
+.badge.draft{ background-color: #fde9c7; color: #8a5a0b; }
+
+.admin-empty{
+    padding: 48px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    color: #5b666f;
+}
+
+.admin-error{
+    background-color: #fde7e5;
+    color: #a62a21;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.admin-loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #5b666f;
+    font-size: 14px;
+}
+
+/* login card */
+.admin-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f6f8;
+    padding: 20px;
+}
+
+.admin-login form{
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.admin-login h1{
+    all: unset;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    color: #15191e;
+}
+
+.admin-login label{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    color: #5b666f;
+}
+
+.admin-login input{
+    padding: 10px 12px;
+    border: 1px solid #d4d7dc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.admin-login input:focus{
+    outline: none;
+    border-color: #0b2239;
+}
+
+.admin-login button[type=submit]{
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    padding: 12px;
+    background-color: #0b2239;
+    color: #ffffff;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.15s;
+}
+
+.admin-login button[type=submit]:hover{ background-color: #15344f; }
+.admin-login button[type=submit]:disabled{ opacity: 0.6; cursor: not-allowed; }
+
+@media (max-width:767px){
+    .admin-shell{ grid-template-columns: 1fr; }
+    .admin-sidebar{ flex-direction: row; align-items: center; padding: 16px; gap: 16px; overflow-x: auto; }
+    .admin-sidebar .brand{ font-size: 15px; }
+    .admin-sidebar nav{ flex-direction: row; gap: 0; }
+    .admin-sidebar .footer{ margin-top: 0; margin-left: auto; flex-direction: row; }
+    .admin-main{ padding: 20px; }
+    .admin-table{ display: block; overflow-x: auto; }
+}

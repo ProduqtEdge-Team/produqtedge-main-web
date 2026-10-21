@@ -12,9 +12,13 @@ import Careers from "../src/pages/Careers.tsx"
 import Job from "../src/pages/Job.tsx"
 import Insights from "../src/pages/Insights.tsx"
 import Insight from "../src/pages/Insight.tsx"
+import AdminLayout from "./pages/admin/AdminLayout.tsx"
+import AdminLogin from "./pages/admin/AdminLogin.tsx"
+import AdminInsights from "./pages/admin/AdminInsights.tsx"
+import {AuthProvider, RequireAuth} from "./lib/auth.tsx"
 import {Footer} from "./components/Footer.tsx"
 import {leadershipService} from "./js/services.ts"
-import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, Navigate, Outlet, RouterProvider} from "react-router-dom";
 
 // layout wrapper so Footer sits inside the router context (its <Link>s need it)
 function Layout(){
@@ -43,8 +47,13 @@ function App() {
       {path:"/insights/:slug", Component:Insight},
       {path:"/contact", Component:Contact},
     ]},
+    {path:"/admin/login", Component:AdminLogin},
+    {path:"/admin", element:<RequireAuth><AdminLayout/></RequireAuth>, children:[
+      {index:true, element:<Navigate to="/admin/insights" replace/>},
+      {path:"insights", Component:AdminInsights},
+    ]},
   ])
-  return <RouterProvider router={router}/>
+  return <AuthProvider><RouterProvider router={router}/></AuthProvider>
 }
 
 export default App
