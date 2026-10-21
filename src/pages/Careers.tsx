@@ -55,15 +55,18 @@ function Careers(){
                 <input type="text" placeholder="Find your next opportunity" value={search} onChange={(e) => setSearch(e.target.value)}/>
             </label>
             <div className="jobs">
-                {found.map((job, i) =>(
-                    <Link to={`/careers/${job.slug}`} className="job" key={i}>
+                {found.map((job, i) => {
+                    const body = <>
                         <h3>{job.title}</h3>
                         <div className="end">
                             <span>{job.tags.join(" | ")}</span>
                             <i className="arrow"><ArrowOutward/></i>
                         </div>
-                    </Link>
-                ))}
+                    </>
+                    return job.link !== undefined
+                        ? <a key={i} className="job" href={job.link} target="_blank" rel="noopener noreferrer">{body}</a>
+                        : <Link key={i} to={`/careers/${job.slug}`} className="job">{body}</Link>
+                })}
                 {found.length === 0 && <span className="none">No open roles match “{search}”.</span>}
             </div>
         </section>
