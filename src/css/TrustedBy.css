@@ -1,0 +1,85 @@
+/* client logo marquee — infinite left scroll with soft edge fades */
+.trusted-by{
+    padding: 48px 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    overflow: hidden;
+}
+
+.trusted-by-heading{
+    all: unset;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #5B666F;
+    padding: 0 var(--gutter);
+}
+
+.trusted-by-marquee{
+    width: 100%;
+    overflow: hidden;
+    /* fade the leftmost and rightmost ~80px so logos ease in/out of view */
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
+}
+
+.trusted-by-track{
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: trusted-by-scroll 50s linear infinite;
+}
+
+.trusted-by-marquee:hover .trusted-by-track{
+    animation-play-state: paused;
+}
+
+.trusted-by-logo{
+    flex-shrink: 0;
+    width: 180px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.trusted-by-logo img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.trusted-by-logo img:hover{
+    opacity: 1;
+}
+
+/* track is rendered twice; shifting by half its width restarts seamlessly */
+@keyframes trusted-by-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+}
+
+/* respect users who've asked the OS to tone motion down */
+@media (prefers-reduced-motion: reduce){
+    .trusted-by-track{
+        animation: none;
+    }
+}
+
+@media (max-width:767px){
+    .trusted-by{ padding: 32px 0; gap: 32px; }
+    .trusted-by-logo{ width: 140px; height: 48px; padding: 0 16px; }
+    .trusted-by-marquee{
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+    }
+    .trusted-by-track{ animation-duration: 35s; }
+}

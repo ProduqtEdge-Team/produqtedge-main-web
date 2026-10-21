@@ -4,6 +4,7 @@ import {CheckCircle} from "@mui/icons-material";
 import Button from "../components/Button.tsx";
 import SectionHeader from "../components/SectionHeader.tsx";
 import ServiceCard from "../components/ServiceCard.tsx";
+import TrustedBy from "../components/TrustedBy.tsx";
 import heroBackground from "../images/Frame 2147223898.png"
 import Philosophy from "../images/philosophy-visual.png"
 import Leadership from "../images/Consulting team.png"
@@ -56,6 +57,7 @@ function Services(){
                 <Button to={leadership.to}>Learn more</Button>
             </div>
         </section>
+        <TrustedBy/>
         <section className="services-why">
             <div className="sec-1">
                 <SectionHeader>Why Choose Produqtedge</SectionHeader>
