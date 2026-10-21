@@ -1,8 +1,24 @@
-/* side padding that caps page content at 1280px (the 1440px design minus 80px each side) */
+/* page content caps at 1280px (the 1440px design minus 80px each side).
+   the gutter steps down at narrower breakpoints so the layout doesn't eat
+   the viewport on tablets and smaller laptops. */
 :root{
     --gutter: max(80px, calc((100% - 1280px) / 2));
     /* fixed navbar height, pages below it pad by this */
     --nav-height: 76px;
+}
+
+/* laptops / small desktops */
+@media (max-width:1279px) {
+    :root{
+        --gutter: 48px;
+    }
+}
+
+/* tablets */
+@media (max-width:1023px) {
+    :root{
+        --gutter: 32px;
+    }
 }
 
 /* phones */
@@ -11,6 +27,13 @@
         --gutter: 20px;
         --nav-height: 64px;
     }
+}
+
+/* belt-and-braces guard against any one page accidentally overflowing
+   horizontally — the symptom is a scrollbar on the whole body */
+html, body{
+    overflow-x: clip;
+    max-width: 100%;
 }
 
 .diamond{

@@ -3,7 +3,7 @@
     .service-head{
         padding: calc(var(--nav-height) + 50px) var(--gutter) 50px var(--gutter);
         display: grid;
-        grid-template-columns: 501px 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 80px;
         align-items: start;
 
