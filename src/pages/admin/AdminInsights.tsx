@@ -28,13 +28,6 @@ export default function AdminInsights(){
         setRows(rows.filter(r => r.id !== row.id))
     }
 
-    const onTogglePublish = async (row:InsightRow) =>{
-        const next = !row.published
-        const {error:err} = await supabase.from("insights").update({published:next}).eq("id", row.id)
-        if(err){ alert(err.message); return }
-        setRows(rows.map(r => r.id === row.id ? {...r, published:next} : r))
-    }
-
     return <>
         <div className="page-head">
             <h1>Insights</h1>
@@ -67,7 +60,6 @@ export default function AdminInsights(){
                                 <td>
                                     <div className="actions">
                                         <Link to={`/admin/insights/${row.id}`}>Edit</Link>
-                                        <button type="button" onClick={() => onTogglePublish(row)}>{row.published ? "Unpublish" : "Publish"}</button>
                                         <button type="button" className="danger" onClick={() => onDelete(row)}>Delete</button>
                                     </div>
                                 </td>

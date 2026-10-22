@@ -4,20 +4,19 @@ import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import CaseStudyCards from "../components/CaseStudyCards.tsx";
 import SectionHeader from "../components/SectionHeader.tsx";
-import {useCaseStudy} from "../lib/content.ts";
+import {caseStudies} from "../js/caseStudies.ts";
 import {bold} from "../js/text.tsx";
 
 function CaseStudyArticle(){
     const {slug} = useParams();
-    const {caseStudy:study, loading, notFound} = useCaseStudy(slug);
+    const study = caseStudies.find((item) => item.slug === slug);
 
     // start at the top whenever a different study is opened
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [slug]);
 
-    if (loading) return <div className="study-loading">Loading…</div>
-    if (notFound || !study) return <Navigate to="/case-studies" replace/>
+    if (!study) return <Navigate to="/case-studies" replace/>
 
     // about 200 words a minute
     const words = study.article.flatMap((section) => section.content)
