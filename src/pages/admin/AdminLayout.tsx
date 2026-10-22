@@ -19,6 +19,7 @@ export default function AdminLayout(){
                 <NavLink to="/admin/insights" className={({isActive}) => isActive ? "active" : ""}>Insights</NavLink>
                 <NavLink to="/admin/case-studies" className={({isActive}) => isActive ? "active" : ""}>Case Studies</NavLink>
                 <NavLink to="/admin/jobs" className={({isActive}) => isActive ? "active" : ""}>Jobs</NavLink>
+                <NavLink to="/admin/migrate" className={({isActive}) => isActive ? "active" : ""}>Migrate</NavLink>
             </nav>
             <div className="footer">
                 <span>{session?.user?.email}</span>

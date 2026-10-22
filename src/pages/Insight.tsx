@@ -5,10 +5,8 @@ import {useEffect} from "react";
 import {ArrowBack, AccessTime} from "@mui/icons-material";
 import InsightCard from "../components/InsightCard.tsx";
 import SectionHeader from "../components/SectionHeader.tsx";
-import {insights} from "../js/insights.ts";
-import type {InsightBlock} from "../js/insights.ts";
+import {useInsight, useInsights, type InsightBlock, type Point} from "../lib/content.ts";
 import {rich} from "../js/text.tsx";
-import type {Point} from "../js/text.tsx";
 
 // a point with sub points gets its own nested list
 const point = (item: Point, i: number) => typeof item === "string"
@@ -41,14 +39,16 @@ const words = (item: InsightBlock): string[] => {
 
 function Insight(){
     const {slug} = useParams();
-    const insight = insights.find((item) => item.slug === slug);
+    const {insight, loading, notFound} = useInsight(slug);
+    const {insights} = useInsights();
 
     // start at the top whenever a different article is opened
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [slug]);
 
-    if (!insight) return <Navigate to="/insights" replace/>
+    if (loading) return <div className="insight-loading">Loading…</div>
+    if (notFound || !insight) return <Navigate to="/insights" replace/>
 
     // about 200 words a minute
     const minutes = Math.max(1, Math.round(insight.article.flatMap(words).join(" ").split(/\s+/).length / 200))

@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {ArrowOutward, CheckCircle, Search} from "@mui/icons-material";
 import SectionHeader from "../components/SectionHeader.tsx";
 import CoreValues from "../components/CoreValues.tsx";
-import {jobs, perks} from "../js/careers.ts";
+import {CAREER_PERKS as perks, useJobs} from "../lib/content.ts";
 import heroBackground from "../images/careers-hero.jpg"
 import Place from "../images/con image.png"
 import Join from "../images/Frame 2147223838.png"
@@ -13,6 +13,7 @@ import Join from "../images/Frame 2147223838.png"
 function Careers(){
     const [search, setSearch] = useState("");
     const {hash} = useLocation();
+    const {jobs} = useJobs();
 
     // "Job openings" links to /careers#positions, scroll down to it once the page renders
     useEffect(() => {

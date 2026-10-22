@@ -17,10 +17,10 @@ function Services(){
             <div className="sec-1" style={{backgroundImage: `url(${heroBackground})`}}>
                 <span className="label">WHAT WE DO</span>
                 <h1>
-                    Product Strategy, <br/> Execution, and Growth
+                    Product, Strategy, <br/> Execution, and Growth
                 </h1>
                 <span className="blurb">
-                    We help organisations move from idea to launch to scale with a connected approach that ties strategy, delivery, and growth together.
+                    We help organisations improve product performance, optimise operations, and unlock new growth opportunities through strategic advisory, product-led innovation, and operational excellence.
                 </span>
             </div>
         </section>

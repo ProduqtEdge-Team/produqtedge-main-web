@@ -10,16 +10,15 @@ import Photo1 from "../images/Photo1.png"
 import {useState} from "react";
 import {CTA1} from "../components/HPM.tsx";
 import {recentProjects, testimonials} from "../js/home.ts";
-import {insights} from "../js/insights.ts";
-import {caseStudies} from "../js/caseStudies.ts";
+import {useInsights, useCaseStudies} from "../lib/content.ts";
 import {categories, leadership} from "../js/services.ts";
 function Home(){
     const [Slide, setSlide] = useState(0);
+    const {insights} = useInsights();
+    const {caseStudies:projects} = useCaseStudies(recentProjects);
 
     // each category opens its own page, then leadership
     const serviceLinks = [...categories.map((category) => ({title:category.title, to:`/services/${category.slug}`})), leadership]
-    const projects = caseStudies.filter((study) => recentProjects.includes(study.slug))
-        .sort((a, b) => recentProjects.indexOf(a.slug) - recentProjects.indexOf(b.slug))
 
     return <div>
         <NavBar/>
