@@ -3,9 +3,8 @@ import "../css/Job.css"
 import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {ArrowBack, ArrowForward, ContentCopy} from "@mui/icons-material";
-import {jobs} from "../js/careers.ts";
+import {useJob, type Point} from "../lib/content.ts";
 import {bold} from "../js/text.tsx";
-import type {Point} from "../js/text.tsx";
 
 const email = "info@produqtedge.com"
 
@@ -16,7 +15,7 @@ const point = (item: Point, i: number) => typeof item === "string"
 
 function Job(){
     const {slug} = useParams();
-    const job = jobs.find((item) => item.slug === slug);
+    const {job, loading, notFound} = useJob(slug);
     // slug of the job whose link was copied, so the label resets on another job
     const [copied, setCopied] = useState("");
 
@@ -25,7 +24,8 @@ function Job(){
         window.scrollTo(0, 0);
     }, [slug]);
 
-    if (!job) return <Navigate to="/careers" replace/>
+    if (loading) return <div className="job-loading">Loading…</div>
+    if (notFound || !job) return <Navigate to="/careers" replace/>
 
     const copyLink = () => {
         // browsers can refuse clipboard access, the label just stays as it is then

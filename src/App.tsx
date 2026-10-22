@@ -15,6 +15,12 @@ import Insight from "../src/pages/Insight.tsx"
 import AdminLayout from "./pages/admin/AdminLayout.tsx"
 import AdminLogin from "./pages/admin/AdminLogin.tsx"
 import AdminInsights from "./pages/admin/AdminInsights.tsx"
+import AdminInsightEdit from "./pages/admin/AdminInsightEdit.tsx"
+import AdminCaseStudies from "./pages/admin/AdminCaseStudies.tsx"
+import AdminCaseStudyEdit from "./pages/admin/AdminCaseStudyEdit.tsx"
+import AdminJobs from "./pages/admin/AdminJobs.tsx"
+import AdminJobEdit from "./pages/admin/AdminJobEdit.tsx"
+import AdminMigrate from "./pages/admin/AdminMigrate.tsx"
 import {AuthProvider, RequireAuth} from "./lib/auth.tsx"
 import {Footer} from "./components/Footer.tsx"
 import {leadershipService} from "./js/services.ts"
@@ -51,6 +57,15 @@ function App() {
     {path:"/admin", element:<RequireAuth><AdminLayout/></RequireAuth>, children:[
       {index:true, element:<Navigate to="/admin/insights" replace/>},
       {path:"insights", Component:AdminInsights},
+      {path:"insights/new", Component:AdminInsightEdit},
+      {path:"insights/:id", Component:AdminInsightEdit},
+      {path:"case-studies", Component:AdminCaseStudies},
+      {path:"case-studies/new", Component:AdminCaseStudyEdit},
+      {path:"case-studies/:id", Component:AdminCaseStudyEdit},
+      {path:"jobs", Component:AdminJobs},
+      {path:"jobs/new", Component:AdminJobEdit},
+      {path:"jobs/:id", Component:AdminJobEdit},
+      {path:"migrate", Component:AdminMigrate},
     ]},
   ])
   return <AuthProvider><RouterProvider router={router}/></AuthProvider>

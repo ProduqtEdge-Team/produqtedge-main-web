@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import "../css/InsightCard.css"
-import type {Insight} from "../js/insights.ts";
+import type {Insight} from "../lib/content.ts";
 
 // image, topic, title, summary and "type • date", used on /insights and under each article
 function InsightCard({insight}: {insight:Insight}){

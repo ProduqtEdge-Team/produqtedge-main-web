@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {useState} from "react";
 import {KeyboardArrowDown} from "@mui/icons-material";
 import InsightCard from "../components/InsightCard.tsx";
-import {contentTypes, insights, topics} from "../js/insights.ts";
+import {INSIGHT_TOPICS, INSIGHT_TYPES, useInsights} from "../lib/content.ts";
 
 // how many cards show under the featured one, Load more adds the same again
 const pageSize = 12
@@ -14,10 +14,11 @@ function Insights(){
     const [type, setType] = useState("");
     const [open, setOpen] = useState("");
     const [shown, setShown] = useState(pageSize);
+    const {insights, loading} = useInsights();
 
     const filters =[
-        {title:"Topics", options:topics, value:topic, set:setTopic},
-        {title:"Content type", options:contentTypes, value:type, set:setType},
+        {title:"Topics", options:INSIGHT_TOPICS, value:topic, set:setTopic},
+        {title:"Content type", options:INSIGHT_TYPES, value:type, set:setType},
     ]
 
     // the newest match is featured at the top, the rest fill the grid
@@ -56,7 +57,7 @@ function Insights(){
             </div>
         </section>
         {featured === undefined && <section className="insights-none">
-            <span>No insights match these filters yet.</span>
+            <span>{loading ? "Loading insights…" : "No insights match these filters yet."}</span>
         </section>}
         {featured !== undefined && <section className="insights-featured">
             <Link to={`/insights/${featured.slug}`} className="sec-1">
