@@ -19,13 +19,14 @@ function Home(){
     // each category opens its own page, then leadership
     const serviceLinks = [...categories.map((category) => ({title:category.title, to:`/services/${category.slug}`})), leadership]
 
-    // one feature piece, then four secondary pieces alternating insight ↔ project
-    const feature = {
+    // Supabase hooks hydrate asynchronously — the learnings section only renders once there's enough content for one feature + four secondary cards.
+    const learningsReady = projects.length >= 3 && insights.length >= 2
+    const feature = learningsReady ? {
         kind: "project" as const, to:`/case-studies/${projects[0].slug}`,
         img: projects[0].thumb ?? projects[0].path,
         label: "Project Story", title: projects[0].title, blurb: projects[0].blurb,
-    }
-    const secondary = [
+    } : null
+    const secondary = learningsReady ? [
         {kind:"insight" as const, to:`/insights/${insights[0].slug}`, img:insights[0].cover,
             label:"Market Insight", title:insights[0].title},
         {kind:"project" as const, to:`/case-studies/${projects[1].slug}`, img:projects[1].thumb ?? projects[1].path,
@@ -34,7 +35,7 @@ function Home(){
             label:"Market Insight", title:insights[1].title},
         {kind:"project" as const, to:`/case-studies/${projects[2].slug}`, img:projects[2].thumb ?? projects[2].path,
             label:"Project Story", title:projects[2].title},
-    ]
+    ] : []
 
     return <div>
         <NavBar/>
@@ -102,7 +103,7 @@ function Home(){
                 <button type="button" aria-label="Next" disabled={Slide === testimonials.length - 1} onClick={() => setSlide(Math.min(Slide + 1, testimonials.length - 1))}><ArrowForward/></button>
             </div>
         </section>
-        <section className="home-learnings">
+        {feature && <section className="home-learnings">
             <h2>Some Learnings from Our Projects and Markets</h2>
             <div className="layout">
                 <Link to={feature.to} className="feature">
@@ -129,7 +130,7 @@ function Home(){
                 <Button to="/case-studies">View all Project Stories</Button>
                 <Button to="/insights" variant="outline">View all Market Insights</Button>
             </div>
-        </section>
+        </section>}
         <section className="home-about">
             <div className="sec-1">
                 <h2>Who We Are</h2>
