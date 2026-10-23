@@ -133,7 +133,7 @@ function Home(){
         </section>
         <section className="home-about">
             <div className="sec-1">
-                <h2>Who We Are</h2>
+                <h2>Meet our Team</h2>
                 <span>
                     At <b>ProduqtEdge</b>, we believe that sustainable growth happens when strategy, products, operations, and technology work together. Sitting at the intersection of people, product and process, we incorporate our market and industry experience, technical know-how through tested and trusted delivery methods and strategies to help organisations successfully deliver value, find product-market fit, grow their products while ensuring the corresponding scale is achieved for internal processes.
                 </span>
