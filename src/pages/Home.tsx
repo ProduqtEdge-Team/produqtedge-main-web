@@ -3,10 +3,9 @@ import heroBackground from "../images/Hero.jpg";
 import "../css/Home.css"
 import CA from "../images/Consultancy_agency_team.png"
 import {Link} from "react-router-dom";
-import {ArrowBack, ArrowForward, Check} from "@mui/icons-material";
+import {ArrowBack, ArrowForward} from "@mui/icons-material";
 import Button from "../components/Button.tsx";
-import DiaHeader from "../components/DiaHeader.tsx";
-import Photo1 from "../images/Photo1.png"
+import Photo1 from "../images/new-images/who-we-are.jpg"
 import {useState} from "react";
 import {CTA1} from "../components/HPM.tsx";
 import {recentProjects, testimonials} from "../js/home.ts";
@@ -20,6 +19,23 @@ function Home(){
     const serviceLinks = [...categories.map((category) => ({title:category.title, to:`/services/${category.slug}`})), leadership]
     const projects = caseStudies.filter((study) => recentProjects.includes(study.slug))
         .sort((a, b) => recentProjects.indexOf(a.slug) - recentProjects.indexOf(b.slug))
+
+    // one feature piece, then four secondary pieces alternating insight ↔ project
+    const feature = {
+        kind: "project" as const, to:`/case-studies/${projects[0].slug}`,
+        img: projects[0].thumb ?? projects[0].path,
+        label: "Project Story", title: projects[0].title, blurb: projects[0].blurb,
+    }
+    const secondary = [
+        {kind:"insight" as const, to:`/insights/${insights[0].slug}`, img:insights[0].cover,
+            label:"Market Insight", title:insights[0].title},
+        {kind:"project" as const, to:`/case-studies/${projects[1].slug}`, img:projects[1].thumb ?? projects[1].path,
+            label:"Project Story", title:projects[1].title},
+        {kind:"insight" as const, to:`/insights/${insights[1].slug}`, img:insights[1].cover,
+            label:"Market Insight", title:insights[1].title},
+        {kind:"project" as const, to:`/case-studies/${projects[2].slug}`, img:projects[2].thumb ?? projects[2].path,
+            label:"Project Story", title:projects[2].title},
+    ]
 
     return <div>
         <NavBar/>
@@ -36,7 +52,10 @@ function Home(){
                 </div>
                 <div className="sec-2">
                     <p>
-                        From transformation strategy and product innovation to operational excellence and growth execution, we help organisations build resilient, high-performing businesses that are ready for the future
+                        From transformation strategy and <br/>
+                        product innovation to operational excellence <br/>
+                        and growth execution, we help organisations build <br/>
+                        resilient, high-performing businesses ready for the future
                     </p>
                 </div>
             </div>
@@ -60,23 +79,8 @@ function Home(){
             </div>
             <img className="sec-2" src={CA} alt=""/>
         </section>
-        <section className="home-projects">
-            <h2>Some of Our Recent Projects</h2>
-            <div className="sec-2">
-                {projects.map((study, i) =>(
-                    <Link to={`/case-studies/${study.slug}`} key={i}>
-                        <DiaHeader content={study.name}/>
-                        <img src={study.thumb ?? study.path} alt=""/>
-                        <h3>{study.title}</h3>
-                    </Link>
-                ))}
-            </div>
-            <div className="end">
-                <Button to="/case-studies">View Past Projects</Button>
-            </div>
-        </section>
         <section className="home-testimonials">
-            <h2>Some Feedback from Our Clients</h2>
+            <h2>Some Clients we have helped Transform</h2>
             {/* every slide sits in one row, moving the row slides between them */}
             <div className="slides">
                 <div className="track" style={{transform: `translateX(calc(${Slide} * (-100% - var(--gap))))`}}>
@@ -99,6 +103,34 @@ function Home(){
                 <button type="button" aria-label="Next" disabled={Slide === testimonials.length - 1} onClick={() => setSlide(Math.min(Slide + 1, testimonials.length - 1))}><ArrowForward/></button>
             </div>
         </section>
+        <section className="home-learnings">
+            <h2>Some Learnings from Our Projects and Markets</h2>
+            <div className="layout">
+                <Link to={feature.to} className="feature">
+                    <img src={feature.img} alt=""/>
+                    <div className="meta">
+                        <span className={`chip ${feature.kind}`}>{feature.label}</span>
+                        <h3>{feature.title}</h3>
+                        <span className="feature-blurb">{feature.blurb}</span>
+                    </div>
+                </Link>
+                <div className="list">
+                    {secondary.map((item, i) =>(
+                        <Link to={item.to} className="row" key={i}>
+                            <img src={item.img} alt=""/>
+                            <div className="meta">
+                                <span className={`chip ${item.kind}`}>{item.label}</span>
+                                <h3>{item.title}</h3>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </div>
+            <div className="actions">
+                <Button to="/case-studies">View all Project Stories</Button>
+                <Button to="/insights" variant="outline">View all Market Insights</Button>
+            </div>
+        </section>
         <section className="home-about">
             <div className="sec-1">
                 <h2>Who We Are</h2>
@@ -113,22 +145,6 @@ function Home(){
                 </div>
             </div>
             <img className="sec-2" src={Photo1} alt=""/>
-        </section>
-        <section className="home-insights">
-            <h2>Featured Insights</h2>
-            <span className="blurb">Some curated articles and lessons from our project experience.</span>
-            <div className="sec-2">
-                {insights.slice(0, 3).map((insight, i) =>(
-                    <Link to={`/insights/${insight.slug}`} key={i}>
-                        <img src={insight.cover} alt=""/>
-                        <h3>{insight.title}</h3>
-                        <span><Check className="check"/> {insight.topic}</span>
-                    </Link>
-                ))}
-            </div>
-            <div className="end">
-                <Button to="/insights">Visit our Insights Page</Button>
-            </div>
         </section>
         <CTA1/>
     </div>
