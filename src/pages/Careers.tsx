@@ -27,11 +27,11 @@ function Careers(){
         <section className="careers-hero">
             <div className="sec-1" style={{backgroundImage: `url(${heroBackground})`}}>
                 <h1>Make a Difference with Produqtedge</h1>
-                <Link to="#positions">View Open Role</Link>
+                <Link to="#positions">View Open Roles</Link>
             </div>
         </section>
         <section className="careers-join">
-            <SectionHeader>Join Us in Removing Barriers to Product & Startup Success</SectionHeader>
+            <SectionHeader>Join Us in Removing Barriers to Product Success</SectionHeader>
             <span>
                 At Produqtedge, we are driven by a single ambition: to help visionary teams build, launch, and scale exceptional products. Our people are the lifeblood of this mission. We value curiosity, collaboration, innovation, and an unrelenting commitment to quality. If you are passionate about solving real problems, thriving in dynamic environments, and making tangible impact you belong here.
             </span>

@@ -22,7 +22,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                padding: 50px 60px;
+                padding: 28px 60px 50px 60px;
                 min-height: 340px;
                 box-sizing: border-box;
                 background-color: #D6E6FB;
@@ -76,7 +76,7 @@
             div{
                 display: flex;
                 flex-direction: column;
-                padding: 32px 24px;
+                padding: 18px 24px 32px 24px;
                 background-color: #D6E6FB;
                 color: #1E2B5E;
 
