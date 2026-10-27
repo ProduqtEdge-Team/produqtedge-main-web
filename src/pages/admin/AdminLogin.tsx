@@ -31,7 +31,7 @@ export default function AdminLogin(){
 
     return <div className="admin-login">
         <form onSubmit={onSubmit}>
-            <h1>Admin sign in</h1>
+            <h1>Admin Sign In</h1>
             {error && <div className="admin-error">{error}</div>}
             <label>
                 Email

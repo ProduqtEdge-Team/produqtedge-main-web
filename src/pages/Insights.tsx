@@ -33,7 +33,7 @@ function Insights(){
     return <div>
         <NavBar/>
         <section className="insights-head">
-            <h1>Featured insights</h1>
+            <h1>Featured Insights</h1>
             <span>
                 Explore our research, insights, and examples of real client impact, designed to help you embrace the key forces of change and get to value faster.
             </span>

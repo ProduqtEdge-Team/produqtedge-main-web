@@ -37,7 +37,7 @@ function Service({service: fixed}: {service?: Item}){
         </section>
         {service.questions !== undefined && <section className="service-questions">
             <div className="sec-1">
-                <SectionHeader>Questions we help you answer:</SectionHeader>
+                <SectionHeader>Questions We Help You Answer:</SectionHeader>
                 <ul className="questions">
                     {service.questions.points.map((question, i) =>(
                         <li key={i}><RadioButtonUnchecked className="circle"/> {question}</li>
@@ -116,11 +116,11 @@ function Service({service: fixed}: {service?: Item}){
         {(service.different !== undefined || service.result !== undefined) && <section className="service-different">
             <div className="panel">
                 {service.different !== undefined && <div className="sec-1">
-                    <h3>What makes us different</h3>
+                    <h3>What Makes Us Different</h3>
                     <span>{service.different}</span>
                 </div>}
                 {service.result !== undefined && <div className={service.different !== undefined ? "sec-2" : "sec-1 result-only"}>
-                    <h3>The result</h3>
+                    <h3>The Result</h3>
                     <span>{service.result}</span>
                     {service.resultPoints !== undefined && <ul className="points">
                         {service.resultPoints.map((point, i) =>(

@@ -192,9 +192,26 @@
                     padding: 0 25px;
                     background-color: transparent;
 
-                    span{
+                    .tags{
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
                         font-size: 12px;
                         color: #8D959C;
+
+                        .tag{
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+
+                        .tag:not(:last-child)::after{
+                            content: "";
+                            display: inline-block;
+                            width: 1px;
+                            height: 16px;
+                            background-color: currentColor;
+                        }
                     }
 
                     .arrow{
@@ -451,10 +468,27 @@
                     padding: 12px 20px;
                     background-color: transparent;
 
-                    span{
+                    .tags{
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
                         font-size: 12px;
                         line-height: 1.5;
                         color: #8D959C;
+
+                        .tag{
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+
+                        .tag:not(:last-child)::after{
+                            content: "";
+                            display: inline-block;
+                            width: 1px;
+                            height: 14px;
+                            background-color: currentColor;
+                        }
                     }
 
                     .arrow{

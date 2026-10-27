@@ -39,7 +39,7 @@ function Careers(){
         <section className="careers-place">
             <img className="sec-1" src={Place} alt=""/>
             <div className="sec-2">
-                <SectionHeader>A Great Place to Work, A Great Way to Help</SectionHeader>
+                <SectionHeader>A Great Place to Work, a Great Way to Help</SectionHeader>
                 <div className="list">
                     {perks.map((perk, i) =>(
                         <span key={i}><CheckCircle className="check"/> {perk}</span>
@@ -59,7 +59,9 @@ function Careers(){
                     const body = <>
                         <h3>{job.title}</h3>
                         <div className="end">
-                            <span>{job.tags.join(" | ")}</span>
+                            <span className="tags">
+                                {job.tags.map((tag, j) => <span key={j} className="tag">{tag}</span>)}
+                            </span>
                             <i className="arrow"><ArrowOutward/></i>
                         </div>
                     </>
@@ -73,8 +75,8 @@ function Careers(){
         <CoreValues/>
         <section className="careers-cta">
             <div className="sec-1" style={{backgroundImage: `linear-gradient(90deg, rgba(5, 20, 35, 0.85), rgba(5, 20, 35, 0.3)), url(${Join})`}}>
-                <h3>Join the team</h3>
-                <SectionHeader>There’s a place for you at ProduqtEdge</SectionHeader>
+                <h3>Join the Team</h3>
+                <SectionHeader>There’s a Place for You at ProduqtEdge</SectionHeader>
                 <span>
                     At Produqtedge, we want you to excel. Our mission is to attract, empower, and reward a high-performing team of builders, thinkers, and innovators who are passionate about shaping the future of products and startups. We are committed to excellence, transparency, and impact for the founders and organisations we serve, and within our own team
                 </span>

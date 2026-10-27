@@ -9,7 +9,7 @@ function CaseStudy(){
         <NavBar/>
         <section className="case-hero">
             <div className="sec-1" style={{backgroundImage: `url(${heroBackground})`}}>
-                <h1>What we’ve done and how we’ve done it</h1>
+                <h1>What We’ve Done and How We’ve Done It</h1>
             </div>
         </section>
         <section className="case-list">

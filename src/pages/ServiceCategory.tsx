@@ -89,7 +89,7 @@ function ServiceCategory(){
                     </ol>}
                     {fit.content !== undefined && <span className="blurb">{fit.content}</span>}
                     {fit.tags !== undefined && <div className="uses">
-                        <h3>What we use</h3>
+                        <h3>What We Use</h3>
                         <div className="tags">
                             {fit.tags.map((tag, i) =>(
                                 <span key={i}>{tag}</span>

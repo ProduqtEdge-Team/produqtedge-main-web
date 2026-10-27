@@ -26,12 +26,12 @@ function Contact(){
     return <div>
         <NavBar/>
         <section className="contact-hero">
-            <h1>Get in touch</h1>
+            <h1>Get in Touch</h1>
             <p>Our friendly team would love to hear from you.</p>
         </section>
         <section className="contact-body">
             <aside className="info">
-                <h2>Reach us directly</h2>
+                <h2>Reach Us Directly</h2>
                 <p>We respond to most enquiries within one working day.</p>
                 <ul>
                     <li><Email className="icon"/> <a href="mailto:info@produqtedge.com">info@produqtedge.com</a></li>

@@ -49,12 +49,12 @@ function CaseStudyArticle(){
                 ))}
             </div>
             {study.service !== "" && <aside>
-                <h3>Related Consulting service</h3>
+                <h3>Related Consulting Service</h3>
                 <Link to="/services">{study.service}</Link>
             </aside>}
         </section>}
         <section className="study-more">
-            <SectionHeader>How we’ve helped clients</SectionHeader>
+            <SectionHeader>How We’ve Helped Clients</SectionHeader>
             <CaseStudyCards/>
         </section>
     </div>

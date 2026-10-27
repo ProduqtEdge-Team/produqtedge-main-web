@@ -72,7 +72,7 @@ export const categories: Category[] =[
         tagline:"Fix how work moves before you automate it.",
         intro:"Operational inefficiency rarely shows up as one obvious failure. It is rework, duplicated effort, unclear ownership, manual workarounds and disconnected tools, adding up across teams. We redesign how work moves across people, teams and systems, then decide where workflow tools, automation, integrations or AI create real value.",
         other:"Fix how work moves, then decide where technology adds value.",
-        start:{title:"Where To Start", content:"Most clients arrive with a situation, not a service name. Find yours.", rows:[
+        start:{title:"Where to Start", content:"Most clients arrive with a situation, not a service name. Find yours.", rows:[
             {situation:"Teams spend more time chasing information than doing the work.", service:"business-process-optimisation"},
             {situation:"Nobody is clear on who owns a process or who approves what.", service:"business-process-optimisation"},
             {situation:"We’ve invested in new systems, but the work hasn’t changed.", service:"digital-transformation"},
@@ -88,7 +88,7 @@ export const categories: Category[] =[
         tagline:"Decide on evidence, not assumption.",
         intro:"Two decisions carry the most risk: entering a market you don’t yet understand, and backing a product whose traction you can’t verify. We test both against primary research and market evidence rather than pitch decks and industry reports.",
         other:"Test the market before you enter it, and the product before you fund it.",
-        start:{title:"Where To Start", content:"Two different decisions, two different services. Find yours.", rows:[
+        start:{title:"Where to Start", content:"Two different decisions, two different services. Find yours.", rows:[
             {situation:"We’re taking a product into a market we don’t know well.", service:"market-intelligence-market-entry"},
             {situation:"The product works elsewhere, but we can’t assume it works here.", service:"market-intelligence-market-entry"},
             {situation:"We’re evaluating a company and the pitch deck isn’t enough.", service:"investor-validation-due-diligence"},
@@ -175,7 +175,7 @@ export const services: Service[] =[
             "Our Product Development & PMaaS covers the full spectrum of Validate, Build, Launch and Grow. It provides the strategic product leadership and hands-on management support needed to develop new products, improve existing ones and strengthen execution across the product lifecycle.",
             "Our approach goes beyond writing product requirements, managing backlogs or coordinating delivery teams. We make sure products are grounded in real customer needs and aligned with clear commercial objectives.",
         ]},
-        work:{title:"Our work", path:PmaasWork, content:[
+        work:{title:"Our Work", path:PmaasWork, content:[
             "Whether we’re developing a new product, improving an existing one or strengthening delivery across a portfolio, we integrate directly with your organisation. We establish clear ownership structures and embed the operating discipline needed to move confidently from discovery through development, launch and continuous improvement.",
         ], method:["Customer & market research","Product strategy","Delivery governance","Performance measurement","User-centred design","Experimentation & validation"]},
         different:"We don’t simply supply Product Managers or hand over a roadmap for internal teams to execute. We work as an integrated product partner, combining strategic direction with hands-on delivery support while transferring knowledge and strengthening internal capability. You get experienced product leadership without first having to build or expand your internal product practice.",
@@ -184,7 +184,7 @@ export const services: Service[] =[
     {slug:"product-led-transformation", category:"advisory-transformation-growth", title:"Product-Led Transformation",
         summary:"Transformation anchored to product and business outcomes, not technical milestones.",
         intro:["In large organisations, company-wide transformation programmes typically stall and drift from their intended product and business outcomes, usually because they become system-led, vendor-driven or project-focused."],
-        approach:{title:"Our approach", path:PltApproach,
+        approach:{title:"Our Approach", path:PltApproach,
             content:["Our Product-Led Transformation advisory is designed to avoid motion without outcomes. We anchor transformation efforts to your key goals and business objectives. We integrate product strategy, modular delivery design, governance and hands-on execution support to minimise delivery risk, delayed ROI and stakeholder fatigue."],
             method:["Product strategy","Hands-on execution support","Modular delivery design","Governance"]},
         different:"We walk the journey with you as an integrated transformation partner. We don’t hand you an implementation manual, or assign Project Managers and walk away at go-live.",
@@ -199,7 +199,7 @@ export const services: Service[] =[
             "What product, pricing, process, or experience barriers are limiting growth?",
             "How can customer and product data be used to identify and prioritise the most valuable growth opportunities?",
         ]},
-        approach:{title:"Our approach", path:PlgApproach, content:[
+        approach:{title:"Our Approach", path:PlgApproach, content:[
             "Our Product-Led Growth approach goes beyond marketing-led acquisition or isolated conversion initiatives. We combine customer research, behavioural and product analytics, journey diagnostics, experimentation, and commercial performance analysis to understand what drives or constrains growth across the full customer lifecycle. We work with your teams across product, growth, marketing, data, technology, operations, business and support to identify high-impact opportunities for improving the customer journey from acquisition to activation and adoption, strengthening user engagement to increase retention, reduce churn, and grow customer lifetime value.",
         ]},
         different:"We don’t treat growth as a series of disconnected campaigns or short-term incentives. We help you build repeatable growth mechanisms into the product and its surrounding customer experience, so growth is driven by genuine value, supported by data and strengthened through continuous learning.",
@@ -221,7 +221,7 @@ export const services: Service[] =[
             "The tools and channels through which work is coordinated",
             "Opportunities for simplification, standardisation and targeted automation",
         ]},
-        gets:{title:"What you get", points:[
+        gets:{title:"What You Get", points:[
             "To-be process states with simplified workflows",
             "Redesigned approval paths",
             "Better-integrated tools",
@@ -254,7 +254,7 @@ export const services: Service[] =[
             "We help organisations translate business priorities and operational needs into a practical, value-led digital transformation agenda. We work with executive sponsors, transformation leaders, technology teams, operational functions and process owners to decide where digital capabilities create the greatest impact and how to introduce them.",
             "We start with deep-dive discovery to assess your digital maturity and identify gaps. We then define transformation strategy and investment priorities to modernise legacy systems and fragmented technology environments, integrating platforms, workflows and data across business functions.",
         ]},
-        work:{title:"Built For Adoption", path:DtAdoption, content:[
+        work:{title:"Built for Adoption", path:DtAdoption, content:[
             "Technology selection is only one part of the work. We account for operating models, data readiness, governance, workforce capability, customer impact, regulatory constraints and change management. Where AI is relevant, we make sure the underlying data, processes, controls and accountability structures are mature enough to support it responsibly and at scale.",
         ]},
         different:"We connect technology decisions directly to business outcomes. Rather than digitising existing inefficiencies or introducing tools in search of a problem, we identify the right transformation opportunities, establish the foundations for success, and support implementation and adoption.",

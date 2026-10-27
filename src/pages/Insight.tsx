@@ -78,7 +78,7 @@ function Insight(){
             </div>
         </section>
         <section className="insight-more">
-            <SectionHeader>Keep reading</SectionHeader>
+            <SectionHeader>Keep Reading</SectionHeader>
             <div className="cards">
                 {more.map((item, i) =>(
                     <InsightCard insight={item} key={i}/>

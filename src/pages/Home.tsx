@@ -80,7 +80,7 @@ function Home(){
             <img className="sec-2" src={CA} alt=""/>
         </section>
         <section className="home-testimonials">
-            <h2>Some Clients we have helped Transform</h2>
+            <h2>Some Clients We Have Helped Transform</h2>
             {/* every slide sits in one row, moving the row slides between them */}
             <div className="slides">
                 <div className="track" style={{transform: `translateX(calc(${Slide} * (-100% - var(--gap))))`}}>

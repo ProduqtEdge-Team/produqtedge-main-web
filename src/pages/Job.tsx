@@ -4,15 +4,15 @@ import {Link, Navigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {ArrowBack, ArrowForward, ContentCopy} from "@mui/icons-material";
 import {jobs} from "../js/careers.ts";
-import {bold} from "../js/text.tsx";
+import {rich} from "../js/text.tsx";
 import type {Point} from "../js/text.tsx";
 
 const email = "info@produqtedge.com"
 
 // a point with sub points gets its own nested list
 const point = (item: Point, i: number) => typeof item === "string"
-    ? <li key={i}>{bold(item)}</li>
-    : <li key={i}>{bold(item.text)}<ul>{item.points.map((sub, j) => <li key={j}>{bold(sub)}</li>)}</ul></li>
+    ? <li key={i}>{rich(item)}</li>
+    : <li key={i}>{rich(item.text)}<ul>{item.points.map((sub, j) => <li key={j}>{rich(sub)}</li>)}</ul></li>
 
 function Job(){
     const {slug} = useParams();
@@ -43,7 +43,9 @@ function Job(){
                 </div>
                 <div className="buttons">
                     <button className="copy" onClick={copyLink}><ContentCopy/> {copied === job.slug ? "Link copied" : "Copy link"}</button>
-                    <a className="apply" href={`mailto:${email}?subject=${encodeURIComponent(`Application: ${job.title}`)}`}>Apply <ArrowForward/></a>
+                    {job.applyUrl !== undefined
+                        ? <a className="apply" href={job.applyUrl} target="_blank" rel="noopener noreferrer">Apply <ArrowForward/></a>
+                        : <a className="apply" href={`mailto:${email}?subject=${encodeURIComponent(`Application: ${job.title}`)}`}>Apply <ArrowForward/></a>}
                 </div>
             </div>
         </section>
@@ -53,14 +55,13 @@ function Job(){
                     <div key={i} className={section.sub ? "sub" : ""}>
                         {section.sub ? <h3>{section.title}</h3> : <h2>{section.title}</h2>}
                         {section.content?.map((paragraph, j) =>(
-                            <p key={j}>{bold(paragraph)}</p>
+                            <p key={j}>{rich(paragraph)}</p>
                         ))}
                         {section.points !== undefined && (section.ordered
                             ? <ol>{section.points.map(point)}</ol>
                             : <ul>{section.points.map(point)}</ul>)}
                     </div>
                 ))}
-                <p className="questions"><b>Questions?</b> Please contact <a href={`mailto:${email}`}>{email}</a></p>
             </div>
             <aside>
                 {job.details.map((detail, i) =>(

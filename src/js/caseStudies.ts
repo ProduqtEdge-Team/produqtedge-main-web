@@ -19,7 +19,7 @@ export type CaseStudy = {slug:string, name:string, logo:string, path:string, thu
 
 export const caseStudies: CaseStudy[] =[
     {slug:"lendsqr", name:"Lendsqr", logo:Lendsqr, path:LendsqrCover, thumb:LendsqrCover,
-        title:"Supporting Lendsqr’s launch with Due Diligence and Market Intelligence",
+        title:"Supporting Lendsqr’s Launch with Due Diligence and Market Intelligence",
         heading:"Supporting Lendsqr’s launch with Due Diligence and Market Validation",
         blurb:"ProduqtEdge helps Lendsqr establish key frameworks for growth, including market validation, product governance, and scaling strategies.",
         service:"Due Diligence & Market Validation",
