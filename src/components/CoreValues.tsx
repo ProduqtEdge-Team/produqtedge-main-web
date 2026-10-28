@@ -3,9 +3,9 @@ import {values} from "../js/about.ts";
 
 // "Our Core Values" grid, shown on About and Careers
 function CoreValues(){
-    return <section className="core-values">
+    return <section className="core-values reveal">
         <h2>Our Core Values</h2>
-        <div className="sec-2">
+        <div className="sec-2 stagger">
             {values.map((value, i) =>(
                 <div key={i}>
                     <value.icon/>

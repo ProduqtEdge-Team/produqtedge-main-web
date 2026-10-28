@@ -32,13 +32,13 @@ function Insights(){
 
     return <div>
         <NavBar/>
-        <section className="insights-head">
+        <section className="insights-head reveal">
             <h1>Featured Insights</h1>
             <span>
                 Explore our research, insights, and examples of real client impact, designed to help you embrace the key forces of change and get to value faster.
             </span>
         </section>
-        <section className="insights-filters">
+        <section className="insights-filters reveal">
             <div className="bar">
                 {filters.map((filter, i) =>(
                     <div className="filter" key={i} onMouseLeave={() => setOpen("")}>
@@ -55,10 +55,10 @@ function Insights(){
                 ))}
             </div>
         </section>
-        {featured === undefined && <section className="insights-none">
+        {featured === undefined && <section className="insights-none reveal">
             <span>No insights match these filters yet.</span>
         </section>}
-        {featured !== undefined && <section className="insights-featured">
+        {featured !== undefined && <section className="insights-featured reveal">
             <Link to={`/insights/${featured.slug}`} className="sec-1">
                 <img src={featured.cover} alt=""/>
                 <div className="content">
@@ -69,8 +69,8 @@ function Insights(){
                 </div>
             </Link>
         </section>}
-        {rest.length > 0 && <section className="insights-grid">
-            <div className="cards">
+        {rest.length > 0 && <section className="insights-grid reveal">
+            <div className="cards stagger">
                 {rest.slice(0, shown).map((insight, i) =>(
                     <InsightCard insight={insight} key={i}/>
                 ))}

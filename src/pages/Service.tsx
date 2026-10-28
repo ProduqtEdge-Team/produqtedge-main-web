@@ -27,7 +27,7 @@ function Service({service: fixed}: {service?: Item}){
 
     return <div>
         <NavBar/>
-        <section className="service-head">
+        <section className="service-head reveal">
             <h1>{service.title}</h1>
             {service.intro.length > 0 && <div className="sec-2">
                 {service.intro.map((paragraph, i) =>(
@@ -35,7 +35,7 @@ function Service({service: fixed}: {service?: Item}){
                 ))}
             </div>}
         </section>
-        {service.questions !== undefined && <section className="service-questions">
+        {service.questions !== undefined && <section className="service-questions reveal">
             <div className="sec-1">
                 <SectionHeader>Questions We Help You Answer:</SectionHeader>
                 <ul className="questions">
@@ -47,7 +47,7 @@ function Service({service: fixed}: {service?: Item}){
             </div>
             <img className="sec-2" src={service.questions.path} alt=""/>
         </section>}
-        {service.approach !== undefined && <section className="service-approach">
+        {service.approach !== undefined && <section className="service-approach reveal">
             <div className="sec-1">
                 <img src={service.approach.path} alt=""/>
             </div>
@@ -66,7 +66,7 @@ function Service({service: fixed}: {service?: Item}){
                 </div>}
             </div>
         </section>}
-        {work !== undefined && <section className="service-work">
+        {work !== undefined && <section className="service-work reveal">
             <div className="sec-1">
                 <SectionHeader>{work.title}</SectionHeader>
                 {work.lead !== undefined && <h3>{work.lead}</h3>}
@@ -101,7 +101,7 @@ function Service({service: fixed}: {service?: Item}){
                     <img src={work.path} alt=""/>
                 </div>}
         </section>}
-        {service.steps !== undefined && <section className="service-steps">
+        {service.steps !== undefined && <section className="service-steps reveal">
             <SectionHeader>{service.steps.title}</SectionHeader>
             <div className="steps">
                 {service.steps.items.map((step, i) =>(
@@ -113,7 +113,7 @@ function Service({service: fixed}: {service?: Item}){
                 ))}
             </div>
         </section>}
-        {(service.different !== undefined || service.result !== undefined) && <section className="service-different">
+        {(service.different !== undefined || service.result !== undefined) && <section className="service-different reveal">
             <div className="panel">
                 {service.different !== undefined && <div className="sec-1">
                     <h3>What Makes Us Different</h3>
@@ -130,7 +130,7 @@ function Service({service: fixed}: {service?: Item}){
                 </div>}
             </div>
         </section>}
-        {service.cases.length > 0 && <section className="service-cases">
+        {service.cases.length > 0 && <section className="service-cases reveal">
             <SectionHeader>Related Case Studies</SectionHeader>
             <span className="blurb">
                 Success doesn’t happen by accident. We combine market intelligence, industry experience, and technical expertise into a proven methodology that delivers results.

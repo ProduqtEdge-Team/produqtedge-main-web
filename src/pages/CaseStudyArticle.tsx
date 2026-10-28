@@ -25,7 +25,7 @@ function CaseStudyArticle(){
 
     return <div>
         <NavBar/>
-        <section className="study-hero">
+        <section className="study-hero reveal">
             <img className="sec-2" src={study.path} alt=""/>
             <div className="sec-1">
                 <img className="logo" src={study.logo} alt={study.name}/>
@@ -34,7 +34,7 @@ function CaseStudyArticle(){
                 {study.article.length > 0 && <span className="read">{minutes} mins read</span>}
             </div>
         </section>
-        {study.article.length > 0 && <section className="study-body">
+        {study.article.length > 0 && <section className="study-body reveal">
             <div className="article">
                 {study.article.map((section, i) =>(
                     <div key={i}>
@@ -53,7 +53,7 @@ function CaseStudyArticle(){
                 <Link to="/services">{study.service}</Link>
             </aside>}
         </section>}
-        <section className="study-more">
+        <section className="study-more reveal">
             <SectionHeader>How We’ve Helped Clients</SectionHeader>
             <CaseStudyCards/>
         </section>

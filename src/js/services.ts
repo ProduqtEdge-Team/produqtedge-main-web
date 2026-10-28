@@ -322,5 +322,5 @@ export const inCategory = (slug: string) => services.filter((service) => service
 // turns services into the links on a card
 export const toLinks = (list: Service[]) => list.map((service) => ({title:service.title, to:servicePath(service)}))
 
-// "Why Choose Produqtedge" checklist
+// "Why Choose ProduqtEdge" checklist
 export const reasons =["Product-First Thinking","Strategy with Hands-On Execution","Support at Every Stage","Reduced Risk, Faster Progress"]

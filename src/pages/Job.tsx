@@ -34,7 +34,7 @@ function Job(){
 
     return <div>
         <NavBar/>
-        <section className="job-head">
+        <section className="job-head reveal">
             <Link to="/careers#positions" className="back"><ArrowBack/> Job openings</Link>
             <div className="sec-1">
                 <div>
@@ -49,7 +49,7 @@ function Job(){
                 </div>
             </div>
         </section>
-        {job.article.length > 0 && <section className="job-body">
+        {job.article.length > 0 && <section className="job-body reveal">
             <div className="article">
                 {job.article.map((section, i) =>(
                     <div key={i} className={section.sub ? "sub" : ""}>

@@ -13,7 +13,7 @@ import {categories, inCategory, leadership, philosophy, reasons, toLinks} from "
 function Services(){
     return <div>
         <NavBar/>
-        <section className="services-hero">
+        <section className="services-hero reveal">
             <div className="sec-1" style={{backgroundImage: `url(${heroBackground})`}}>
                 <span className="label">WHAT WE DO</span>
                 <h1>
@@ -24,7 +24,7 @@ function Services(){
                 </span>
             </div>
         </section>
-        <section className="services-philosophy">
+        <section className="services-philosophy reveal">
             <div className="sec-1">
                 <SectionHeader>Our Philosophy</SectionHeader>
                 {philosophy.map((paragraph, i) =>(
@@ -33,7 +33,7 @@ function Services(){
             </div>
             <img className="sec-2" src={Philosophy} alt=""/>
         </section>
-        <section className="services-categories">
+        <section className="services-categories reveal">
             <SectionHeader>Core Service Categories</SectionHeader>
             {categories.map((category, i) =>(
                 <ServiceCard key={i} title={category.title} path={category.path} content={category.content}
@@ -41,7 +41,7 @@ function Services(){
                              more={`/services/${category.slug}`}/>
             ))}
         </section>
-        <section className="services-leadership">
+        <section className="services-leadership reveal">
             <SectionHeader>Leadership Coaching & Capacity Development</SectionHeader>
             <div className="intro">
                 <h3>Build the leaders your organization needs to scale.</h3>
@@ -58,13 +58,13 @@ function Services(){
             </div>
         </section>
         <TrustedBy/>
-        <section className="services-why">
+        <section className="services-why reveal">
             <div className="sec-1">
-                <SectionHeader>Why Choose Produqtedge</SectionHeader>
+                <SectionHeader>Why Choose ProduqtEdge</SectionHeader>
                 <span className="blurb">
                     We are a product studio and consultancy built to help organisations reduce risk, execute with clarity, and achieve measurable outcomes across every stage of the product and innovation journey.
                 </span>
-                <div className="list">
+                <div className="list stagger">
                     {reasons.map((reason, i) =>(
                         <span key={i}><CheckCircle className="check"/> {reason}</span>
                     ))}

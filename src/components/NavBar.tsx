@@ -48,7 +48,7 @@ function NavBar() {
     const mobileNav = <nav className="mobile-nav">
         <div className="bar">
             <Link to="/" className="nav-logo" onClick={close}>
-                <img src={Logo} alt="Produqtedge home"/>
+                <img src={Logo} alt="ProduqtEdge home"/>
             </Link>
             <button type="button" className="toggle" aria-label={Open ? "Close menu" : "Open menu"} aria-expanded={Open} onClick={() => Open ? close() : setOpen(true)}>
                 {Open ? <Close/> : <Menu/>}
@@ -87,7 +87,7 @@ function NavBar() {
 
     const webNav = <nav className="web-nav" onMouseLeave={() => setHovered(false)}>
         <Link to="/" className="nav-logo">
-            <img src={Logo} alt="Produqtedge home"/>
+            <img src={Logo} alt="ProduqtEdge home"/>
         </Link>
 
         <div className="nav-links">

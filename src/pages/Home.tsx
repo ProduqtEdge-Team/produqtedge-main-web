@@ -39,7 +39,7 @@ function Home(){
 
     return <div>
         <NavBar/>
-        <section className="hero" style={{backgroundImage: `url(${heroBackground})`}} >
+        <section className="hero reveal" style={{backgroundImage: `url(${heroBackground})`}} >
 
             <div className="hero-body">
                 <div className="sec-1">
@@ -60,13 +60,13 @@ function Home(){
                 </div>
             </div>
         </section>
-        <section className="home-services">
+        <section className="home-services reveal">
             <div className="sec-1">
                 <h2>Our Services</h2>
                 <span className="blurb">
                     We partner with teams and organisations to solve complex challenges, delivering strategies and solutions that create real impact. Each project reflects our focus on uniqueness, clarity, performance transformation, and growth.
                 </span>
-                <div className="list">
+                <div className="list stagger">
                     {serviceLinks.map((link, i) =>(
                         <Link to={link.to} key={i}>
                             <span>{link.title}</span> <ArrowForward className="arrow"/>
@@ -79,7 +79,7 @@ function Home(){
             </div>
             <img className="sec-2" src={CA} alt=""/>
         </section>
-        <section className="home-testimonials">
+        <section className="home-testimonials reveal">
             <h2>Some Clients We Have Helped Transform</h2>
             {/* every slide sits in one row, moving the row slides between them */}
             <div className="slides">
@@ -103,7 +103,7 @@ function Home(){
                 <button type="button" aria-label="Next" disabled={Slide === testimonials.length - 1} onClick={() => setSlide(Math.min(Slide + 1, testimonials.length - 1))}><ArrowForward/></button>
             </div>
         </section>
-        <section className="home-learnings">
+        <section className="home-learnings reveal">
             <h2>Some Learnings from Our Projects and Markets</h2>
             <div className="layout">
                 <Link to={feature.to} className="feature">
@@ -114,7 +114,7 @@ function Home(){
                         <span className="feature-blurb">{feature.blurb}</span>
                     </div>
                 </Link>
-                <div className="list">
+                <div className="list stagger">
                     {secondary.map((item, i) =>(
                         <Link to={item.to} className="row" key={i}>
                             <img src={item.img} alt=""/>
@@ -131,7 +131,7 @@ function Home(){
                 <Button to="/insights" variant="outline">View all Market Insights</Button>
             </div>
         </section>
-        <section className="home-about">
+        <section className="home-about reveal">
             <div className="sec-1">
                 <h2>Meet Our Team</h2>
                 <span>

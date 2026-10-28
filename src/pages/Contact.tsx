@@ -25,17 +25,17 @@ function Contact(){
 
     return <div>
         <NavBar/>
-        <section className="contact-hero">
+        <section className="contact-hero reveal">
             <h1>Get in Touch</h1>
             <p>Our friendly team would love to hear from you.</p>
         </section>
-        <section className="contact-body">
+        <section className="contact-body reveal">
             <aside className="info">
                 <h2>Reach Us Directly</h2>
                 <p>We respond to most enquiries within one working day.</p>
                 <ul>
                     <li><Email className="icon"/> <a href="mailto:info@produqtedge.com">info@produqtedge.com</a></li>
-                    <li><Phone className="icon"/> <a href="tel:+001329356465">+001 329-356465</a></li>
+                    <li><Phone className="icon"/> <a href="tel:+2347012345678">+234 701 234 5678</a></li>
                     <li><LocationOn className="icon"/> Lagos, Abuja</li>
                 </ul>
             </aside>

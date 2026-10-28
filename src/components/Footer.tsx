@@ -38,7 +38,7 @@ export function Footer(){
                 <ul>
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><a href="mailto:info@produqtedge.com">info@produqtedge.com</a></li>
-                    <li><a href="tel:+001329356465">+001 329-356465</a></li>
+                    <li><a href="tel:+2347012345678">+234 701 234 5678</a></li>
                 </ul>
             </div>
             <div>

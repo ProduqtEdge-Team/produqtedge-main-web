@@ -24,19 +24,19 @@ function Careers(){
 
     return <div>
         <NavBar/>
-        <section className="careers-hero">
+        <section className="careers-hero reveal">
             <div className="sec-1" style={{backgroundImage: `url(${heroBackground})`}}>
-                <h1>Make a Difference with Produqtedge</h1>
+                <h1>Make a Difference with ProduqtEdge</h1>
                 <Link to="#positions">View Open Roles</Link>
             </div>
         </section>
-        <section className="careers-join">
+        <section className="careers-join reveal">
             <SectionHeader>Join Us in Removing Barriers to Product Success</SectionHeader>
             <span>
-                At Produqtedge, we are driven by a single ambition: to help visionary teams build, launch, and scale exceptional products. Our people are the lifeblood of this mission. We value curiosity, collaboration, innovation, and an unrelenting commitment to quality. If you are passionate about solving real problems, thriving in dynamic environments, and making tangible impact you belong here.
+                At ProduqtEdge, we are driven by a single ambition: to help visionary teams build, launch, and scale exceptional products. Our people are the lifeblood of this mission. We value curiosity, collaboration, innovation, and an unrelenting commitment to quality. If you are passionate about solving real problems, thriving in dynamic environments, and making tangible impact you belong here.
             </span>
         </section>
-        <section className="careers-place">
+        <section className="careers-place reveal">
             <img className="sec-1" src={Place} alt=""/>
             <div className="sec-2">
                 <SectionHeader>A Great Place to Work, a Great Way to Help</SectionHeader>
@@ -47,14 +47,14 @@ function Careers(){
                 </div>
             </div>
         </section>
-        <section className="careers-positions" id="positions">
+        <section className="careers-positions reveal" id="positions">
             <SectionHeader>Open Positions</SectionHeader>
             <span className="blurb">We are always looking for talented individuals to join our growing team. Below are current opportunities:</span>
             <label className="search">
                 <Search/>
                 <input type="text" placeholder="Find your next opportunity" value={search} onChange={(e) => setSearch(e.target.value)}/>
             </label>
-            <div className="jobs">
+            <div className="jobs stagger">
                 {found.map((job, i) => {
                     const body = <>
                         <h3>{job.title}</h3>
@@ -73,12 +73,12 @@ function Careers(){
             </div>
         </section>
         <CoreValues/>
-        <section className="careers-cta">
+        <section className="careers-cta reveal">
             <div className="sec-1" style={{backgroundImage: `linear-gradient(90deg, rgba(5, 20, 35, 0.85), rgba(5, 20, 35, 0.3)), url(${Join})`}}>
                 <h3>Join the Team</h3>
                 <SectionHeader>There’s a Place for You at ProduqtEdge</SectionHeader>
                 <span>
-                    At Produqtedge, we want you to excel. Our mission is to attract, empower, and reward a high-performing team of builders, thinkers, and innovators who are passionate about shaping the future of products and startups. We are committed to excellence, transparency, and impact for the founders and organisations we serve, and within our own team
+                    At ProduqtEdge, we want you to excel. Our mission is to attract, empower, and reward a high-performing team of builders, thinkers, and innovators who are passionate about shaping the future of products and startups. We are committed to excellence, transparency, and impact for the founders and organisations we serve, and within our own team
                 </span>
             </div>
         </section>

@@ -58,7 +58,7 @@ function Insight(){
 
     return <div>
         <NavBar/>
-        <section className="insight-head">
+        <section className="insight-head reveal">
             <div className="sec-1">
                 <Link to="/insights" className="back"><ArrowBack/> ProduqtEdge Blog</Link>
                 <span className="topic">{insight.topic}</span>
@@ -71,15 +71,15 @@ function Insight(){
             </div>
             <img className="sec-2" src={insight.cover} alt=""/>
         </section>
-        <section className="insight-body">
+        <section className="insight-body reveal">
             <span className="read"><AccessTime/> {minutes} min read</span>
             <div className="article">
                 {insight.article.map(block)}
             </div>
         </section>
-        <section className="insight-more">
+        <section className="insight-more reveal">
             <SectionHeader>Keep Reading</SectionHeader>
-            <div className="cards">
+            <div className="cards stagger">
                 {more.map((item, i) =>(
                     <InsightCard insight={item} key={i}/>
                 ))}

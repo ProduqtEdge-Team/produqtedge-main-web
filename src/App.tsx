@@ -18,10 +18,12 @@ import AdminInsights from "./pages/admin/AdminInsights.tsx"
 import {AuthProvider, RequireAuth} from "./lib/auth.tsx"
 import {Footer} from "./components/Footer.tsx"
 import {leadershipService} from "./js/services.ts"
+import {useReveal} from "./lib/useReveal.ts"
 import {createBrowserRouter, Navigate, Outlet, RouterProvider} from "react-router-dom";
 
 // layout wrapper so Footer sits inside the router context (its <Link>s need it)
 function Layout(){
+  useReveal()
   return <>
     <Outlet/>
     <Footer/>

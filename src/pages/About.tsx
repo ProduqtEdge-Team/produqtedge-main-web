@@ -42,27 +42,27 @@ function About(){
 
     return <div>
         <NavBar/>
-        <section className="about-who">
+        <section className="about-who reveal">
             <h1>Who We Are</h1>
             <span>
-                We are a Lagos-headquartered product-as-a-service (PaaS) consultancy on a mission to remove all barriers to startup and product success. At Produqtedge, we believe that ideas are just the beginning. What transforms an idea into a successful, scalable product is disciplined process, domain insight, and hands-on execution. To help organisations achieve exponential growth at a fraction of the cost, we operate a model that democratises access to world class experience, helping product teams and organisations solve for problem-solution fit and product-market fit, gaining market share and achieving multiple X growth.
+                We are a Lagos-headquartered product-as-a-service (PaaS) consultancy on a mission to remove all barriers to startup and product success. At ProduqtEdge, we believe that ideas are just the beginning. What transforms an idea into a successful, scalable product is disciplined process, domain insight, and hands-on execution. To help organisations achieve exponential growth at a fraction of the cost, we operate a model that democratises access to world class experience, helping product teams and organisations solve for problem-solution fit and product-market fit, gaining market share and achieving multiple X growth.
             </span>
         </section>
-        <section className="about-offer">
+        <section className="about-offer reveal">
             <img className="sec-1" src={Offer} alt=""/>
             <div className="sec-2">
                 <SectionHeader>What We Offer</SectionHeader>
                 <span className="blurb">
                     Our services cut across the broad spectrum of product development, management and growth engineering for organisations across all stages of growth. Sitting at the intersection of people, product and process, we help organisations successfully deliver value, find product-market fit, grow their products by incorporating our extensive market and industry experience, technical know-how, employing tested and trusted delivery methods and strategies, while optimising internal processes for scalability and exponential growth.
                 </span>
-                <div className="list">
+                <div className="list stagger">
                     {offers.map((offer, i) =>(
                         <span key={i}><CheckCircle className="check"/> {offer}</span>
                     ))}
                 </div>
             </div>
         </section>
-        <section className="about-mission">
+        <section className="about-mission reveal">
             <div className="sec-1">
                 <SectionHeader>Mission & Vision</SectionHeader>
                 {missions.map((mission, i) =>(
@@ -74,7 +74,7 @@ function About(){
             </div>
             <img className="sec-2" src={Mission} alt=""/>
         </section>
-        <section className="about-team" id="team">
+        <section className="about-team reveal" id="team">
             <SectionHeader>Our Team</SectionHeader>
             {memberCards(teamCards)}
             <h2 className="board">Advisory Board</h2>

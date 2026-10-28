@@ -20,7 +20,7 @@ function TeamMember(){
 
     return <div>
         <NavBar/>
-        <section className="member-hero">
+        <section className="member-hero reveal">
             <h1>{member.name}</h1>
             <div className="sec-2">
                 <img src={member.path} alt={member.name}/>
@@ -30,7 +30,7 @@ function TeamMember(){
                 </div>
             </div>
         </section>
-        <section className="member-bio">
+        <section className="member-bio reveal">
             <h3>Biography</h3>
             {member.bio.map((paragraph, i) =>(
                 <p key={i}>{paragraph}</p>

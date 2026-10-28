@@ -28,7 +28,7 @@ function ServiceCategory(){
 
     return <div>
         <NavBar/>
-        <section className="category-head">
+        <section className="category-head reveal">
             <div className="sec-1">
                 <h1>{category.heading ?? category.title}</h1>
                 <span>{category.tagline}</span>
@@ -40,7 +40,7 @@ function ServiceCategory(){
                 </div>
             </div>
         </section>
-        <section className="category-services">
+        <section className="category-services reveal">
             <SectionHeader>The Services</SectionHeader>
             <div className="cards">
                 {inCategory(category.slug).map((service, i) =>(
@@ -53,7 +53,7 @@ function ServiceCategory(){
                 ))}
             </div>
         </section>
-        <section className="category-start">
+        <section className="category-start reveal">
             <SectionHeader>{category.start.title}</SectionHeader>
             <span className="blurb">{category.start.content}</span>
             <div className="rows">
@@ -67,7 +67,7 @@ function ServiceCategory(){
                 })}
             </div>
         </section>
-        <section className="category-fit">
+        <section className="category-fit reveal">
             <SectionHeader>{fit.title}</SectionHeader>
             <div className="body">
                 {/* stays a grey box until the photo for it is supplied */}
@@ -99,7 +99,7 @@ function ServiceCategory(){
                 </div>
             </div>
         </section>
-        <section className="category-other">
+        <section className="category-other reveal">
             <div className="sec-1">
                 <SectionHeader>Other Service Areas</SectionHeader>
                 <Link to="/services">All services</Link>
