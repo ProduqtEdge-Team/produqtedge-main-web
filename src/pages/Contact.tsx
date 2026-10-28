@@ -35,7 +35,7 @@ function Contact(){
                 <p>We respond to most enquiries within one working day.</p>
                 <ul>
                     <li><Email className="icon"/> <a href="mailto:info@produqtedge.com">info@produqtedge.com</a></li>
-                    <li><Phone className="icon"/> <a href="tel:+2347045000540">0704 500 0540</a></li>
+                    <li><Phone className="icon"/> <a href="tel:+2347045000540">+234 704 500 0540</a></li>
                     <li><LocationOn className="icon"/> Lagos, Abuja</li>
                 </ul>
             </aside>
