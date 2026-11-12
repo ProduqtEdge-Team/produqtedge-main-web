@@ -245,9 +245,9 @@ export const services: Service[] =[
         questions:{path:DtQuestions, points:[
             "Are our technology investments delivering measurable operational and commercial value?",
             "Where can workflow automation reduce manual coordination, delays, errors and administrative effort?",
-            "How well are our internal processes and systems supporting product performance?",
-            "Do we have the right product operating model, governance, and team capabilities?",
-            "How aligned are product decisions with our broader commercial priorities?",
+            "How can our systems, platforms, and data be better connected across teams and business functions?",
+            "Which applications of AI can seamlessly improve decision-making, service delivery, employee productivity, or customer experience?",
+            "How can we create real-time visibility into workflow performance, service levels, exceptions, and business outcomes?",
             "What governance, controls, capabilities and change interventions will ensure adoption and sustainable value?",
         ]},
         approach:{title:"Our Approach", path:DtApproach, content:[
